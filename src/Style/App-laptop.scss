@@ -1,0 +1,121 @@
+$Black : rgb(5, 5, 5);
+$White : rgb(240, 240, 240);
+$Grey: rgb(186, 201, 195);
+$GreyDarker: rgb(135, 145, 141);
+$PurpleGrey: rgb(117, 101, 124);
+$PurpleDarker : rgb(43, 11, 50);
+$Gold : rgb(245, 205, 115);
+$Red : rgb(199, 18, 18);
+$Green : rgb(3, 149, 8);
+$Darked : rgba(15, 15, 15, 0.5);
+$DarkedLight : rgba(15, 15, 15, 0.2);
+
+
+@media screen and (min-width: 781px) {
+
+    /* HOME */
+
+    .home-image {
+        width: 700px;
+        top: 60%;
+        transform: translate(-50%, -25%);
+    }
+
+    .home-title {
+        font-size: 100px;
+        margin: 25px 0 125px 0
+            /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+        ;
+    }
+
+    .sentence {
+        margin-top: 100px
+            /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+        ;
+    }
+
+    /* HOC */
+
+    header {
+        height: 75px;
+
+        .header-ctn {
+
+            .nav-ctn {
+
+                .menu-ctn-open {
+                    background-image: none;
+                    background-color: $White;
+                }
+
+                nav {
+                    width: auto;
+                    background-image: none;
+                    background-color: $White;
+
+                    a {
+                        text-align: center;
+                    }
+                }
+
+                .mediaQ_show-laptop_desktop {
+                    display: block;
+                    margin-left: 0;
+                }
+
+                .mediaQ_show-mobile_tablet {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+
+    .slider-ctn,
+    .trickslist-ctn,
+    .form-ctn,
+    .mytracker-ctn {
+
+        .trickslist-list,
+        .mytrickslist-ctn {
+            // compte utilisateur
+            background-position: 0 0;
+        }
+
+
+        .slider-video,
+        .myvideo {
+            width: 70%;
+            height: auto;
+            max-height: 400px;
+            margin-top: 50px;
+        }
+        .slider-button {
+            top: 50%;
+        }
+    
+        .prev {
+            left: 10%;
+        }
+    
+        .next {
+            right: 10%;
+        }
+
+        .trickslist-list,
+        .mytracker,
+        .mytrickslist-ctn {
+
+            h3 {
+                text-align: left;
+                margin: 15px 0 15px 0;
+            }
+
+            p {
+                margin: 0 0 14px 150px;
+            }
+        }
+    }
+}

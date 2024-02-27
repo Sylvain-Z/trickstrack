@@ -1,0 +1,513 @@
+@font-face {
+  font-family: "Kiona";
+  src: url("../Assets/Font/Kiona-Regular.ttf");
+}
+@font-face {
+  font-family: "Rounded_Elegance";
+  src: url("../Assets/Font/Rounded_Elegance.ttf");
+}
+/* GENERALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Rounded_Elegance";
+  font-size: 16px;
+  background-image: url("../Assets/Images/TextureBeton.jpg");
+  background-size: cover;
+  color: rgb(5, 5, 5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Kiona";
+}
+
+.msg {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.red {
+  color: rgb(199, 18, 18);
+}
+
+.green {
+  color: rgb(3, 149, 8);
+}
+
+.purple {
+  color: rgb(43, 11, 50);
+}
+
+.overline {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  padding: 0 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HOME */
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-image {
+  width: 300px;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  transform-origin: 200px 100px;
+  z-index: 1;
+}
+
+.home-title {
+  color: rgb(240, 240, 240);
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+  margin: 50px 0 150px 0;
+  background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 20;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 25;
+  font-family: "Kiona";
+}
+
+.sentence {
+  font-size: 20px;
+  margin-top: 100px;
+}
+
+.home-button {
+  text-decoration: none;
+}
+.home-button p {
+  background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
+  color: rgb(240, 240, 240);
+  font-weight: bold;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  border: none;
+  border-radius: 30px;
+}
+.home-button p:hover {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  color: rgb(43, 11, 50);
+}
+
+/* HOC */
+header {
+  width: 100%;
+  height: 100px;
+}
+header .header-ctn {
+  width: 100%;
+  position: relative;
+}
+header .header-ctn .logo-div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+header .header-ctn .logo-div .header-img {
+  width: 75px;
+  margin-top: 13px;
+}
+header .header-ctn .menu-name-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 25px;
+}
+header .header-ctn .menu img {
+  width: 50px;
+}
+header .header-ctn .faBars,
+header .header-ctn .faXmark {
+  cursor: pointer;
+}
+header .header-ctn .nav-ctn {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+header .header-ctn .nav-ctn .menu-ctn-closed,
+header .header-ctn .nav-ctn .menu-ctn-open {
+  display: flex;
+  align-items: center;
+  padding: 25px 35px 25px 25px;
+  z-index: 20;
+}
+header .header-ctn .nav-ctn .menu-ctn-open {
+  background-color: rgb(240, 240, 240);
+}
+header .header-ctn .nav-ctn nav {
+  width: 100vw;
+  height: 100vh;
+  padding: 25px;
+  background-color: rgb(240, 240, 240);
+}
+header .header-ctn .nav-ctn nav .links {
+  display: flex;
+  flex-direction: column;
+}
+header .header-ctn .nav-ctn nav div,
+header .header-ctn .nav-ctn nav a {
+  font-family: "Kiona";
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(5, 5, 5);
+}
+header .header-ctn .nav-ctn .header-button {
+  /* NavLink */
+  text-decoration: none;
+}
+header .header-ctn .nav-ctn .header-button p {
+  width: 200px;
+  margin: auto;
+  color: rgb(240, 240, 240);
+  font-weight: bold;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 10px;
+  border: none;
+  border-radius: 30px;
+}
+header .header-ctn .nav-ctn .header-button .logs-login {
+  background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
+  border: 1px solid rgb(43, 11, 50);
+}
+header .header-ctn .nav-ctn .header-button .logs-profil {
+  background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
+  margin-bottom: 25px;
+  border: 1px solid rgb(117, 101, 124);
+}
+header .header-ctn .nav-ctn .header-button .logs-logout {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  color: rgb(43, 11, 50);
+  border: 1px solid rgb(240, 240, 240);
+}
+header .header-ctn .nav-ctn .header-button .logs-login:hover {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  color: rgb(43, 11, 50);
+  border: 1px solid rgb(43, 11, 50);
+}
+header .header-ctn .nav-ctn .header-button .logs-profil:hover {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  color: rgb(43, 11, 50);
+  border: 1px solid rgb(117, 101, 124);
+}
+header .header-ctn .nav-ctn .header-button .logs-logout:hover {
+  border: 1px solid rgb(117, 101, 124);
+}
+header .header-ctn .nav-ctn .burger_hidden {
+  display: none;
+}
+header .header-ctn .nav-ctn .mediaQ_show-laptop_desktop {
+  display: none;
+}
+header .header-ctn .nav-ctn .mediaQ_show-mobile_tablet {
+  display: block;
+}
+
+footer {
+  position: fixed;
+  right: 50px;
+  bottom: 25px;
+}
+footer a {
+  margin: 0 25px;
+}
+
+/* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+.slider-ctn,
+.trickslist-ctn,
+.form-ctn,
+.mytracker-ctn {
+  width: 80%;
+  height: 350px;
+  margin: 25px auto;
+}
+.slider-ctn .slider-title,
+.slider-ctn .trickslist-title,
+.slider-ctn .form-title,
+.slider-ctn .mytracker-title,
+.trickslist-ctn .slider-title,
+.trickslist-ctn .trickslist-title,
+.trickslist-ctn .form-title,
+.trickslist-ctn .mytracker-title,
+.form-ctn .slider-title,
+.form-ctn .trickslist-title,
+.form-ctn .form-title,
+.form-ctn .mytracker-title,
+.mytracker-ctn .slider-title,
+.mytracker-ctn .trickslist-title,
+.mytracker-ctn .form-title,
+.mytracker-ctn .mytracker-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 300;
+  font-size: 20px;
+}
+.slider-ctn .slider,
+.slider-ctn form,
+.trickslist-ctn .slider,
+.trickslist-ctn form,
+.form-ctn .slider,
+.form-ctn form,
+.mytracker-ctn .slider,
+.mytracker-ctn form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.slider-ctn .slider-video,
+.slider-ctn .myvideo,
+.trickslist-ctn .slider-video,
+.trickslist-ctn .myvideo,
+.form-ctn .slider-video,
+.form-ctn .myvideo,
+.mytracker-ctn .slider-video,
+.mytracker-ctn .myvideo {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  margin-top: 50px;
+}
+.slider-ctn .slider-button,
+.trickslist-ctn .slider-button,
+.form-ctn .slider-button,
+.mytracker-ctn .slider-button {
+  position: absolute;
+  top: 0;
+  border: none;
+  background: none;
+}
+.slider-ctn .prev,
+.trickslist-ctn .prev,
+.form-ctn .prev,
+.mytracker-ctn .prev {
+  left: 40%;
+}
+.slider-ctn .next,
+.trickslist-ctn .next,
+.form-ctn .next,
+.mytracker-ctn .next {
+  right: 40%;
+}
+.slider-ctn .fa-chevron-left,
+.slider-ctn .fa-chevron-right,
+.trickslist-ctn .fa-chevron-left,
+.trickslist-ctn .fa-chevron-right,
+.form-ctn .fa-chevron-left,
+.form-ctn .fa-chevron-right,
+.mytracker-ctn .fa-chevron-left,
+.mytracker-ctn .fa-chevron-right {
+  color: rgb(43, 11, 50);
+}
+.slider-ctn .fa-chevron-left:hover,
+.slider-ctn .fa-chevron-right:hover,
+.trickslist-ctn .fa-chevron-left:hover,
+.trickslist-ctn .fa-chevron-right:hover,
+.form-ctn .fa-chevron-left:hover,
+.form-ctn .fa-chevron-right:hover,
+.mytracker-ctn .fa-chevron-left:hover,
+.mytracker-ctn .fa-chevron-right:hover {
+  cursor: pointer;
+}
+.slider-ctn .trickslist-nav,
+.slider-ctn .mytracker-nav,
+.trickslist-ctn .trickslist-nav,
+.trickslist-ctn .mytracker-nav,
+.form-ctn .trickslist-nav,
+.form-ctn .mytracker-nav,
+.mytracker-ctn .trickslist-nav,
+.mytracker-ctn .mytracker-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 30;
+}
+.slider-ctn .trickslist-nav button,
+.slider-ctn .mytracker-nav button,
+.trickslist-ctn .trickslist-nav button,
+.trickslist-ctn .mytracker-nav button,
+.form-ctn .trickslist-nav button,
+.form-ctn .mytracker-nav button,
+.mytracker-ctn .trickslist-nav button,
+.mytracker-ctn .mytracker-nav button {
+  width: 150px;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgb(135, 145, 141), rgb(5, 5, 5));
+  color: rgb(240, 240, 240);
+}
+.slider-ctn .trickslist-nav button:hover,
+.slider-ctn .mytracker-nav button:hover,
+.trickslist-ctn .trickslist-nav button:hover,
+.trickslist-ctn .mytracker-nav button:hover,
+.form-ctn .trickslist-nav button:hover,
+.form-ctn .mytracker-nav button:hover,
+.mytracker-ctn .trickslist-nav button:hover,
+.mytracker-ctn .mytracker-nav button:hover {
+  cursor: pointer;
+}
+.slider-ctn .trickslist-list,
+.slider-ctn .mytracker,
+.slider-ctn .mytrickslist-ctn,
+.trickslist-ctn .trickslist-list,
+.trickslist-ctn .mytracker,
+.trickslist-ctn .mytrickslist-ctn,
+.form-ctn .trickslist-list,
+.form-ctn .mytracker,
+.form-ctn .mytrickslist-ctn,
+.mytracker-ctn .trickslist-list,
+.mytracker-ctn .mytracker,
+.mytracker-ctn .mytrickslist-ctn {
+  width: 100%;
+  margin-top: 25px;
+}
+.slider-ctn .trickslist-list h3,
+.slider-ctn .mytracker h3,
+.slider-ctn .mytrickslist-ctn h3,
+.trickslist-ctn .trickslist-list h3,
+.trickslist-ctn .mytracker h3,
+.trickslist-ctn .mytrickslist-ctn h3,
+.form-ctn .trickslist-list h3,
+.form-ctn .mytracker h3,
+.form-ctn .mytrickslist-ctn h3,
+.mytracker-ctn .trickslist-list h3,
+.mytracker-ctn .mytracker h3,
+.mytracker-ctn .mytrickslist-ctn h3 {
+  text-align: left;
+  margin: 15px 0 15px 25px;
+}
+.slider-ctn .trickslist-list p,
+.slider-ctn .mytracker p,
+.slider-ctn .mytrickslist-ctn p,
+.trickslist-ctn .trickslist-list p,
+.trickslist-ctn .mytracker p,
+.trickslist-ctn .mytrickslist-ctn p,
+.form-ctn .trickslist-list p,
+.form-ctn .mytracker p,
+.form-ctn .mytrickslist-ctn p,
+.mytracker-ctn .trickslist-list p,
+.mytracker-ctn .mytracker p,
+.mytracker-ctn .mytrickslist-ctn p {
+  margin: 0 0 15px 25px;
+}
+.slider-ctn .mytracker,
+.trickslist-ctn .mytracker,
+.form-ctn .mytracker,
+.mytracker-ctn .mytracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider-ctn .trickslist-list,
+.slider-ctn .mytrickslist-ctn,
+.trickslist-ctn .trickslist-list,
+.trickslist-ctn .mytrickslist-ctn,
+.form-ctn .trickslist-list,
+.form-ctn .mytrickslist-ctn,
+.mytracker-ctn .trickslist-list,
+.mytracker-ctn .mytrickslist-ctn {
+  background-image: url("../Assets/Images/TexturePapier.jpg");
+  background-size: 1000px 1000px;
+  background-repeat: repeat;
+  background-position: -135px 0;
+  padding: 15px;
+}
+.slider-ctn form label,
+.trickslist-ctn form label,
+.form-ctn form label,
+.mytracker-ctn form label {
+  margin-bottom: 10px;
+}
+.slider-ctn form input,
+.slider-ctn form button,
+.trickslist-ctn form input,
+.trickslist-ctn form button,
+.form-ctn form input,
+.form-ctn form button,
+.mytracker-ctn form input,
+.mytracker-ctn form button {
+  background: radial-gradient(circle, rgb(43, 11, 50), rgb(5, 5, 5));
+  color: rgb(240, 240, 240);
+  font-weight: bold;
+  padding: 15px 30px;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  font-size: 10px;
+  border-radius: 30px;
+  border: 1px solid rgb(43, 11, 50);
+}
+.slider-ctn form button,
+.trickslist-ctn form button,
+.form-ctn form button,
+.mytracker-ctn form button {
+  background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
+  color: rgb(43, 11, 50);
+  border: 1px solid rgb(186, 201, 195);
+}
+.slider-ctn form button:hover,
+.trickslist-ctn form button:hover,
+.form-ctn form button:hover,
+.mytracker-ctn form button:hover {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgb(186, 201, 195);
+}/*# sourceMappingURL=App.css.map */

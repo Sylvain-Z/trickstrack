@@ -1,0 +1,109 @@
+@media screen and (min-width: 781px) {
+  /* HOME */
+  .home-image {
+    width: 700px;
+    top: 60%;
+    transform: translate(-50%, -25%);
+  }
+  .home-title {
+    font-size: 100px;
+    margin: 25px 0 125px 0;
+  }
+  .sentence {
+    margin-top: 100px;
+  }
+  /* HOC */
+  header {
+    height: 75px;
+  }
+  header .header-ctn .nav-ctn .menu-ctn-open {
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+  }
+  header .header-ctn .nav-ctn nav {
+    width: auto;
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+  }
+  header .header-ctn .nav-ctn nav a {
+    text-align: center;
+  }
+  header .header-ctn .nav-ctn .mediaQ_show-laptop_desktop {
+    display: block;
+    margin-left: 0;
+  }
+  header .header-ctn .nav-ctn .mediaQ_show-mobile_tablet {
+    display: none;
+  }
+  /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+  .slider-ctn .trickslist-list,
+  .slider-ctn .mytrickslist-ctn,
+  .trickslist-ctn .trickslist-list,
+  .trickslist-ctn .mytrickslist-ctn,
+  .form-ctn .trickslist-list,
+  .form-ctn .mytrickslist-ctn,
+  .mytracker-ctn .trickslist-list,
+  .mytracker-ctn .mytrickslist-ctn {
+    background-position: 0 0;
+  }
+  .slider-ctn .slider-video,
+  .slider-ctn .myvideo,
+  .trickslist-ctn .slider-video,
+  .trickslist-ctn .myvideo,
+  .form-ctn .slider-video,
+  .form-ctn .myvideo,
+  .mytracker-ctn .slider-video,
+  .mytracker-ctn .myvideo {
+    width: 70%;
+    height: auto;
+    max-height: 400px;
+    margin-top: 50px;
+  }
+  .slider-ctn .slider-button,
+  .trickslist-ctn .slider-button,
+  .form-ctn .slider-button,
+  .mytracker-ctn .slider-button {
+    top: 50%;
+  }
+  .slider-ctn .prev,
+  .trickslist-ctn .prev,
+  .form-ctn .prev,
+  .mytracker-ctn .prev {
+    left: 10%;
+  }
+  .slider-ctn .next,
+  .trickslist-ctn .next,
+  .form-ctn .next,
+  .mytracker-ctn .next {
+    right: 10%;
+  }
+  .slider-ctn .trickslist-list h3,
+  .slider-ctn .mytracker h3,
+  .slider-ctn .mytrickslist-ctn h3,
+  .trickslist-ctn .trickslist-list h3,
+  .trickslist-ctn .mytracker h3,
+  .trickslist-ctn .mytrickslist-ctn h3,
+  .form-ctn .trickslist-list h3,
+  .form-ctn .mytracker h3,
+  .form-ctn .mytrickslist-ctn h3,
+  .mytracker-ctn .trickslist-list h3,
+  .mytracker-ctn .mytracker h3,
+  .mytracker-ctn .mytrickslist-ctn h3 {
+    text-align: left;
+    margin: 15px 0 15px 0;
+  }
+  .slider-ctn .trickslist-list p,
+  .slider-ctn .mytracker p,
+  .slider-ctn .mytrickslist-ctn p,
+  .trickslist-ctn .trickslist-list p,
+  .trickslist-ctn .mytracker p,
+  .trickslist-ctn .mytrickslist-ctn p,
+  .form-ctn .trickslist-list p,
+  .form-ctn .mytracker p,
+  .form-ctn .mytrickslist-ctn p,
+  .mytracker-ctn .trickslist-list p,
+  .mytracker-ctn .mytracker p,
+  .mytracker-ctn .mytrickslist-ctn p {
+    margin: 0 0 14px 150px;
+  }
+}/*# sourceMappingURL=App-laptop.css.map */

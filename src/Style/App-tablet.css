@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Kiona";
+  src: url("../Assets/Font/Kiona-Regular.ttf");
+}
+@font-face {
+  font-family: "Rounded_Elegance";
+  src: url("../Assets/Font/Rounded_Elegance.ttf");
+}
+@media screen and (min-width: 426px) {
+  /* HOME */
+  .home-title {
+    margin: 30px 0 100px 0;
+  }
+  .sentence {
+    letter-spacing: 10px;
+    margin-top: 70px;
+  }
+  /* HOC */
+  /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+  .slider-ctn .trickslist-list,
+  .slider-ctn .mytrickslist-ctn,
+  .trickslist-ctn .trickslist-list,
+  .trickslist-ctn .mytrickslist-ctn,
+  .form-ctn .trickslist-list,
+  .form-ctn .mytrickslist-ctn,
+  .mytracker-ctn .trickslist-list,
+  .mytracker-ctn .mytrickslist-ctn {
+    background-position: -50px 0;
+  }
+  .slider-ctn .trickslist-nav,
+  .slider-ctn .mytracker-nav,
+  .trickslist-ctn .trickslist-nav,
+  .trickslist-ctn .mytracker-nav,
+  .form-ctn .trickslist-nav,
+  .form-ctn .mytracker-nav,
+  .mytracker-ctn .trickslist-nav,
+  .mytracker-ctn .mytracker-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .slider-ctn .trickslist-nav button,
+  .slider-ctn .mytracker-nav button,
+  .trickslist-ctn .trickslist-nav button,
+  .trickslist-ctn .mytracker-nav button,
+  .form-ctn .trickslist-nav button,
+  .form-ctn .mytracker-nav button,
+  .mytracker-ctn .trickslist-nav button,
+  .mytracker-ctn .mytracker-nav button {
+    width: auto;
+  }
+  .slider-ctn .trickslist-list h3,
+  .slider-ctn .mytracker h3,
+  .slider-ctn .mytrickslist-ctn h3,
+  .trickslist-ctn .trickslist-list h3,
+  .trickslist-ctn .mytracker h3,
+  .trickslist-ctn .mytrickslist-ctn h3,
+  .form-ctn .trickslist-list h3,
+  .form-ctn .mytracker h3,
+  .form-ctn .mytrickslist-ctn h3,
+  .mytracker-ctn .trickslist-list h3,
+  .mytracker-ctn .mytracker h3,
+  .mytracker-ctn .mytrickslist-ctn h3 {
+    text-align: left;
+    margin: 15px 0 15px 0;
+  }
+  .slider-ctn .trickslist-list p,
+  .slider-ctn .mytracker p,
+  .slider-ctn .mytrickslist-ctn p,
+  .trickslist-ctn .trickslist-list p,
+  .trickslist-ctn .mytracker p,
+  .trickslist-ctn .mytrickslist-ctn p,
+  .form-ctn .trickslist-list p,
+  .form-ctn .mytracker p,
+  .form-ctn .mytrickslist-ctn p,
+  .mytracker-ctn .trickslist-list p,
+  .mytracker-ctn .mytracker p,
+  .mytracker-ctn .mytrickslist-ctn p {
+    margin: 0 0 14px 100px;
+  }
+  .slider-ctn .slider-video,
+  .slider-ctn .myvideo,
+  .trickslist-ctn .slider-video,
+  .trickslist-ctn .myvideo,
+  .form-ctn .slider-video,
+  .form-ctn .myvideo,
+  .mytracker-ctn .slider-video,
+  .mytracker-ctn .myvideo {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin-top: 50px;
+  }
+}/*# sourceMappingURL=App-tablet.css.map */

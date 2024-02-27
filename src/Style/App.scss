@@ -1,0 +1,475 @@
+$Black : rgb(5, 5, 5);
+$White : rgb(240, 240, 240);
+$Grey: rgb(186, 201, 195);
+$GreyDarker: rgb(135, 145, 141);
+$PurpleGrey: rgb(117, 101, 124);
+$PurpleDarker : rgb(43, 11, 50);
+$Gold : rgb(245, 205, 115);
+$Red : rgb(199, 18, 18);
+$Green : rgb(3, 149, 8);
+$Darked : rgba(15, 15, 15, 0.5);
+$DarkedLight : rgba(15, 15, 15, 0.2);
+$title-font : 'Kiona';
+$text-font : 'Rounded_Elegance';
+
+@font-face {
+    font-family: 'Kiona';
+    src: url('../Assets/Font/Kiona-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rounded_Elegance';
+    src: url('../Assets/Font/Rounded_Elegance.ttf');
+}
+
+/* GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: $text-font;
+    font-size: 16px;
+    background-image: url('../Assets/Images/TextureBeton.jpg');
+    background-size: cover;
+    color: $Black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Kiona';
+}
+
+.msg {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.red {
+    color: $Red;
+}
+
+.green {
+    color: $Green;
+}
+
+.purple {
+    color: $PurpleDarker;
+}
+
+.overline {
+    background: radial-gradient(circle, $White, $Grey);
+    padding: 0 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HOME */
+
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-evenly;
+    justify-content: center
+        /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+    ;
+}
+
+.home-image {
+    width: 300px;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    transform-origin: 200px 100px;
+    z-index: 1;
+}
+
+.home-title {
+    color: $White;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: center;
+    margin: 50px 0 150px 0
+        /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+    ;
+    background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 20;
+}
+
+.home-text {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 25;
+    font-family: 'Kiona';
+}
+
+.sentence {
+    font-size: 20px;
+    margin-top: 100px
+        /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+    ;
+}
+
+.home-button {
+    text-decoration: none;
+
+    p {
+        background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
+        color: $White;
+        font-weight: bold;
+        padding: 15px 30px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 10px;
+        border: none;
+        border-radius: 30px;
+    }
+
+    p:hover {
+        background: radial-gradient(circle, $White, $Grey);
+        color: $PurpleDarker;
+    }
+}
+
+
+/* HOC */
+
+header {
+    width: 100%;
+    height: 100px;
+
+    .header-ctn {
+        width: 100%;
+        position: relative;
+
+        .logo-div {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            z-index: 10;
+
+            .header-img {
+                width: 75px;
+                margin-top: 13px;
+            }
+        }
+
+        .menu-name-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0 25px;
+        }
+
+        .menu img {
+            width: 50px
+        }
+
+        .faBars,
+        .faXmark {
+            cursor: pointer;
+        }
+
+        .nav-ctn {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            z-index: 20;
+
+            .menu-ctn-closed,
+            .menu-ctn-open {
+                display: flex;
+                align-items: center;
+                padding: 25px 35px 25px 25px;
+                z-index: 20;
+            }
+
+            .menu-ctn-open {
+                background-color: $White;
+            }
+
+            nav {
+                width: 100vw;
+                height: 100vh;
+                padding: 25px;
+                background-color: $White;
+
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                div,
+                a {
+                    font-family: 'Kiona';
+                    text-align: center;
+                    margin-bottom: 25px;
+                    color: $Black;
+                }
+            }
+
+            .header-button {
+                /* NavLink */
+                text-decoration: none;
+
+                p {
+                    width: 200px;
+                    margin: auto;
+                    color: $White;
+                    font-weight: bold;
+                    padding: 15px 30px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    letter-spacing: 3px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 30px;
+                }
+
+                .logs-login {
+                    background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
+                    border: 1px solid $PurpleDarker;
+                }
+
+                .logs-profil {
+                    background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
+                    margin-bottom: 25px;
+                    border: 1px solid $PurpleGrey;
+                }
+
+                .logs-logout {
+                    background: radial-gradient(circle, $White, $Grey);
+                    color: $PurpleDarker;
+                    border: 1px solid $White;
+                }
+
+                .logs-login:hover {
+                    background: radial-gradient(circle, $White, $Grey);
+                    color: $PurpleDarker;
+                    border: 1px solid $PurpleDarker;
+                }
+
+                .logs-profil:hover {
+                    background: radial-gradient(circle, $White, $Grey);
+                    color: $PurpleDarker;
+                    border: 1px solid $PurpleGrey;
+                }
+
+                .logs-logout:hover {
+                    border: 1px solid $PurpleGrey;
+                }
+            }
+
+            .burger_hidden {
+                display: none;
+            }
+
+            .mediaQ_show-laptop_desktop {
+                display: none;
+            }
+
+            .mediaQ_show-mobile_tablet {
+                display: block;
+            }
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    right: 50px;
+    bottom: 25px;
+
+    a {
+        margin: 0 25px;
+    }
+}
+
+
+/* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+
+.slider-ctn,
+.trickslist-ctn,
+.form-ctn,
+.mytracker-ctn {
+    width: 80%;
+    height: 350px;
+    margin: 25px auto;
+
+    .slider-title,
+    .trickslist-title,
+    .form-title,
+    .mytracker-title {
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 300;
+        font-size: 20px;
+    }
+
+    .slider,
+    form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider-video,
+    .myvideo {
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+        margin-top: 50px;
+    }
+
+    .slider-button {
+        position: absolute;
+        top: 0;
+        border: none;
+        background: none;
+    }
+
+    .prev {
+        left: 40%;
+    }
+
+    .next {
+        right: 40%;
+    }
+
+    .fa-chevron-left,
+    .fa-chevron-right {
+        color: $PurpleDarker;
+    }
+
+    .fa-chevron-left:hover,
+    .fa-chevron-right:hover {
+        cursor: pointer;
+    }
+
+
+    .trickslist-nav,
+    .mytracker-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        z-index: 30;
+
+        button {
+            width: 150px;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            background: radial-gradient(circle, $GreyDarker, $Black);
+            color: $White;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+
+    .trickslist-list,
+    .mytracker,
+    .mytrickslist-ctn {
+        width: 100%;
+        margin-top: 25px;
+
+        h3 {
+            text-align: left;
+            margin: 15px 0 15px 25px;
+        }
+
+        p {
+            margin: 0 0 15px 25px;
+        }
+    }
+
+    .mytracker {
+        // compte utilisateur
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trickslist-list,
+    .mytrickslist-ctn {
+        // compte utilisateur
+        background-image: url('../Assets/Images/TexturePapier.jpg');
+        background-size: 1000px 1000px;
+        background-repeat: repeat;
+        background-position: -135px 0;
+        padding: 15px;
+
+    }
+
+    form {
+        label {
+            margin-bottom: 10px;
+        }
+
+        input,
+        button {
+            background: radial-gradient(circle, $PurpleDarker, $Black);
+            color: $White;
+            font-weight: bold;
+            padding: 15px 30px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            font-size: 10px;
+            border-radius: 30px;
+            border: 1px solid $PurpleDarker;
+        }
+
+        button {
+            background: radial-gradient(circle, $White, $Grey);
+            color: $PurpleDarker;
+            border: 1px solid $Grey;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid $Grey;
+        }
+    }
+
+}
