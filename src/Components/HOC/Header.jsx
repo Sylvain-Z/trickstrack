@@ -7,8 +7,8 @@ import { FETCH_URL } from '../../Assets/Variables/const';
 import { getItemWithExpiration } from '../../Assets/Variables/functions';
 
 import Board from '../../Assets/Images/HeaderSkate.png';
-import Open from '../../Assets/Images/MenuColor.png';
-import Closed from '../../Assets/Images/MenuColorNB.png';
+import Open from '../../Assets/Images/MenuOuvert.png';
+import Closed from '../../Assets/Images/MenuFerme.png';
 
 function Header() {
 
@@ -77,16 +77,8 @@ function Header() {
 
                             <div className="menu-name"><h1 className="menu-name-title mediaQ_show-laptop_desktop">TricksTrack</h1></div> {/* Visible uniquement en version laptop et desktop lorsque le menu est ouvert et fermé*/}
 
-                            <div className="menu">
-                                <img src={Closed} alt=""
-                                    className={!menuHidden ? "faBars burger_hidden" : "faBars"}
-                                    onClick={handleButtonClick} />
-                            </div>
-                            <div className="menu">
-                                <img src={Open} alt=""
-                                    className={!menuHidden ? "faXmark" : "faXmark burger_hidden"}
-                                    onClick={toggleMenu} />
-                            </div>
+                            <img src={Closed} alt="pictogram barres" className={!menuHidden ? "faBars burger_hidden" : "faBars"} onClick={handleButtonClick} />
+                            <img src={Open} alt="pictogram croix" className={!menuHidden ? "faXmark" : "faXmark burger_hidden"} onClick={toggleMenu} />
 
                             <div className="menu-name"><h1 className={!menuHidden ? "menu-name-title mediaQ_show-mobile_tablet" : "burger_hidden"}>TricksTrack</h1></div> {/* Visible uniquement version mobil et tablet lors de l'ouverture du menu */}
                         </div>

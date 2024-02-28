@@ -93,7 +93,6 @@ h6 {
 
 .home-title {
   color: rgb(240, 240, 240);
-  font-weight: 900;
   font-size: 40px;
   text-align: center;
   margin: 50px 0 150px 0;
@@ -123,7 +122,6 @@ h6 {
 .home-button p {
   background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
   color: rgb(240, 240, 240);
-  font-weight: bold;
   padding: 15px 30px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -139,7 +137,7 @@ h6 {
 /* HOC */
 header {
   width: 100%;
-  height: 100px;
+  height: 75px;
 }
 header .header-ctn {
   width: 100%;
@@ -155,18 +153,15 @@ header .header-ctn .logo-div {
 }
 header .header-ctn .logo-div .header-img {
   width: 75px;
-  margin-top: 13px;
+  margin-top: 5px;
 }
 header .header-ctn .menu-name-title {
   font-size: 20px;
-  font-weight: 400;
   margin: 0 25px;
-}
-header .header-ctn .menu img {
-  width: 50px;
 }
 header .header-ctn .faBars,
 header .header-ctn .faXmark {
+  height: 20px;
   cursor: pointer;
 }
 header .header-ctn .nav-ctn {
@@ -178,6 +173,7 @@ header .header-ctn .nav-ctn {
 header .header-ctn .nav-ctn .menu-ctn-closed,
 header .header-ctn .nav-ctn .menu-ctn-open {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 25px 35px 25px 25px;
   z-index: 20;
@@ -210,7 +206,6 @@ header .header-ctn .nav-ctn .header-button p {
   width: 200px;
   margin: auto;
   color: rgb(240, 240, 240);
-  font-weight: bold;
   padding: 15px 30px;
   text-transform: uppercase;
   text-align: center;
@@ -257,9 +252,10 @@ header .header-ctn .nav-ctn .mediaQ_show-mobile_tablet {
 }
 
 footer {
-  position: fixed;
-  right: 50px;
-  bottom: 25px;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: flex-end;
 }
 footer a {
   margin: 0 25px;
@@ -269,31 +265,46 @@ footer a {
 .slider-ctn,
 .trickslist-ctn,
 .form-ctn,
-.mytracker-ctn {
+.mytracker-ctn,
+.legal-ctn {
   width: 80%;
-  height: 350px;
-  margin: 25px auto;
+  margin: 0 auto 25px auto;
 }
 .slider-ctn .slider-title,
 .slider-ctn .trickslist-title,
 .slider-ctn .form-title,
 .slider-ctn .mytracker-title,
+.slider-ctn .legal-title,
 .trickslist-ctn .slider-title,
 .trickslist-ctn .trickslist-title,
 .trickslist-ctn .form-title,
 .trickslist-ctn .mytracker-title,
+.trickslist-ctn .legal-title,
 .form-ctn .slider-title,
 .form-ctn .trickslist-title,
 .form-ctn .form-title,
 .form-ctn .mytracker-title,
+.form-ctn .legal-title,
 .mytracker-ctn .slider-title,
 .mytracker-ctn .trickslist-title,
 .mytracker-ctn .form-title,
-.mytracker-ctn .mytracker-title {
+.mytracker-ctn .mytracker-title,
+.mytracker-ctn .legal-title,
+.legal-ctn .slider-title,
+.legal-ctn .trickslist-title,
+.legal-ctn .form-title,
+.legal-ctn .mytracker-title,
+.legal-ctn .legal-title {
   text-align: center;
   margin-bottom: 25px;
-  font-weight: 300;
   font-size: 20px;
+}
+.slider-ctn .legal-titleb,
+.trickslist-ctn .legal-titleb,
+.form-ctn .legal-titleb,
+.mytracker-ctn .legal-titleb,
+.legal-ctn .legal-titleb {
+  margin: 25px 0 15px 0;
 }
 .slider-ctn .slider,
 .slider-ctn form,
@@ -302,7 +313,9 @@ footer a {
 .form-ctn .slider,
 .form-ctn form,
 .mytracker-ctn .slider,
-.mytracker-ctn form {
+.mytracker-ctn form,
+.legal-ctn .slider,
+.legal-ctn form {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -316,7 +329,9 @@ footer a {
 .form-ctn .slider-video,
 .form-ctn .myvideo,
 .mytracker-ctn .slider-video,
-.mytracker-ctn .myvideo {
+.mytracker-ctn .myvideo,
+.legal-ctn .slider-video,
+.legal-ctn .myvideo {
   width: 100%;
   height: auto;
   max-height: 450px;
@@ -325,43 +340,28 @@ footer a {
 .slider-ctn .slider-button,
 .trickslist-ctn .slider-button,
 .form-ctn .slider-button,
-.mytracker-ctn .slider-button {
+.mytracker-ctn .slider-button,
+.legal-ctn .slider-button {
   position: absolute;
   top: 0;
   border: none;
   background: none;
+  color: rgb(43, 11, 50);
+  cursor: pointer;
 }
 .slider-ctn .prev,
 .trickslist-ctn .prev,
 .form-ctn .prev,
-.mytracker-ctn .prev {
-  left: 40%;
+.mytracker-ctn .prev,
+.legal-ctn .prev {
+  left: 30%;
 }
 .slider-ctn .next,
 .trickslist-ctn .next,
 .form-ctn .next,
-.mytracker-ctn .next {
-  right: 40%;
-}
-.slider-ctn .fa-chevron-left,
-.slider-ctn .fa-chevron-right,
-.trickslist-ctn .fa-chevron-left,
-.trickslist-ctn .fa-chevron-right,
-.form-ctn .fa-chevron-left,
-.form-ctn .fa-chevron-right,
-.mytracker-ctn .fa-chevron-left,
-.mytracker-ctn .fa-chevron-right {
-  color: rgb(43, 11, 50);
-}
-.slider-ctn .fa-chevron-left:hover,
-.slider-ctn .fa-chevron-right:hover,
-.trickslist-ctn .fa-chevron-left:hover,
-.trickslist-ctn .fa-chevron-right:hover,
-.form-ctn .fa-chevron-left:hover,
-.form-ctn .fa-chevron-right:hover,
-.mytracker-ctn .fa-chevron-left:hover,
-.mytracker-ctn .fa-chevron-right:hover {
-  cursor: pointer;
+.mytracker-ctn .next,
+.legal-ctn .next {
+  right: 30%;
 }
 .slider-ctn .trickslist-nav,
 .slider-ctn .mytracker-nav,
@@ -370,7 +370,9 @@ footer a {
 .form-ctn .trickslist-nav,
 .form-ctn .mytracker-nav,
 .mytracker-ctn .trickslist-nav,
-.mytracker-ctn .mytracker-nav {
+.mytracker-ctn .mytracker-nav,
+.legal-ctn .trickslist-nav,
+.legal-ctn .mytracker-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -385,7 +387,9 @@ footer a {
 .form-ctn .trickslist-nav button,
 .form-ctn .mytracker-nav button,
 .mytracker-ctn .trickslist-nav button,
-.mytracker-ctn .mytracker-nav button {
+.mytracker-ctn .mytracker-nav button,
+.legal-ctn .trickslist-nav button,
+.legal-ctn .mytracker-nav button {
   width: 150px;
   margin: 5px;
   padding: 10px 20px;
@@ -393,15 +397,6 @@ footer a {
   border-radius: 30px;
   background: radial-gradient(circle, rgb(135, 145, 141), rgb(5, 5, 5));
   color: rgb(240, 240, 240);
-}
-.slider-ctn .trickslist-nav button:hover,
-.slider-ctn .mytracker-nav button:hover,
-.trickslist-ctn .trickslist-nav button:hover,
-.trickslist-ctn .mytracker-nav button:hover,
-.form-ctn .trickslist-nav button:hover,
-.form-ctn .mytracker-nav button:hover,
-.mytracker-ctn .trickslist-nav button:hover,
-.mytracker-ctn .mytracker-nav button:hover {
   cursor: pointer;
 }
 .slider-ctn .trickslist-list,
@@ -415,7 +410,10 @@ footer a {
 .form-ctn .mytrickslist-ctn,
 .mytracker-ctn .trickslist-list,
 .mytracker-ctn .mytracker,
-.mytracker-ctn .mytrickslist-ctn {
+.mytracker-ctn .mytrickslist-ctn,
+.legal-ctn .trickslist-list,
+.legal-ctn .mytracker,
+.legal-ctn .mytrickslist-ctn {
   width: 100%;
   margin-top: 25px;
 }
@@ -430,7 +428,10 @@ footer a {
 .form-ctn .mytrickslist-ctn h3,
 .mytracker-ctn .trickslist-list h3,
 .mytracker-ctn .mytracker h3,
-.mytracker-ctn .mytrickslist-ctn h3 {
+.mytracker-ctn .mytrickslist-ctn h3,
+.legal-ctn .trickslist-list h3,
+.legal-ctn .mytracker h3,
+.legal-ctn .mytrickslist-ctn h3 {
   text-align: left;
   margin: 15px 0 15px 25px;
 }
@@ -445,13 +446,17 @@ footer a {
 .form-ctn .mytrickslist-ctn p,
 .mytracker-ctn .trickslist-list p,
 .mytracker-ctn .mytracker p,
-.mytracker-ctn .mytrickslist-ctn p {
+.mytracker-ctn .mytrickslist-ctn p,
+.legal-ctn .trickslist-list p,
+.legal-ctn .mytracker p,
+.legal-ctn .mytrickslist-ctn p {
   margin: 0 0 15px 25px;
 }
 .slider-ctn .mytracker,
 .trickslist-ctn .mytracker,
 .form-ctn .mytracker,
-.mytracker-ctn .mytracker {
+.mytracker-ctn .mytracker,
+.legal-ctn .mytracker {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -464,7 +469,9 @@ footer a {
 .form-ctn .trickslist-list,
 .form-ctn .mytrickslist-ctn,
 .mytracker-ctn .trickslist-list,
-.mytracker-ctn .mytrickslist-ctn {
+.mytracker-ctn .mytrickslist-ctn,
+.legal-ctn .trickslist-list,
+.legal-ctn .mytrickslist-ctn {
   background-image: url("../Assets/Images/TexturePapier.jpg");
   background-size: 1000px 1000px;
   background-repeat: repeat;
@@ -474,7 +481,8 @@ footer a {
 .slider-ctn form label,
 .trickslist-ctn form label,
 .form-ctn form label,
-.mytracker-ctn form label {
+.mytracker-ctn form label,
+.legal-ctn form label {
   margin-bottom: 10px;
 }
 .slider-ctn form input,
@@ -484,10 +492,11 @@ footer a {
 .form-ctn form input,
 .form-ctn form button,
 .mytracker-ctn form input,
-.mytracker-ctn form button {
+.mytracker-ctn form button,
+.legal-ctn form input,
+.legal-ctn form button {
   background: radial-gradient(circle, rgb(43, 11, 50), rgb(5, 5, 5));
   color: rgb(240, 240, 240);
-  font-weight: bold;
   padding: 15px 30px;
   margin-bottom: 25px;
   letter-spacing: 3px;
@@ -498,7 +507,8 @@ footer a {
 .slider-ctn form button,
 .trickslist-ctn form button,
 .form-ctn form button,
-.mytracker-ctn form button {
+.mytracker-ctn form button,
+.legal-ctn form button {
   background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
   color: rgb(43, 11, 50);
   border: 1px solid rgb(186, 201, 195);
@@ -506,7 +516,8 @@ footer a {
 .slider-ctn form button:hover,
 .trickslist-ctn form button:hover,
 .form-ctn form button:hover,
-.mytracker-ctn form button:hover {
+.mytracker-ctn form button:hover,
+.legal-ctn form button:hover {
   cursor: pointer;
   background: transparent;
   border: 1px solid rgb(186, 201, 195);

@@ -50,12 +50,12 @@ function Slider() {
 
       <div className="slider">
         <button onClick={goToPrevSlide} className='slider-button prev'><FontAwesomeIcon icon={faChevronLeft} size="2xl" className="fa fa-chevron-left" /></button>
+        <button onClick={goToNextSlide} className='slider-button next'><FontAwesomeIcon icon={faChevronRight} size="2xl" className="fa fa-chevron-right" /></button>
 
         <video className='slider-video' controls>
           <source src={"/Videos/" + galery[currentIndex].title} controls type="video/mp4" />
         </video>
 
-        <button onClick={goToNextSlide} className='slider-button next'><FontAwesomeIcon icon={faChevronRight} size="2xl" className="fa fa-chevron-right" /></button>
       </div>
 
 

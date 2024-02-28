@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HOC from "./Components/HOC/Index";
 import Home from "./Components/Pages/Home/Index";
 import Galery from "./Components/Pages/Galery/Index";
+import Legal from "./Components/Pages/Others/Legal";
 
 import TricksList from "./Components/Pages/TricksList/Index";
 import Flat from "./Components/Pages/TricksList/Flat";
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="/" element={<HOC child={Home} />} />
         <Route path="/galerie" element={<HOC child={Galery} />} />
+        <Route path="/mentions-legales" element={<HOC child={Legal} />} />
 
         <Route path="/tricks-list" element={<HOC child={TricksList}/>}>
           <Route path="gap" element={<HOC child={Gap}/>} />
