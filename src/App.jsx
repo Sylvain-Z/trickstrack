@@ -12,6 +12,7 @@ import Gap from "./Components/Pages/TricksList/Gaps";
 import GrindsSlides from "./Components/Pages/TricksList/GrindsSlides";
 import Ramps from "./Components/Pages/TricksList/Ramps";
 
+import SkateDice from "./Components/Pages/SkateDice/index";
 
 /* Pages compte client */
 import Tracker from "./Components/Pages/Users/Index";
@@ -31,12 +32,13 @@ function App() {
         <Route path="/" element={<HOC child={Home} />} />
         <Route path="/galerie" element={<HOC child={Galery} />} />
         <Route path="/mentions-legales" element={<HOC child={Legal} />} />
+        <Route path="/skate-dice" element={<HOC child={SkateDice} />} />
 
-        <Route path="/tricks-list" element={<HOC child={TricksList}/>}>
-          <Route path="gap" element={<HOC child={Gap}/>} />
-          <Route path="grind-slide" element={<HOC child={GrindsSlides}/>} />
-          <Route path="flat" element={<HOC child={Flat}/>} />
-          <Route path="ramps" element={<HOC child={Ramps}/>} />
+        <Route path="/tricks-list" element={<HOC child={TricksList} />}>
+          <Route path="gap" element={<HOC child={Gap} />} />
+          <Route path="grind-slide" element={<HOC child={GrindsSlides} />} />
+          <Route path="flat" element={<HOC child={Flat} />} />
+          <Route path="ramps" element={<HOC child={Ramps} />} />
         </Route>
 
         <Route path="utilisateurs" >
