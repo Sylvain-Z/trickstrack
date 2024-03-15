@@ -89,7 +89,7 @@ function Header() {
                                 <NavLink to="/galerie" >Nouveautés</NavLink>
                                 <NavLink >Catégories</NavLink>
                                 <NavLink to="/tricks-list" >Liste des tricks</NavLink>
-                                <NavLink to="/skate-dice" >Skate Dice</NavLink>
+                                <NavLink to="/skate-dice" className="new-Navlink"><span>Nouveauté</span> Skate Dice</NavLink>
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>

@@ -19,7 +19,7 @@ function SkateDice() {
                     <div className='stance-div shake-elem'><p className='stance'></p></div>
                 </div>
 
-                <button className='go'>Lancer les dés</button>
+                <button className='go' onClick={Play}>Lancer les dés</button>
 
                 <article className='skatedice-rule'>
 
