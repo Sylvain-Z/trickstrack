@@ -1,10 +1,44 @@
+import { useState } from 'react';
 
 import './Style/skatedice-style.scss';
 
-import { Play } from "./scripts/main"  // Enclenche la fonction js après chargement du DOM
-
-
 function SkateDice() {
+
+    const [dices, setDices] = useState({
+        flips: null,
+        shoveit: null,
+        rotation: null,
+        stance: null,
+        direction: null,
+    });
+
+    const DiceFaces = {
+        flips: ['Kickflip', 'Heelflip', 'Kickflip', 'Heelflip', "⛭", "∅"],
+        shoveit: ['Shove it', '360 Shove it', '⛭', "⛭", '∅', "∅"],
+        rotation: ['180', '360', '⛭', "⛭", '∅', "∅"],
+        stance: ['Regular', 'Switch', 'Fakie', 'Nollie', "⛭", "⛭"],
+        direction: ['Frontside', 'Backside', 'Frontside', 'Backside', "⛭", "⛭"],
+    };
+
+    const rollDice = () => {
+        const randomResults = {
+            flips: DiceFaces.flips[Math.floor(Math.random() * 6)],
+            shoveit: DiceFaces.shoveit[Math.floor(Math.random() * 6)],
+            rotation: DiceFaces.rotation[Math.floor(Math.random() * 6)],
+            stance: DiceFaces.stance[Math.floor(Math.random() * 6)],
+            direction: DiceFaces.direction[Math.floor(Math.random() * 6)],
+        };
+        setDices(randomResults);
+
+        const shakeElements = document.querySelectorAll('.shake-elem');
+        shakeElements.forEach(element => {
+            element.classList.add('shake');
+            setTimeout(() => {
+                element.classList.remove('shake');
+            }, 500);
+        });
+    };
+
 
     return (
         <>
@@ -12,14 +46,14 @@ function SkateDice() {
                 <h2 className="skatedice-title">Skate Dice</h2>
 
                 <div className='dices'>
-                    <div className='flips-div shake-elem'><p className='flips'></p></div>
-                    <div className='shoveit-div shake-elem'><p className='shoveit'></p></div>
-                    <div className='rotation-div shake-elem'><p className='rotation'></p></div>
-                    <div className='direction-div shake-elem'><p className='direction'></p></div>
-                    <div className='stance-div shake-elem'><p className='stance'></p></div>
+                    <div className='flips-div shake-elem'><p className='flips'>{dices.flips}</p></div>
+                    <div className='shoveit-div shake-elem'><p className='shoveit'>{dices.shoveit}</p></div>
+                    <div className='rotation-div shake-elem'><p className='rotation'>{dices.rotation}</p></div>
+                    <div className='direction-div shake-elem'><p className='direction'>{dices.direction}</p></div>
+                    <div className='stance-div shake-elem'><p className='stance'>{dices.stance}</p></div>
                 </div>
 
-                <button className='go' onClick={Play}>Lancer les dés</button>
+                <button className='go' onClick={rollDice}>Lancer les dés</button>
 
                 <article className='skatedice-rule'>
 
