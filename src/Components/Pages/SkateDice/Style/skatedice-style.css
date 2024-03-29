@@ -1,0 +1,109 @@
+.skatedice-ctn {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skatedice-ctn .skatedice-title {
+  color: rgb(43, 11, 50);
+  margin: 25px 0;
+}
+.skatedice-ctn .dices {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+}
+.skatedice-ctn .flips-div {
+  background-image: url("../../../../Assets/Images/De1.png");
+}
+.skatedice-ctn .shoveit-div {
+  background-image: url("../../../../Assets/Images/De2.png");
+}
+.skatedice-ctn .rotation-div {
+  background-image: url("../../../../Assets/Images/De3.png");
+}
+.skatedice-ctn .stance-div {
+  background-image: url("../../../../Assets/Images/De4.png");
+}
+.skatedice-ctn .direction-div {
+  background-image: url("../../../../Assets/Images/De5.png");
+}
+.skatedice-ctn .flips-div,
+.skatedice-ctn .shoveit-div,
+.skatedice-ctn .rotation-div,
+.skatedice-ctn .stance-div,
+.skatedice-ctn .direction-div {
+  width: 125px;
+  height: 125px;
+  margin: 5px;
+  background-size: cover;
+}
+.skatedice-ctn .flips-div p,
+.skatedice-ctn .shoveit-div p,
+.skatedice-ctn .rotation-div p,
+.skatedice-ctn .stance-div p,
+.skatedice-ctn .direction-div p {
+  margin-top: 40px;
+  font-weight: bolder;
+  color: rgb(240, 240, 240);
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(5, 5, 5);
+}
+.skatedice-ctn button {
+  width: 200px;
+  margin: auto;
+  color: rgb(240, 240, 240);
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 10px;
+  border: none;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgb(117, 101, 124), rgb(43, 11, 50));
+  border: 1px solid rgb(43, 11, 50);
+  cursor: pointer;
+}
+.skatedice-ctn .shake {
+  animation: Shake 0.25s;
+}
+@keyframes Shake {
+  0% {
+    transform: rotate(10deg);
+  }
+  33% {
+    transform: rotate(-10deg);
+  }
+  66% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.skatedice-ctn .skatedice-rule {
+  width: 80%;
+}
+.skatedice-ctn .skatedice-rule p {
+  margin-bottom: 15px;
+}
+.skatedice-ctn .mauve {
+  background-color: rgb(117, 101, 124);
+}
+.skatedice-ctn .jaune {
+  background-color: rgb(245, 205, 115);
+}
+.skatedice-ctn .vert {
+  background-color: rgb(3, 149, 8);
+}
+.skatedice-ctn .noir {
+  background-color: rgb(5, 5, 5);
+  color: rgb(240, 240, 240);
+}
+.skatedice-ctn .rouge {
+  background-color: rgb(199, 18, 18);
+  color: rgb(240, 240, 240);
+}/*# sourceMappingURL=skatedice-style.css.map */

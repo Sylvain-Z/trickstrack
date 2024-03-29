@@ -22,7 +22,7 @@ function Header() {
     useEffect(() => { // pour que le menu se referme automatiquement si l'internaute ne s'en sert pas
         let intervalId;
         if (!menuHidden) {
-            intervalId = setInterval(toggleMenu, 7000);
+            intervalId = setInterval(toggleMenu, 70000);
         }
         return () => clearInterval(intervalId); // Nettoie l'intervalle lorsque le composant est démonté
     }, [menuHidden]); // Utilisation de [menuHidden] comme dépendance
@@ -32,7 +32,7 @@ function Header() {
 
     /* Gère l'état des boutons de connexion et déconnexion et la récupération des données du user */
     const [users, setUsers] = useState(null);
-    const myuserid = getItemWithExpiration("myuserid"); // récupère le pseudo de l'usager stocké lors du signin
+    const myuserid = getItemWithExpiration("myuserid"); // récupère l'email de l'usager stocké lors du signin
     useEffect(() => {
         async function getData() {
             try {
@@ -86,7 +86,7 @@ function Header() {
                         <nav className={!menuHidden ? "" : "burger_hidden"}>
                             {/* <div className="menu"><FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="fa fa-search" /></div> */}
                             <div className="links">
-                                <NavLink to="/galerie" >Nouveautés</NavLink>
+                                <NavLink to="/galerie" >Derniers Ajouts</NavLink>
                                 <NavLink >Catégories</NavLink>
                                 <NavLink to="/tricks-list" >Liste des tricks</NavLink>
                                 <NavLink to="/skate-dice" className="new-Navlink"><span>Nouveauté</span> Skate Dice</NavLink>
@@ -95,12 +95,12 @@ function Header() {
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>
                                 {!users ? (
                                     <>
-                                        <NavLink to="/utilisateurs/connexion" className="header-button"><p className="logs-login">Se connecter</p></NavLink>
+                                        <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion">Se connecter</NavLink></p>
                                     </>
                                 ) : (
                                     <>
-                                        <NavLink to={`/utilisateurs/mon-tracker/${users[0].id}`} className="header-button"><p className="logs-profil">Mon tracker</p></NavLink>
-                                        <NavLink to="/utilisateurs/deconnexion" className="header-button"><p className="logs-logout">Se déconnecter</p></NavLink>
+                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${users[0].id}`} >Mon tracker</NavLink></p>
+                                        <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion">Se déconnecter</NavLink></p>
                                     </>
                                 )}
                             </div>

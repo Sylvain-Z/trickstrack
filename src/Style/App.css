@@ -191,6 +191,16 @@ header .header-ctn .nav-ctn nav .links {
   display: flex;
   flex-direction: column;
 }
+header .header-ctn .nav-ctn nav .links .new-Navlink {
+  position: relative;
+}
+header .header-ctn .nav-ctn nav .links .new-Navlink span {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  color: rgb(199, 18, 18);
+  font-size: 12px;
+}
 header .header-ctn .nav-ctn nav div,
 header .header-ctn .nav-ctn nav a {
   font-family: "Kiona";
@@ -261,7 +271,7 @@ footer a {
   margin: 0 25px;
 }
 
-/* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
+/* Galeries (pages publiques) -- MyTracker (compte utilisateur) */
 .slider-ctn,
 .trickslist-ctn,
 .form-ctn,
@@ -334,7 +344,7 @@ footer a {
 .legal-ctn .myvideo {
   width: 100%;
   height: auto;
-  max-height: 450px;
+  max-height: 500px;
   margin-top: 50px;
 }
 .slider-ctn .slider-button,

@@ -30,12 +30,12 @@ function Flat() {
 
             {/* {!tricks ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (tricks.map(trick =>
 
                 <React.Fragment key={trick.id}>
-                    <p>{trick.name}</p>
+                    <p className="list">{trick.name}</p>
                 </React.Fragment>
             ))} */}
 
@@ -46,10 +46,10 @@ function Flat() {
             ) : (flattricks.map(flattrick =>
 
                 <React.Fragment key={flattrick.id}>
-                    <p>{flattrick.name}</p>
+                    <p className="list">{flattrick.name}</p>
                 </React.Fragment>
             ))}
-            <p>etc...</p>
+            <p className="list">etc...</p>
         </>
     )
 

@@ -32,26 +32,26 @@ function Grabs() {
 
             {/* {!tricks ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (tricks.map(trick =>
 
                 <React.Fragment key={trick.id}>
-                    <p>{trick.name}</p>
+                    <p className="list">{trick.name}</p>
                 </React.Fragment>
             ))} */}
 
             {!grabs.length ? (
                 <>
-                    <p>Liste à venir</p>
+                    <p className="list">Liste à venir</p>
                 </>
             ) : (grabs.map(grab =>
 
                 <React.Fragment key={grab.id}>
-                    <p>{grab.name}</p>
+                    <p className="list">{grab.name}</p>
                 </React.Fragment>
             ))}
-            <p>etc...</p>
+            <p className="list">etc...</p>
         </>
     );
 

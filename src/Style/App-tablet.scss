@@ -25,23 +25,26 @@ $DarkedLight: rgba(15, 15, 15, 0.2);
 
   .home-title {
     margin: 30px 0 100px 0
-      /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */;
+      /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+    ;
   }
 
   .sentence {
     letter-spacing: 10px;
     margin-top: 70px
-      /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */;
+      /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+    ;
   }
 
   /* HOC */
 
   /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
 
-  .slider-ctn,
+  .galery-ctn,
   .trickslist-ctn,
   .form-ctn,
   .mytracker-ctn {
+
     .trickslist-list,
     .mytrickslist-ctn {
       // compte utilisateur
@@ -66,17 +69,35 @@ $DarkedLight: rgba(15, 15, 15, 0.2);
         margin: 15px 0 15px 0;
       }
 
-      p {
+      .list {
         margin: 0 0 14px 100px;
       }
     }
 
+    .galery figure,
+    .mytracker figure {
+      display: flex;
+
+      figcaption {
+
+        padding: 15px;
+        padding-top: 50px;
+  
+        p {
+          text-align: center;
+          margin: 10px auto;
+        }
+      }
+    }
+
+
+    .galery-video,
     .slider-video,
     .myvideo {
       width: 100%;
       height: auto;
-      max-height: 200px;
-      margin-top: 50px;
+      max-height: 400px;
     }
   }
+
 }

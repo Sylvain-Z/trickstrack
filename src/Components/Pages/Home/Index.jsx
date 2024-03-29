@@ -71,7 +71,7 @@ function Home() {
 
                 <h1 className="home-title">TricksTrack</h1>
 
-                <Link to="/galerie" className="home-text home-button"><p>Start now!</p></Link>
+                <p className="home-text home-button"><Link to="/galerie">Start now!</Link></p>
 
             </div>
 

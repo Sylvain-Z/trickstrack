@@ -32,26 +32,26 @@ function Ramps() {
 
             {/* {!tricks ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (tricks.map(trick =>
 
                 <React.Fragment key={trick.id}>
-                    <p>{trick.name}</p>
+                    <p className="list">{trick.name}</p>
                 </React.Fragment>
             ))} */}
 
             {!ramps.length ? (
                 <>
-                    <p>Liste à venir</p>
+                    <p className="list">Liste à venir</p>
                 </>
             ) : (ramps.map(ramp =>
 
                 <React.Fragment key={ramp.id}>
-                    <p>{ramp.name}</p>
+                    <p className="list">{ramp.name}</p>
                 </React.Fragment>
             ))}
-            <p>etc...</p>
+            <p className="list">etc...</p>
         </>
     );
 

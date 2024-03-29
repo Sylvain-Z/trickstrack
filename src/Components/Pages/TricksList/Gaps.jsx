@@ -30,26 +30,26 @@ function Gaps() {
 
             {/* {!tricks ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (tricks.map(trick =>
 
                 <React.Fragment key={trick.id}>
-                    <p>{trick.name}</p>
+                    <p className="list">{trick.name}</p>
                 </React.Fragment>
             ))}*/}
 
             {!gaps ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (gaps.map(gap =>
 
                 <React.Fragment key={gap.id}>
-                    <p>{gap.name}</p>
+                    <p className="list">{gap.name}</p>
                 </React.Fragment>
             ))}
-            <p>etc...</p>
+            <p className="list">etc...</p>
         </>
     )
 };

@@ -33,26 +33,26 @@ function GrindsSlides() {
 
             {/* {!tricks ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (tricks.map(trick =>
 
                 <React.Fragment key={trick.id}>
-                    <p>{trick.name}</p>
+                    <p className="list">{trick.name}</p>
                 </React.Fragment>
             ))} */}
 
             {!grindslides ? (
                 <>
-                    <p>La liste est vide</p>
+                    <p className="list">La liste est vide</p>
                 </>
             ) : (grindslides.map(grindslide =>
 
                 <React.Fragment key={grindslide.id}>
-                    <p>{grindslide.name}</p>
+                    <p className="list">{grindslide.name}</p>
                 </React.Fragment>
             ))}
-            <p>etc...</p>
+            <p className="list">etc...</p>
         </>
     )
 };

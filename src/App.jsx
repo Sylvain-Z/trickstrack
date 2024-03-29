@@ -16,6 +16,7 @@ import SkateDice from "./Components/Pages/SkateDice/index";
 
 /* Pages compte client */
 import Tracker from "./Components/Pages/Users/Index";
+import UploadSucceded from "./Components/Pages/Users/Videos/UploadSucceded";
 import Signup from "./Components/Pages/Users/Connection/Signup";
 import Signin from "./Components/Pages/Users/Connection/Signin";
 import SignOut from "./Components/Pages/Users/Connection/Signout";
@@ -46,6 +47,7 @@ function App() {
           <Route path="connexion" element={<HOC child={Signin} />} />
           <Route path="deconnexion" element={<HOC child={SignOut} />} />
           <Route path="mon-tracker/:id" element={<HOC child={Tracker} auth={true} />} />
+          <Route path="telechargement_reussi" element={<HOC child={UploadSucceded} auth={true} />} />
         </Route>
 
       </Routes>

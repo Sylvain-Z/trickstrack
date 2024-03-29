@@ -73,7 +73,7 @@ $DarkedLight : rgba(15, 15, 15, 0.2);
 
     /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
 
-    .slider-ctn,
+    .galery-ctn,
     .trickslist-ctn,
     .form-ctn,
     .mytracker-ctn {
@@ -82,26 +82,6 @@ $DarkedLight : rgba(15, 15, 15, 0.2);
         .mytrickslist-ctn {
             // compte utilisateur
             background-position: 0 0;
-        }
-
-
-        .slider-video,
-        .myvideo {
-            width: 70%;
-            height: auto;
-            max-height: 400px;
-            margin-top: 0;
-        }
-        .slider-button {
-            top: 50%;
-        }
-    
-        .prev {
-            left: 10%;
-        }
-    
-        .next {
-            right: 10%;
         }
 
         .trickslist-list,
@@ -113,9 +93,23 @@ $DarkedLight : rgba(15, 15, 15, 0.2);
                 margin: 15px 0 15px 0;
             }
 
-            p {
+            .list {
                 margin: 0 0 14px 150px;
             }
         }
+
+        .galery-video,
+        .slider-video,
+        .myvideo {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+        }
+
     }
+
+    
+  .addVideo-form {
+    width: 600px;
+  }
 }

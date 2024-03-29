@@ -4,7 +4,12 @@ $Grey: rgb(186, 201, 195);
 $GreyDarker: rgb(135, 145, 141);
 $PurpleGrey: rgb(117, 101, 124);
 $PurpleDarker: rgb(43, 11, 50);
+$PurpleGradientBkg : linear-gradient(50deg, $PurpleDarker, rgba(255, 255, 255, 0) 90.71%),
+linear-gradient(200deg, $PurpleDarker, rgba(0, 255, 0, 0) 30.71%),
+linear-gradient(127deg, $PurpleDarker, rgba(0, 255, 0, 0) 70.71%),
+linear-gradient(336deg, $PurpleDarker, rgba(0, 0, 255, 0) 95.71%);
 $Gold: rgb(245, 205, 115);
+$Fire: rgb(255, 94, 0);
 $Red: rgb(199, 18, 18);
 $Green: rgb(3, 149, 8);
 $Darked: rgba(15, 15, 15, 0.5);
@@ -69,16 +74,24 @@ h6 {
   margin-bottom: 25px;
 }
 
+.advise {
+  text-align: center;
+}
+
+.advise_top {
+  margin-top: 25px;
+}
+
 .red {
-  color: $Red;
+  color: $Red !important;
 }
 
 .green {
-  color: $Green;
+  color: $Green !important;
 }
 
 .purple {
-  color: $PurpleDarker;
+  color: $PurpleDarker !important;
 }
 
 .overline {
@@ -98,7 +111,8 @@ h6 {
   flex-direction: column;
   // justify-content: space-evenly;
   justify-content: center
-    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */;
+    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+  ;
 }
 
 .home-image {
@@ -116,7 +130,8 @@ h6 {
   font-size: 40px;
   text-align: center;
   margin: 50px 0 150px 0
-    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */;
+    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+  ;
   background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
   background-clip: text;
   -webkit-background-clip: text;
@@ -135,27 +150,85 @@ h6 {
 .sentence {
   font-size: 20px;
   margin-top: 100px
-    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */;
+    /* espacement des éléments texte pour simuler un space evenly mais que le texte du haut descende */
+  ;
 }
 
 .home-button {
+  width: 200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 30px;
+  color: $White;
+  background: $PurpleGradientBkg;
+}
+
+.home-button:hover {
+  background: $PurpleDarker;
+}
+
+
+.button_ctn,
+button {
   text-decoration: none;
+  width: 200px;
+  margin: auto;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 10px;
+  border: none;
+  border-radius: 30px;
+  color: $White;
+  cursor: pointer;
 
-  p {
-    background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
-    color: $White;
-    padding: 15px 30px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 10px;
-    border: none;
-    border-radius: 30px;
+  a {
+    color: $White !important;
   }
+}
 
-  p:hover {
-    background: radial-gradient(circle, $White, $Grey);
-    color: $PurpleDarker;
+.logs-login,
+.update,
+button {
+  background: $PurpleGradientBkg;
+  border: 1px solid $PurpleDarker;
+}
+
+.update {
+  //boutton myinformations
+  width: 150px;
+  margin: 0 auto !important;
+}
+
+.logs-profil {
+  background: $PurpleGradientBkg;
+  margin-bottom: 25px;
+}
+
+.logs-logout {
+  background: none;
+  border: 1px solid $White;
+
+  a {
+    color: $PurpleDarker !important;
   }
+}
+
+
+.logs-login:hover,
+.logs-profil:hover,
+button:hover {
+  background: $PurpleDarker;
+  border: 1px solid $PurpleDarker;
+}
+
+.logs-logout:hover {
+  border: 1px solid $PurpleGrey;
 }
 
 /* HOC */
@@ -221,8 +294,10 @@ header {
         .links {
           display: flex;
           flex-direction: column;
+
           .new-Navlink {
             position: relative;
+
             span {
               position: absolute;
               bottom: -10px;
@@ -239,57 +314,6 @@ header {
           text-align: center;
           margin-bottom: 25px;
           color: $Black;
-        }
-      }
-
-      .header-button {
-        /* NavLink */
-        text-decoration: none;
-
-        p {
-          width: 200px;
-          margin: auto;
-          color: $White;
-          padding: 15px 30px;
-          text-transform: uppercase;
-          text-align: center;
-          letter-spacing: 3px;
-          font-size: 10px;
-          border: none;
-          border-radius: 30px;
-        }
-
-        .logs-login {
-          background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
-          border: 1px solid $PurpleDarker;
-        }
-
-        .logs-profil {
-          background: radial-gradient(circle, $PurpleGrey, $PurpleDarker);
-          margin-bottom: 25px;
-          border: 1px solid $PurpleGrey;
-        }
-
-        .logs-logout {
-          background: radial-gradient(circle, $White, $Grey);
-          color: $PurpleDarker;
-          border: 1px solid $White;
-        }
-
-        .logs-login:hover {
-          background: radial-gradient(circle, $White, $Grey);
-          color: $PurpleDarker;
-          border: 1px solid $PurpleDarker;
-        }
-
-        .logs-profil:hover {
-          background: radial-gradient(circle, $White, $Grey);
-          color: $PurpleDarker;
-          border: 1px solid $PurpleGrey;
-        }
-
-        .logs-logout:hover {
-          border: 1px solid $PurpleGrey;
         }
       }
 
@@ -321,7 +345,7 @@ footer {
 
 /* Galeries (pages publiques) -- MyTracker (compte utilisateur) */
 
-.slider-ctn,
+.galery-ctn,
 .trickslist-ctn,
 .form-ctn,
 .mytracker-ctn,
@@ -329,7 +353,7 @@ footer {
   width: 80%;
   margin: 0 auto 25px auto;
 
-  .slider-title,
+  .galery-title,
   .trickslist-title,
   .form-title,
   .mytracker-title,
@@ -343,7 +367,8 @@ footer {
     margin: 25px 0 15px 0;
   }
 
-  .slider,
+  .galery,
+  .mytracker-galery,
   form {
     position: relative;
     display: flex;
@@ -352,29 +377,61 @@ footer {
     justify-content: center;
   }
 
-  .slider-video,
+  .galery div,
+  .mytracker-galery div {
+    margin: 25px 0;
+    box-shadow: 0px 0px 5px $GreyDarker;
+  }
+
+  .galery figure,
+  .mytracker figure {
+    background: $PurpleGradientBkg;
+    background-size: cover;
+
+    figcaption {
+
+      padding: 15px;
+
+      p {
+        text-align: center;
+        margin: 10px auto;
+        color: $Gold;
+      }
+
+      button {
+        padding: 0;
+        font-size: 16px;
+        display: block;
+        color: $Fire;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .galery_end {
+    text-align: center;
+    line-height: 30px;
+    margin: 5px 0;
+  }
+
+  .galery-video,
   .myvideo {
     width: 100%;
     height: auto;
-    max-height: 450px;
-    margin-top: 50px;
+    max-height: 500px;
   }
 
-  .slider-button {
-    position: absolute;
-    top: 0;
-    border: none;
-    background: none;
-    color: $PurpleDarker;
-    cursor: pointer;
-  }
+  .video-comment {
+    background: $White;
+    width: 100%;
+    padding-top: 25px;
 
-  .prev {
-    left: 30%;
-  }
-
-  .next {
-    right: 30%;
+    input {
+      width: 85%;
+    }
   }
 
   .trickslist-nav,
@@ -387,14 +444,32 @@ footer {
     z-index: 30;
 
     button {
-      width: 150px;
+      width: 200px;
       margin: 5px;
       padding: 10px 20px;
       border: none;
       border-radius: 30px;
-      background: radial-gradient(circle, $GreyDarker, $Black);
+      background: linear-gradient(50deg, $Black, rgba(255, 255, 255, 0) 90.71%),
+        linear-gradient(200deg, $Black, rgba(0, 255, 0, 0) 30.71%),
+        linear-gradient(127deg, $Black, rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, $Black, rgba(0, 0, 255, 0) 95.71%);
       color: $White;
       cursor: pointer;
+    }
+
+    .addVideo-tab {
+      background: linear-gradient(50deg, $Gold, rgba(255, 255, 255, 0) 90.71%),
+        linear-gradient(200deg, $Gold, rgba(0, 255, 0, 0) 30.71%),
+        linear-gradient(127deg, $Gold, rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, $Gold, rgba(0, 0, 255, 0) 95.71%);
+      color: $PurpleDarker;
+    }
+  }
+
+
+  .mytracker-nav {
+    button {
+      width: 75px;
     }
   }
 
@@ -409,7 +484,7 @@ footer {
       margin: 15px 0 15px 25px;
     }
 
-    p {
+    .list {
       margin: 0 0 15px 25px;
     }
   }
@@ -420,6 +495,56 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .myinformations {
+    position: relative;
+    width: 340px;
+    height: 220px; // format carte cb
+    background: $PurpleGradientBkg;
+    color: $Gold;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px $Black;
+  }
+
+  .myinformations p {
+    position: absolute;
+  }
+
+  .myinformations-pseudo {
+    left: 25px;
+    bottom: 50px;
+  }
+
+  .myinformations-email {
+    left: 25px;
+    bottom: 25px;
+  }
+
+  .myinformations-trickstrack {
+    left: 25px;
+    top: 50%;
+    font-family: $title-font;
+  }
+
+  .myinformations-btn {
+    background: radial-gradient(circle, $Gold, rgb(168, 115, 0));
+    right: 30px;
+    top: 30px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px $Gold;
+
+    .icon {
+      color: $PurpleDarker;
+    }
+
+    a {
+      line-height: 35px;
+    }
   }
 
   .trickslist-list,
@@ -437,28 +562,70 @@ footer {
       margin-bottom: 10px;
     }
 
-    input,
-    button {
-      background: radial-gradient(circle, $PurpleDarker, $Black);
-      color: $White;
+    input {
+      background-image: url("../Assets/Images/TextureBeton.jpg");
+      background-size: cover;
+      color: $PurpleDarker;
       padding: 15px 30px;
       margin-bottom: 25px;
       letter-spacing: 3px;
       font-size: 10px;
       border-radius: 30px;
       border: 1px solid $PurpleDarker;
-    }
-
-    button {
-      background: radial-gradient(circle, $White, $Grey);
-      color: $PurpleDarker;
-      border: 1px solid $Grey;
-    }
-
-    button:hover {
-      cursor: pointer;
-      background: transparent;
-      border: 1px solid $Grey;
+      box-shadow: inset 0px 0px 5px $GreyDarker;
     }
   }
+}
+
+.addVideo-form {
+  width: 100%;
+  padding: 25px;
+  border-radius: 15px;
+  background: $PurpleGradientBkg;
+  color: $Gold;
+
+  .advise {
+    font-style: italic;
+    margin: 10px 0 40px 0 !important;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  button {
+    background: radial-gradient(circle, $Gold, rgb(168, 115, 0));
+    right: 30px;
+    top: 30px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px $Gold;
+
+    .icon {
+      color: $PurpleDarker;
+    }
+
+    a {
+      line-height: 35px;
+    }
+  }
+}
+
+.uploadsucceded {
+  height: 500px;
+  padding-top: 250px;
+
+  .uploadsucceded-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+.a_venir {
+  margin-bottom: 25px;
+  padding: 10px;
+  background: $Green;
 }

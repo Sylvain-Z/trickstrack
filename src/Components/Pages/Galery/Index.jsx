@@ -1,15 +1,15 @@
-import Slider from './Slider'
+import GaleryVideos from './GaleryVideos'
 
 function Galery() {
 
 
     return (
         <>
-            <section className='slider-ctn'>
+            <section className='galery-ctn'>
 
-                <h2 className='slider-title'>Les progrès de la communauté</h2>
+                <h2 className='galery-title'>Les progrès de la communauté</h2>
 
-                <Slider/>
+                <GaleryVideos/>
 
             </section>
 
