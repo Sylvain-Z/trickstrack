@@ -3,10 +3,10 @@ import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-import { FETCH_URL } from '../../../../Assets/Variables/const';
-import { setItemWithExpiration } from '../../../../Assets/Variables/functions';
+// import { FETCH_URL } from '../../../../Assets/Variables/const';
+// import { setItemWithExpiration } from '../../../../Assets/Variables/functions';
 
-import { signin } from "../../../../store/slices/user";
+// import { signin } from "../../../../store/slices/user";
 
 function Form({ type }) {
   const dispatch = useDispatch();
@@ -23,40 +23,40 @@ function Form({ type }) {
 
   // Fonction de connection lorsque l'Application est reliée à une Base de données --------
   // --------------------------------------------------------------------------------------
-  async function handleSubmit(e) {
-      e.preventDefault();
-      const res = await fetch(FETCH_URL + "users/sign" + type, {
-          method: "post",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id, pseudo, email, password }),
-      });
-      const json = await res.json();
-      setMsg(json.msg);
-      setMsg2(json.msg2);
-      setMsg3(json.msg3);
-
-      if (type === "in" && res.status === 200) {
-          setItemWithExpiration("auth", json.TOKEN, 10080); // 10080 équivaut à 7*24*60 minutes c'est à dire le nombre de minutes dans 7 jours pour l'expiration de l'élément en localstorage
-          setItemWithExpiration("myuserid", email, 10080);
-          dispatch(signin({ email }));
-          navigate("/");
-      }
-      if (type === "up" && res.status === 201) {
-          navigate("/utilisateurs/connexion");
-      }
-  }
-
-  // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   // async function handleSubmit(e) {
   //     e.preventDefault();
+  //     const res = await fetch(FETCH_URL + "users/sign" + type, {
+  //         method: "post",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({ id, pseudo, email, password }),
+  //     });
+  //     const json = await res.json();
+  //     setMsg(json.msg);
+  //     setMsg2(json.msg2);
+  //     setMsg3(json.msg3);
 
-  //     if (type === "in") {
-  //         setMsg("Application non connecté à une base de données");
+  //     if (type === "in" && res.status === 200) {
+  //         setItemWithExpiration("auth", json.TOKEN, 10080); // 10080 équivaut à 7*24*60 minutes c'est à dire le nombre de minutes dans 7 jours pour l'expiration de l'élément en localstorage
+  //         setItemWithExpiration("myuserid", email, 10080);
+  //         dispatch(signin({ email }));
+  //         navigate("/");
   //     }
-  //     if (type === "up") {
-  //         setMsg("Application non connecté à une base de données");
+  //     if (type === "up" && res.status === 201) {
+  //         navigate("/utilisateurs/connexion");
   //     }
   // }
+
+  // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
+  async function handleSubmit(e) {
+      e.preventDefault();
+
+      if (type === "in") {
+          setMsg("Application non connecté à une base de données");
+      }
+      if (type === "up") {
+          setMsg("Application non connecté à une base de données");
+      }
+  }
 
   return (
     <>
