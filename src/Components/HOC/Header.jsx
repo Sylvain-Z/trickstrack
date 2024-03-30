@@ -19,13 +19,15 @@ function Header() {
     const toggleMenu = () => {
         setMenuHidden(prevMenuHidden => !prevMenuHidden);
     };
+    
     useEffect(() => { // pour que le menu se referme automatiquement si l'internaute ne s'en sert pas
         let intervalId;
         if (!menuHidden) {
-            intervalId = setInterval(toggleMenu, 70000);
+            intervalId = setInterval(toggleMenu, 7000);
         }
         return () => clearInterval(intervalId); // Nettoie l'intervalle lorsque le composant est démonté
     }, [menuHidden]); // Utilisation de [menuHidden] comme dépendance
+
     const handleButtonClick = () => {
         toggleMenu();
     };
@@ -86,21 +88,21 @@ function Header() {
                         <nav className={!menuHidden ? "" : "burger_hidden"}>
                             {/* <div className="menu"><FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="fa fa-search" /></div> */}
                             <div className="links">
-                                <NavLink to="/galerie" >Derniers Ajouts</NavLink>
-                                <NavLink >Catégories</NavLink>
-                                <NavLink to="/tricks-list" >Liste des tricks</NavLink>
-                                <NavLink to="/skate-dice" className="new-Navlink"><span>Nouveauté</span> Skate Dice</NavLink>
+                                <NavLink to="/galerie" onClick={toggleMenu}>Derniers Ajouts</NavLink>
+                                <NavLink onClick={toggleMenu}>Catégories</NavLink>
+                                <NavLink to="/tricks-list" onClick={toggleMenu}>Liste des tricks</NavLink>
+                                <NavLink to="/skate-dice" className="new-Navlink" onClick={toggleMenu}><span>Nouveauté</span> Skate Dice</NavLink>
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>
                                 {!users ? (
                                     <>
-                                        <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion">Se connecter</NavLink></p>
+                                        <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion" onClick={toggleMenu}>Se connecter</NavLink></p>
                                     </>
                                 ) : (
                                     <>
-                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${users[0].id}`} >Mon tracker</NavLink></p>
-                                        <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion">Se déconnecter</NavLink></p>
+                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${users[0].id}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
+                                        <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion" onClick={toggleMenu}>Se déconnecter</NavLink></p>
                                     </>
                                 )}
                             </div>
