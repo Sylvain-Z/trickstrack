@@ -23,7 +23,7 @@ function Header() {
     useEffect(() => { // pour que le menu se referme automatiquement si l'internaute ne s'en sert pas
         let intervalId;
         if (!menuHidden) {
-            intervalId = setInterval(toggleMenu, 7000);
+            intervalId = setInterval(toggleMenu, 70000);
         }
         return () => clearInterval(intervalId); // Nettoie l'intervalle lorsque le composant est démonté
     }, [menuHidden]); // Utilisation de [menuHidden] comme dépendance
@@ -89,9 +89,9 @@ function Header() {
                             {/* <div className="menu"><FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="fa fa-search" /></div> */}
                             <div className="links">
                                 <NavLink to="/galerie" onClick={toggleMenu}>Derniers Ajouts</NavLink>
-                                <NavLink onClick={toggleMenu}>Catégories</NavLink>
-                                <NavLink to="/tricks-list" onClick={toggleMenu}>Liste des tricks</NavLink>
-                                <NavLink to="/skate-dice" className="new-Navlink" onClick={toggleMenu}><span>Nouveauté</span> Skate Dice</NavLink>
+                                <NavLink to="/tricks-list"onClick={toggleMenu}>Liste des tricks</NavLink>
+                                <NavLink to="/skate-dice" className="special-Navlink" onClick={toggleMenu}><span>Nouveauté</span> Skate Dice</NavLink>
+                                <NavLink onClick={toggleMenu}  className="special-Navlink" ><span>Prochainement</span> Catégories</NavLink>
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>

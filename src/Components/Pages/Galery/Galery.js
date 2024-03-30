@@ -72,5 +72,12 @@ export const galery = [
         "trick_name" : "trick_name",
         "reactions" : 10,
     },
+    {
+        "id" : "11",
+        "pseudo": "user_pseudo-4",
+        "title": "User4V1.mp4",
+        "trick_name" : "trick_name",
+        "reactions" : 100,
+    },
 
 ];

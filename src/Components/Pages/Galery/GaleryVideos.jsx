@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { format } from "date-fns-tz";
+// import { format } from "date-fns-tz";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 // import { getItemWithExpiration } from "../../../Assets/Variables/functions"; // pour version API
@@ -160,9 +160,6 @@ function GaleryVideos() {
                   <figcaption>
                     <button
                       onClick={() => addReaction(video.id)}
-                      className={
-                        video.clicked ? "button_clicked" : "button_notclicked"
-                      }
                     >
                       <FontAwesomeIcon icon={faFire} size="lg" />{" "}
                       {video.reactions}
@@ -178,10 +175,10 @@ function GaleryVideos() {
                     <p>
                       <FontAwesomeIcon icon={faCheck} size="xs" /> 2024-02-15
                     </p>
+
+                    <AddComment video={video} />
                   </figcaption>
                 </figure>
-
-                <AddComment />
               </div>
             </>
           ))
