@@ -52,11 +52,10 @@ html {
 html,
 body {
   width: 100%;
-  height: 100vh;
   font-family: $text-font;
   font-size: 16px;
   background-image: url("../Assets/Images/TextureBeton.jpg");
-  background-size: cover;
+  background-size: 100%;
   color: $Black;
 }
 
@@ -342,7 +341,7 @@ header {
 
 footer {
   width: 100%;
-  padding: 0 25px 0 25px;
+  padding: 25px;
   display: flex;
   justify-content: flex-end; // pour coller les éléments à droite
 
@@ -408,7 +407,7 @@ footer {
       }
 
       button {
-        width: 75px; // contre la width du button général
+        width: 100px; // contre la width du button général
         padding: 0;
         font-size: 16px;
         display: block;
