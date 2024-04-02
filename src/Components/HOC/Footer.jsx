@@ -13,7 +13,7 @@ function Footer() {
 
                 <Link to="https://www.facebook.com/" ><FontAwesomeIcon icon={faFacebookF} size="lg" className="fa fa-facebook-f media" /></Link>
                 <Link to="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} size="lg" className="fa fa-facebook-f media" /></Link>
-                <p id="legal-link"><Link to="/mentions-legales">Mentions Légales</Link></p>
+                <p id="legal-link"><Link to="/mentions-legales">CGU</Link></p>
 
             </footer>
 

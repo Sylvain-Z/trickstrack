@@ -342,9 +342,9 @@ header {
 
 footer {
   width: 100%;
-  padding: 25px;
+  padding: 0 25px 0 25px;
   display: flex;
-  justify-content: flex-end; // poru coller les éléments à droite
+  justify-content: flex-end; // pour coller les éléments à droite
 
   a {
     margin: 0 25px;
@@ -408,7 +408,7 @@ footer {
       }
 
       button {
-        width: 50px; // contre la width du button général
+        width: 75px; // contre la width du button général
         padding: 0;
         font-size: 16px;
         display: block;
