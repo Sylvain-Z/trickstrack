@@ -60,7 +60,7 @@ body {
 }
 
 main {
-  min-height: 75vh; // pour que le footer soit toujours en bas de page même sur les page avec peu de contenu
+  min-height: 60vh; // pour que le footer soit toujours en bas de page même sur les page avec peu de contenu
 }
 
 h1,
@@ -291,7 +291,7 @@ header {
 
       nav {
         width: 100vw;
-        height: 100vh;
+        height: 90vh; 
         padding: 25px;
         background-color: $White;
 

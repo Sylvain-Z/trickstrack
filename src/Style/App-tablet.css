@@ -17,8 +17,8 @@
   }
   /* HOC */
   /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
-  .slider-ctn .trickslist-list,
-  .slider-ctn .mytrickslist-ctn,
+  .galery-ctn .trickslist-list,
+  .galery-ctn .mytrickslist-ctn,
   .trickslist-ctn .trickslist-list,
   .trickslist-ctn .mytrickslist-ctn,
   .form-ctn .trickslist-list,
@@ -27,8 +27,8 @@
   .mytracker-ctn .mytrickslist-ctn {
     background-position: -50px 0;
   }
-  .slider-ctn .trickslist-nav,
-  .slider-ctn .mytracker-nav,
+  .galery-ctn .trickslist-nav,
+  .galery-ctn .mytracker-nav,
   .trickslist-ctn .trickslist-nav,
   .trickslist-ctn .mytracker-nav,
   .form-ctn .trickslist-nav,
@@ -38,8 +38,8 @@
     flex-direction: row;
     justify-content: center;
   }
-  .slider-ctn .trickslist-nav button,
-  .slider-ctn .mytracker-nav button,
+  .galery-ctn .trickslist-nav button,
+  .galery-ctn .mytracker-nav button,
   .trickslist-ctn .trickslist-nav button,
   .trickslist-ctn .mytracker-nav button,
   .form-ctn .trickslist-nav button,
@@ -48,9 +48,9 @@
   .mytracker-ctn .mytracker-nav button {
     width: auto;
   }
-  .slider-ctn .trickslist-list h3,
-  .slider-ctn .mytracker h3,
-  .slider-ctn .mytrickslist-ctn h3,
+  .galery-ctn .trickslist-list h3,
+  .galery-ctn .mytracker h3,
+  .galery-ctn .mytrickslist-ctn h3,
   .trickslist-ctn .trickslist-list h3,
   .trickslist-ctn .mytracker h3,
   .trickslist-ctn .mytrickslist-ctn h3,
@@ -63,31 +63,67 @@
     text-align: left;
     margin: 15px 0 15px 0;
   }
-  .slider-ctn .trickslist-list p,
-  .slider-ctn .mytracker p,
-  .slider-ctn .mytrickslist-ctn p,
-  .trickslist-ctn .trickslist-list p,
-  .trickslist-ctn .mytracker p,
-  .trickslist-ctn .mytrickslist-ctn p,
-  .form-ctn .trickslist-list p,
-  .form-ctn .mytracker p,
-  .form-ctn .mytrickslist-ctn p,
-  .mytracker-ctn .trickslist-list p,
-  .mytracker-ctn .mytracker p,
-  .mytracker-ctn .mytrickslist-ctn p {
+  .galery-ctn .trickslist-list .list,
+  .galery-ctn .mytracker .list,
+  .galery-ctn .mytrickslist-ctn .list,
+  .trickslist-ctn .trickslist-list .list,
+  .trickslist-ctn .mytracker .list,
+  .trickslist-ctn .mytrickslist-ctn .list,
+  .form-ctn .trickslist-list .list,
+  .form-ctn .mytracker .list,
+  .form-ctn .mytrickslist-ctn .list,
+  .mytracker-ctn .trickslist-list .list,
+  .mytracker-ctn .mytracker .list,
+  .mytracker-ctn .mytrickslist-ctn .list {
     margin: 0 0 14px 100px;
   }
-  .slider-ctn .slider-video,
-  .slider-ctn .myvideo,
+  .galery-ctn .galery figure,
+  .galery-ctn .mytracker figure,
+  .trickslist-ctn .galery figure,
+  .trickslist-ctn .mytracker figure,
+  .form-ctn .galery figure,
+  .form-ctn .mytracker figure,
+  .mytracker-ctn .galery figure,
+  .mytracker-ctn .mytracker figure {
+    display: flex;
+  }
+  .galery-ctn .galery figure figcaption,
+  .galery-ctn .mytracker figure figcaption,
+  .trickslist-ctn .galery figure figcaption,
+  .trickslist-ctn .mytracker figure figcaption,
+  .form-ctn .galery figure figcaption,
+  .form-ctn .mytracker figure figcaption,
+  .mytracker-ctn .galery figure figcaption,
+  .mytracker-ctn .mytracker figure figcaption {
+    width: 50%;
+    padding: 15px;
+    padding-top: 50px;
+  }
+  .galery-ctn .galery figure figcaption p,
+  .galery-ctn .mytracker figure figcaption p,
+  .trickslist-ctn .galery figure figcaption p,
+  .trickslist-ctn .mytracker figure figcaption p,
+  .form-ctn .galery figure figcaption p,
+  .form-ctn .mytracker figure figcaption p,
+  .mytracker-ctn .galery figure figcaption p,
+  .mytracker-ctn .mytracker figure figcaption p {
+    text-align: center;
+    margin: 10px auto;
+  }
+  .galery-ctn .galery-video,
+  .galery-ctn .slider-video,
+  .galery-ctn .myvideo,
+  .trickslist-ctn .galery-video,
   .trickslist-ctn .slider-video,
   .trickslist-ctn .myvideo,
+  .form-ctn .galery-video,
   .form-ctn .slider-video,
   .form-ctn .myvideo,
+  .mytracker-ctn .galery-video,
   .mytracker-ctn .slider-video,
   .mytracker-ctn .myvideo {
-    width: 100%;
+    width: 50%;
     height: auto;
-    max-height: 200px;
-    margin-top: 50px;
+    max-height: 450px;
   }
 }/*# sourceMappingURL=App-tablet.css.map */

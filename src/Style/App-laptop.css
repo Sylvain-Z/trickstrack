@@ -36,8 +36,8 @@
     display: none;
   }
   /* Galeries (pasges publiques) -- MyTracker (compte utilisateur) */
-  .slider-ctn .trickslist-list,
-  .slider-ctn .mytrickslist-ctn,
+  .galery-ctn .trickslist-list,
+  .galery-ctn .mytrickslist-ctn,
   .trickslist-ctn .trickslist-list,
   .trickslist-ctn .mytrickslist-ctn,
   .form-ctn .trickslist-list,
@@ -46,40 +46,9 @@
   .mytracker-ctn .mytrickslist-ctn {
     background-position: 0 0;
   }
-  .slider-ctn .slider-video,
-  .slider-ctn .myvideo,
-  .trickslist-ctn .slider-video,
-  .trickslist-ctn .myvideo,
-  .form-ctn .slider-video,
-  .form-ctn .myvideo,
-  .mytracker-ctn .slider-video,
-  .mytracker-ctn .myvideo {
-    width: 70%;
-    height: auto;
-    max-height: 400px;
-    margin-top: 0;
-  }
-  .slider-ctn .slider-button,
-  .trickslist-ctn .slider-button,
-  .form-ctn .slider-button,
-  .mytracker-ctn .slider-button {
-    top: 50%;
-  }
-  .slider-ctn .prev,
-  .trickslist-ctn .prev,
-  .form-ctn .prev,
-  .mytracker-ctn .prev {
-    left: 10%;
-  }
-  .slider-ctn .next,
-  .trickslist-ctn .next,
-  .form-ctn .next,
-  .mytracker-ctn .next {
-    right: 10%;
-  }
-  .slider-ctn .trickslist-list h3,
-  .slider-ctn .mytracker h3,
-  .slider-ctn .mytrickslist-ctn h3,
+  .galery-ctn .trickslist-list h3,
+  .galery-ctn .mytracker h3,
+  .galery-ctn .mytrickslist-ctn h3,
   .trickslist-ctn .trickslist-list h3,
   .trickslist-ctn .mytracker h3,
   .trickslist-ctn .mytrickslist-ctn h3,
@@ -92,18 +61,46 @@
     text-align: left;
     margin: 15px 0 15px 0;
   }
-  .slider-ctn .trickslist-list p,
-  .slider-ctn .mytracker p,
-  .slider-ctn .mytrickslist-ctn p,
-  .trickslist-ctn .trickslist-list p,
-  .trickslist-ctn .mytracker p,
-  .trickslist-ctn .mytrickslist-ctn p,
-  .form-ctn .trickslist-list p,
-  .form-ctn .mytracker p,
-  .form-ctn .mytrickslist-ctn p,
-  .mytracker-ctn .trickslist-list p,
-  .mytracker-ctn .mytracker p,
-  .mytracker-ctn .mytrickslist-ctn p {
+  .galery-ctn .trickslist-list .list,
+  .galery-ctn .mytracker .list,
+  .galery-ctn .mytrickslist-ctn .list,
+  .trickslist-ctn .trickslist-list .list,
+  .trickslist-ctn .mytracker .list,
+  .trickslist-ctn .mytrickslist-ctn .list,
+  .form-ctn .trickslist-list .list,
+  .form-ctn .mytracker .list,
+  .form-ctn .mytrickslist-ctn .list,
+  .mytracker-ctn .trickslist-list .list,
+  .mytracker-ctn .mytracker .list,
+  .mytracker-ctn .mytrickslist-ctn .list {
     margin: 0 0 14px 150px;
+  }
+  .galery-ctn .galery div,
+  .galery-ctn .mytracker-galery div,
+  .trickslist-ctn .galery div,
+  .trickslist-ctn .mytracker-galery div,
+  .form-ctn .galery div,
+  .form-ctn .mytracker-galery div,
+  .mytracker-ctn .galery div,
+  .mytracker-ctn .mytracker-galery div {
+    max-width: 850px;
+  }
+  .galery-ctn .galery-video,
+  .galery-ctn .slider-video,
+  .galery-ctn .myvideo,
+  .trickslist-ctn .galery-video,
+  .trickslist-ctn .slider-video,
+  .trickslist-ctn .myvideo,
+  .form-ctn .galery-video,
+  .form-ctn .slider-video,
+  .form-ctn .myvideo,
+  .mytracker-ctn .galery-video,
+  .mytracker-ctn .slider-video,
+  .mytracker-ctn .myvideo {
+    height: auto;
+    max-height: 450px;
+  }
+  .addVideo-form {
+    width: 600px;
   }
 }/*# sourceMappingURL=App-laptop.css.map */
