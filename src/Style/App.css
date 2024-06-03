@@ -75,6 +75,16 @@ h6 {
   color: rgb(43, 11, 50) !important;
 }
 
+.gold {
+  color: rgb(245, 205, 115) !important;
+}
+
+.static {
+  position: static !important;
+  transform: translate(0) !important;
+  margin: 0 !important;
+}
+
 .overline {
   background: radial-gradient(circle, rgb(240, 240, 240), rgb(186, 201, 195));
   padding: 0 5px;
@@ -137,7 +147,7 @@ h6 {
   border: none;
   border-radius: 30px;
   color: rgb(240, 240, 240);
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
 }
 
 .home-button:hover {
@@ -167,7 +177,7 @@ button a {
 .logs-login,
 .update,
 button {
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   border: 1px solid rgb(43, 11, 50);
 }
 
@@ -177,7 +187,7 @@ button {
 }
 
 .logs-profil {
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   margin-bottom: 25px;
 }
 
@@ -388,7 +398,7 @@ footer a {
 .mytracker-ctn .mytracker figure,
 .legal-ctn .galery figure,
 .legal-ctn .mytracker figure {
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   background-size: cover;
 }
 .galery-ctn .galery figure figcaption,
@@ -467,14 +477,70 @@ footer a {
 .mytracker-ctn .video-comment,
 .legal-ctn .video-comment {
   width: 100%;
-  padding-top: 25px;
 }
-.galery-ctn .video-comment input,
-.trickslist-ctn .video-comment input,
-.form-ctn .video-comment input,
-.mytracker-ctn .video-comment input,
-.legal-ctn .video-comment input {
+.galery-ctn .video-comment .last-comment,
+.trickslist-ctn .video-comment .last-comment,
+.form-ctn .video-comment .last-comment,
+.mytracker-ctn .video-comment .last-comment,
+.legal-ctn .video-comment .last-comment {
   width: 85%;
+  padding: 5px;
+  color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+.galery-ctn .video-comment .input-div,
+.galery-ctn .video-comment .comment-btn-div,
+.trickslist-ctn .video-comment .input-div,
+.trickslist-ctn .video-comment .comment-btn-div,
+.form-ctn .video-comment .input-div,
+.form-ctn .video-comment .comment-btn-div,
+.mytracker-ctn .video-comment .input-div,
+.mytracker-ctn .video-comment .comment-btn-div,
+.legal-ctn .video-comment .input-div,
+.legal-ctn .video-comment .comment-btn-div {
+  width: 85%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+}
+.galery-ctn .video-comment .input-div input,
+.galery-ctn .video-comment .comment-btn-div input,
+.trickslist-ctn .video-comment .input-div input,
+.trickslist-ctn .video-comment .comment-btn-div input,
+.form-ctn .video-comment .input-div input,
+.form-ctn .video-comment .comment-btn-div input,
+.mytracker-ctn .video-comment .input-div input,
+.mytracker-ctn .video-comment .comment-btn-div input,
+.legal-ctn .video-comment .input-div input,
+.legal-ctn .video-comment .comment-btn-div input {
+  width: 100%;
+  margin: 0;
+  padding-right: 40px;
+}
+.galery-ctn .video-comment .input-div button,
+.galery-ctn .video-comment .comment-btn-div button,
+.trickslist-ctn .video-comment .input-div button,
+.trickslist-ctn .video-comment .comment-btn-div button,
+.form-ctn .video-comment .input-div button,
+.form-ctn .video-comment .comment-btn-div button,
+.mytracker-ctn .video-comment .input-div button,
+.mytracker-ctn .video-comment .comment-btn-div button,
+.legal-ctn .video-comment .input-div button,
+.legal-ctn .video-comment .comment-btn-div button {
+  width: auto;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  color: rgb(43, 11, 50);
+}
+.galery-ctn .video-comment .comment-btn-div button,
+.trickslist-ctn .video-comment .comment-btn-div button,
+.form-ctn .video-comment .comment-btn-div button,
+.mytracker-ctn .video-comment .comment-btn-div button,
+.legal-ctn .video-comment .comment-btn-div button {
+  margin-bottom: 15px !important;
 }
 .galery-ctn .trickslist-nav,
 .galery-ctn .mytracker-nav,
@@ -603,17 +669,48 @@ footer a {
   position: relative;
   width: 340px;
   height: 220px;
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   color: rgb(245, 205, 115);
   border-radius: 15px;
   box-shadow: 0px 0px 15px rgb(5, 5, 5);
 }
+.galery-ctn .myinformations-update,
+.trickslist-ctn .myinformations-update,
+.form-ctn .myinformations-update,
+.mytracker-ctn .myinformations-update,
+.legal-ctn .myinformations-update {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 25px;
+}
 .galery-ctn .myinformations p,
+.galery-ctn .myinformations button,
 .trickslist-ctn .myinformations p,
+.trickslist-ctn .myinformations button,
 .form-ctn .myinformations p,
+.form-ctn .myinformations button,
 .mytracker-ctn .myinformations p,
-.legal-ctn .myinformations p {
+.mytracker-ctn .myinformations button,
+.legal-ctn .myinformations p,
+.legal-ctn .myinformations button {
   position: absolute;
+}
+.galery-ctn .myinformations .non-absolute,
+.trickslist-ctn .myinformations .non-absolute,
+.form-ctn .myinformations .non-absolute,
+.mytracker-ctn .myinformations .non-absolute,
+.legal-ctn .myinformations .non-absolute {
+  position: static;
+  margin-bottom: 25px;
+}
+.galery-ctn .myinformations-bio,
+.trickslist-ctn .myinformations-bio,
+.form-ctn .myinformations-bio,
+.mytracker-ctn .myinformations-bio,
+.legal-ctn .myinformations-bio {
+  width: 300px;
+  margin-bottom: 25px;
 }
 .galery-ctn .myinformations-pseudo,
 .trickslist-ctn .myinformations-pseudo,
@@ -651,6 +748,7 @@ footer a {
   padding: 0;
   width: 35px;
   height: 35px;
+  line-height: 35px;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 0px 3px rgb(245, 205, 115);
@@ -661,13 +759,6 @@ footer a {
 .mytracker-ctn .myinformations-btn .icon,
 .legal-ctn .myinformations-btn .icon {
   color: rgb(43, 11, 50);
-}
-.galery-ctn .myinformations-btn a,
-.trickslist-ctn .myinformations-btn a,
-.form-ctn .myinformations-btn a,
-.mytracker-ctn .myinformations-btn a,
-.legal-ctn .myinformations-btn a {
-  line-height: 35px;
 }
 .galery-ctn .trickslist-list,
 .galery-ctn .mytrickslist-ctn,
@@ -693,10 +784,15 @@ footer a {
   margin-bottom: 10px;
 }
 .galery-ctn form input,
+.galery-ctn form textarea,
 .trickslist-ctn form input,
+.trickslist-ctn form textarea,
 .form-ctn form input,
+.form-ctn form textarea,
 .mytracker-ctn form input,
-.legal-ctn form input {
+.mytracker-ctn form textarea,
+.legal-ctn form input,
+.legal-ctn form textarea {
   width: 300px;
   background-image: url("../Assets/Images/TextureBeton.jpg");
   background-size: cover;
@@ -714,7 +810,7 @@ footer a {
   width: 100%;
   padding: 25px;
   border-radius: 15px;
-  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(0, 0, 255, 0) 95.71%);
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   color: rgb(245, 205, 115);
 }
 .addVideo-form .advise {
@@ -751,14 +847,75 @@ footer a {
   margin-bottom: 50px;
 }
 
-.a_venir {
+/* POPUP Commentaires */
+.popup-ctn {
+  position: relative;
+  width: 300px;
+  color: rgb(240, 240, 240);
+}
+
+.popup-btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: rgb(240, 240, 240);
+}
+
+.popup-btn:hover {
+  color: rgb(240, 240, 240);
+}
+
+.popup-commentaires {
+  margin-top: 25px;
+}
+
+.comment-user {
+  font-family: "Kiona";
+  margin-bottom: 7px;
+  color: rgb(245, 205, 115);
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.truncated-btn {
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  color: rgb(245, 205, 115);
+}
+
+.truncated-btn:hover {
+  background: none;
+  border: none;
+  color: rgb(43, 11, 50);
+}
+
+.endline {
+  background-color: rgb(245, 205, 115);
+  width: 250px;
+  height: 2px;
+  margin: 30px auto 0 auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.focus {
   position: relative;
   width: 100%;
   text-align: left !important;
   margin-bottom: 25px;
   padding-left: 50px;
 }
-.a_venir span {
+.focus span {
   position: absolute;
   top: -25px;
   left: 0;

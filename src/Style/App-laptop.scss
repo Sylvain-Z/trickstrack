@@ -5,15 +5,17 @@ $GreyDarker: rgb(135, 145, 141);
 $PurpleGrey: rgb(117, 101, 124);
 $PurpleDarker: rgb(43, 11, 50);
 $PurpleGradientBkg : linear-gradient(50deg, $PurpleDarker, rgba(255, 255, 255, 0) 90.71%),
-linear-gradient(200deg, $PurpleDarker, rgba(0, 255, 0, 0) 30.71%),
-linear-gradient(127deg, $PurpleDarker, rgba(0, 255, 0, 0) 70.71%),
-linear-gradient(336deg, $PurpleDarker, rgba(0, 0, 255, 0) 95.71%);
+linear-gradient(200deg, $PurpleDarker, rgba(255, 255, 255, 0) 30.71%),
+linear-gradient(127deg, $PurpleDarker, rgba(255, 255, 255, 0) 70.71%),
+linear-gradient(336deg, $PurpleDarker, rgba(255, 255, 255, 0) 95.71%);
 $Gold: rgb(245, 205, 115);
 $Fire: rgb(255, 94, 0);
 $Red: rgb(199, 18, 18);
 $Green: rgb(3, 149, 8);
 $Darked: rgba(15, 15, 15, 0.5);
 $DarkedLight: rgba(15, 15, 15, 0.2);
+$title-font: "Kiona";
+$text-font: "Rounded_Elegance";
 
 
 @media screen and (min-width: 781px) {
@@ -117,8 +119,13 @@ $DarkedLight: rgba(15, 15, 15, 0.2);
 
     }
 
-
     .addVideo-form {
         width: 600px;
+    }
+
+    /* POPUP Commentaires */
+
+    .popup-ctn {
+        width: 500px;
     }
 }

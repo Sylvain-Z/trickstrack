@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { FETCH_URL } from "../../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../../Assets/Variables/functions"; // pour version API
+
+import UpdateInfos from "./UpdateInfos";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
@@ -12,9 +13,14 @@ function MyInfos() {
   const myuserid = getItemWithExpiration("myuserid");
   const TOKEN = getItemWithExpiration("auth");
 
+  const [editIsActiv, setEditIsActiv] = useState(false);
+  const toggleEditIsActiv = () => {
+    setEditIsActiv(preveditIsActiv => !preveditIsActiv);
+  };
+
   // Récupère l'id du user connecté pour l'envoyer dans la mise à jour d'un nombre de réaction
   useEffect(() => {
-    async function getData() {
+    async function getUserInfos() {
       try {
         let id = "";
         if (!myuserid) {
@@ -39,36 +45,47 @@ function MyInfos() {
         throw Error(error);
       }
     }
-    getData();
+    getUserInfos();
   }, []);
 
   return (
     <>
       <h3>Mes informations</h3>
 
-      <div className="myinformations">
-        {!user ? (
-          <></>
-        ) : (
-          <>
+      {!user ? (
+        <></>
+      ) : (
+        <>
+          <p className="myinformations-bio">Bio : {user[0].bio}</p>
+
+          <div className="myinformations">
             <img src="../../../Assets/" alt="" />
 
             <p className="myinformations-pseudo">{user[0].pseudo}</p>
             <p className="myinformations-email">{user[0].email}</p>
             <p className="myinformations-trickstrack">TricksTrack</p>
 
-            <p className="button_ctn update myinformations-btn">
-              <Link to={``}>
+
+            <button
+                className="button_ctn update myinformations-btn"
+                type="button"
+                onClick={toggleEditIsActiv}
+              >
                 <FontAwesomeIcon
                   icon={faPenToSquare}
                   size="xl"
                   className="icon"
                 />
-              </Link>
-            </p>
-          </>
-        )}
-      </div>
+              </button>
+          </div>
+        </>
+      )}
+
+      {!editIsActiv ? (
+        <></>
+      ) : (
+        <>{!user ? <></> : <UpdateInfos user={user[0]} />}</>
+      )}
     </>
   );
 }

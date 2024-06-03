@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { /* useNavigate, */ Link } from "react-router-dom";
+// import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-// import { FETCH_URL } from '../../../../Assets/Variables/const';
-// import { setItemWithExpiration } from '../../../../Assets/Variables/functions';
+// import { FETCH_URL } from "../../../../Assets/Variables/const";  // pour version API ------------
+// import { setItemWithExpiration } from "../../../../Assets/Variables/functions";  // pour version API ------
 
 // import { signin } from "../../../../store/slices/user";
 
 function Form({ type }) {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
-  const [id, setId] = useState(uuidv4().slice(0, 16)); // à chaque chargement du composant une chaine de 16 caractères aléatoire sera stocké
+  const [newUserId, setnewUserId] = useState(uuidv4().slice(0, 16)); // à chaque chargement du composant une chaine de 16 caractères aléatoire sera stocké // SIGNUP
+  // const [id, setId] = useState(""); // SIGNIN
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,17 +29,18 @@ function Form({ type }) {
   //     const res = await fetch(FETCH_URL + "users/sign" + type, {
   //         method: "post",
   //         headers: { "Content-Type": "application/json" },
-  //         body: JSON.stringify({ id, pseudo, email, password }),
+  //         body: JSON.stringify({ newUserId, pseudo, email, password }),
   //     });
   //     const json = await res.json();
   //     setMsg(json.msg);
   //     setMsg2(json.msg2);
   //     setMsg3(json.msg3);
+  //     setId(json.userId);
 
   //     if (type === "in" && res.status === 200) {
-  //         setItemWithExpiration("auth", json.TOKEN, 10080); // 10080 équivaut à 7*24*60 minutes c'est à dire le nombre de minutes dans 7 jours pour l'expiration de l'élément en localstorage
-  //         setItemWithExpiration("myuserid", email, 10080);
-  //         dispatch(signin({ email }));
+  //         setItemWithExpiration("auth", json.TOKEN, 10080);
+  //         setItemWithExpiration("myuserid", json.userId, 10080);
+  //         dispatch(signin({ id }));
   //         navigate("/");
   //     }
   //     if (type === "up" && res.status === 201) {
@@ -48,14 +50,14 @@ function Form({ type }) {
 
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   async function handleSubmit(e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      if (type === "in") {
-          setMsg("Application non connecté à une base de données");
-      }
-      if (type === "up") {
-          setMsg("Application non connecté à une base de données");
-      }
+    if (type === "in") {
+      setMsg("Application non connecté à une base de données");
+    }
+    if (type === "up") {
+      setMsg("Application non connecté à une base de données");
+    }
   }
 
   return (
@@ -101,8 +103,8 @@ function Form({ type }) {
                 placeholder="ID du client"
                 type="hidden"
                 name="id"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
+                value={newUserId}
+                onChange={(e) => setnewUserId(e.target.value)}
               />
               <label htmlFor="pseudo">Pseudo</label>
               <input

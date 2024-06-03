@@ -2,8 +2,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react'
 
-
-import { FETCH_URL } from '../../Assets/Variables/const';
 import { getItemWithExpiration } from '../../Assets/Variables/functions';
 
 import Board from '../../Assets/Images/HeaderSkate.png';
@@ -33,36 +31,8 @@ function Header() {
     };
 
     /* Gère l'état des boutons de connexion et déconnexion et la récupération des données du user */
-    const [users, setUsers] = useState(null);
-    const myuserid = getItemWithExpiration("myuserid"); // récupère l'email de l'usager stocké lors du signin
-    useEffect(() => {
-        async function getData() {
-            try {
-                let id = "";
-                if (!myuserid) {
-                    return
-                } else {
-                    id = myuserid;
-                }
-                const TOKEN = getItemWithExpiration('auth');
-                const users = await fetch(FETCH_URL + "users/" + id, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authentication': `Bearer ${TOKEN}`
-                    }
-                });
-                if (users.status === 200) {
-                    const json = await users.json();
-                    setUsers(json);
-                }
-            } catch (error) {
-                throw Error(error);
-            }
-        }
-        getData();
-    }, []);
 
+    const myuserid = getItemWithExpiration("myuserid"); // récupère l'id de l'usager stocké lors du signin
 
     return (
         <>
@@ -90,18 +60,18 @@ function Header() {
                             <div className="links">
                                 <NavLink to="/galerie" onClick={toggleMenu}>Derniers Ajouts</NavLink>
                                 <NavLink to="/tricks-list"onClick={toggleMenu}>Liste des tricks</NavLink>
-                                <NavLink to="/skate-dice" className="special-Navlink" onClick={toggleMenu}><span>Nouveauté</span> Skate Dice</NavLink>
+                                <NavLink to="/skate-dice" onClick={toggleMenu}>Skate Dice</NavLink>
                                 <NavLink onClick={toggleMenu}  className="special-Navlink" ><span>Prochainement</span> Catégories</NavLink>
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>
-                                {!users ? (
+                                {!myuserid ? (
                                     <>
                                         <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion" onClick={toggleMenu}>Se connecter</NavLink></p>
                                     </>
                                 ) : (
                                     <>
-                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${users[0].id}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
+                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${myuserid}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
                                         <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion" onClick={toggleMenu}>Se déconnecter</NavLink></p>
                                     </>
                                 )}

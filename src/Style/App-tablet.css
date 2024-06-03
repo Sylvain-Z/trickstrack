@@ -126,4 +126,8 @@
     height: auto;
     max-height: 450px;
   }
+  /* POPUP Commentaires */
+  .popup-ctn {
+    width: 400px;
+  }
 }/*# sourceMappingURL=App-tablet.css.map */

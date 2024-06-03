@@ -5,9 +5,9 @@ $GreyDarker: rgb(135, 145, 141);
 $PurpleGrey: rgb(117, 101, 124);
 $PurpleDarker: rgb(43, 11, 50);
 $PurpleGradientBkg : linear-gradient(50deg, $PurpleDarker, rgba(255, 255, 255, 0) 90.71%),
-linear-gradient(200deg, $PurpleDarker, rgba(0, 255, 0, 0) 30.71%),
-linear-gradient(127deg, $PurpleDarker, rgba(0, 255, 0, 0) 70.71%),
-linear-gradient(336deg, $PurpleDarker, rgba(0, 0, 255, 0) 95.71%);
+linear-gradient(200deg, $PurpleDarker, rgba(255, 255, 255, 0) 30.71%),
+linear-gradient(127deg, $PurpleDarker, rgba(255, 255, 255, 0) 70.71%),
+linear-gradient(336deg, $PurpleDarker, rgba(255, 255, 255, 0) 95.71%);
 $Gold: rgb(245, 205, 115);
 $Fire: rgb(255, 94, 0);
 $Red: rgb(199, 18, 18);
@@ -95,6 +95,16 @@ h6 {
 
 .purple {
   color: $PurpleDarker !important;
+}
+
+.gold {
+  color: $Gold !important;
+}
+
+.static {
+  position: static !important;
+  transform: translate(0) !important;
+  margin: 0 !important;
 }
 
 .overline {
@@ -291,7 +301,7 @@ header {
 
       nav {
         width: 100vw;
-        height: 90vh; 
+        height: 90vh;
         padding: 25px;
         background-color: $White;
 
@@ -436,11 +446,42 @@ footer {
 
   .video-comment {
     width: 100%;
-    padding-top: 25px;
 
-    input {
+    .last-comment {
       width: 85%;
+      padding: 5px;
+      color: $White;
+      cursor: pointer;
     }
+
+    .input-div,
+    .comment-btn-div {
+      width: 85%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      box-shadow: none;
+
+      input {
+        width: 100%;
+        margin: 0;
+        padding-right: 40px; // pour que le texte de l'input ne passe pas derrière le button
+      }
+
+      button {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        color: $PurpleDarker;
+      }
+    }
+
+    .comment-btn-div button {
+      margin-bottom: 15px !important;
+    }
+
   }
 
   .trickslist-nav,
@@ -458,7 +499,8 @@ footer {
       padding: 10px 20px;
       border: none;
       border-radius: 30px;
-      background: linear-gradient(50deg, $Black, rgba(255, 255, 255, 0) 90.71%),
+      background:
+        linear-gradient(50deg, $Black, rgba(255, 255, 255, 0) 90.71%),
         linear-gradient(200deg, $Black, rgba(0, 255, 0, 0) 30.71%),
         linear-gradient(127deg, $Black, rgba(0, 255, 0, 0) 70.71%),
         linear-gradient(336deg, $Black, rgba(0, 0, 255, 0) 95.71%);
@@ -467,14 +509,14 @@ footer {
     }
 
     .addVideo-tab {
-      background: linear-gradient(50deg, $Gold, rgba(255, 255, 255, 0) 90.71%),
+      background:
+        linear-gradient(50deg, $Gold, rgba(255, 255, 255, 0) 90.71%),
         linear-gradient(200deg, $Gold, rgba(0, 255, 0, 0) 30.71%),
         linear-gradient(127deg, $Gold, rgba(0, 255, 0, 0) 70.71%),
         linear-gradient(336deg, $Gold, rgba(0, 0, 255, 0) 95.71%);
       color: $PurpleDarker;
     }
   }
-
 
   .mytracker-nav {
     button {
@@ -516,8 +558,26 @@ footer {
     box-shadow: 0px 0px 15px $Black;
   }
 
-  .myinformations p {
+  .myinformations-update {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 25px;
+  }
+
+  .myinformations p,
+  .myinformations button {
     position: absolute;
+  }
+
+  .myinformations .non-absolute {
+    position: static;
+    margin-bottom: 25px;
+  }
+
+  .myinformations-bio {
+    width: 300px;
+    margin-bottom: 25px;
   }
 
   .myinformations-pseudo {
@@ -543,16 +603,13 @@ footer {
     padding: 0;
     width: 35px;
     height: 35px;
+    line-height: 35px;
     border-radius: 5px;
     border: none;
     box-shadow: 0px 0px 3px $Gold;
 
     .icon {
       color: $PurpleDarker;
-    }
-
-    a {
-      line-height: 35px;
     }
   }
 
@@ -571,7 +628,8 @@ footer {
       margin-bottom: 10px;
     }
 
-    input {
+    input,
+    textarea {
       width: 300px;
       background-image: url("../Assets/Images/TextureBeton.jpg");
       background-size: cover;
@@ -587,6 +645,8 @@ footer {
   }
 }
 
+
+
 .addVideo-form {
   width: 100%;
   padding: 25px;
@@ -600,7 +660,7 @@ footer {
   }
 
   input {
-    width: 90%;
+    width: 90% !important;
   }
 
   button {
@@ -634,10 +694,71 @@ footer {
   }
 }
 
+/* POPUP Commentaires */
+
+.popup-ctn {
+  position: relative;
+  width: 300px;
+  color: $White;
+}
+
+.popup-btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  color: $White;
+}
+
+.popup-btn:hover {
+  color: $White;
+}
+
+.popup-commentaires {
+  margin-top: 25px;
+}
+
+.comment-user {
+  font-family: $title-font;
+  margin-bottom: 7px;
+  color: $Gold;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.truncated-btn {
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+  color: $Gold;
+}
+
+.truncated-btn:hover {
+  background: none;
+  border: none;
+  color: $PurpleDarker;
+}
+
+.endline {
+  background-color: $Gold;
+  width: 250px;
+  height: 2px;
+  margin: 30px auto 0 auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
 
 // --------------Mode dev-----------
 
-.a_venir {
+.focus {
   position: relative;
   width: 100%;
   text-align: left !important;
