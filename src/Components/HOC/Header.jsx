@@ -7,7 +7,6 @@ import Board from '../../Assets/Images/HeaderSkate.png';
 import Open from '../../Assets/Images/MenuOuvert.png';
 import Closed from '../../Assets/Images/MenuFerme.png';
 
-
 import { getItemWithExpiration } from "../../Assets/Variables/functions"; // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
 
 function Header() {
@@ -60,12 +59,11 @@ function Header() {
                         </div>
 
                         <nav className={!menuHidden ? "" : "burger_hidden"}>
-                            {/* <div className="menu"><FontAwesomeIcon icon={faMagnifyingGlass} size="xl" className="fa fa-search" /></div> */}
                             <div className="links">
                                 <NavLink to="/galerie" onClick={toggleMenu}>Derniers Ajouts</NavLink>
+                                <NavLink to="/categories" onClick={toggleMenu}  className="special-Navlink" ><span>Nouveauté</span> Catégories</NavLink>
                                 <NavLink to="/tricks-list"onClick={toggleMenu}>Liste des tricks</NavLink>
                                 <NavLink to="/skate-dice" onClick={toggleMenu}>Skate Dice</NavLink>
-                                <NavLink onClick={toggleMenu}  className="special-Navlink" ><span>Prochainement</span> Catégories</NavLink>
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>

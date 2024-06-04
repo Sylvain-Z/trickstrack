@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { format } from "date-fns-tz";
 // import { useSelector } from "react-redux";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../Assets/Variables/functions";
+import { timeElapsed } from "../../../Assets/Variables/functions";
 
 import { galery } from "./Galery"; // variables js pour démo version statique (hébergement sans BDD)
 
@@ -27,21 +27,26 @@ function GaleryVideos() {
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   // Simule l'ajout et le retrait d'une réaction
   const [videos, setVideos] = useState(galery.map((item) => ({ ...item })));
+  const [msg, setMsg] = useState("");
 
   const FAKETOKEN = getItemWithExpiration("fakeauth");
 
   function addReaction(id) {
-    setVideos((prevVideos) =>
-      prevVideos.map((video) =>
-        video.video_id === id
-          ? {
-              ...video,
-              reaction_total: video.reaction_total + (video.clicked ? -1 : 1),
-              clicked: !video.clicked,
-            }
-          : video
-      )
-    );
+    if (!FAKETOKEN) {
+      setMsg("Compte utilisateur requis");
+    } else {
+      setVideos((prevVideos) =>
+        prevVideos.map((video) =>
+          video.video_id === id
+            ? {
+                ...video,
+                reaction_total: video.reaction_total + (video.clicked ? -1 : 1),
+                clicked: !video.clicked,
+              }
+            : video
+        )
+      );
+    }
   }
 
   // Code fetch API Node JS ------------------------------------------
@@ -110,50 +115,16 @@ function GaleryVideos() {
   //   }
   // };
 
-  function timeElapsed(publicationDate) {
-    const now = Date.now();
-    const timestamp = new Date(publicationDate).getTime();
-    const diff = now - timestamp;
-
-    const realDate = format(new Date(publicationDate), "dd-MM-yyyy", {
-      timeZone: "auto",
-    });
-
-    const secondes = Math.floor(diff / 1000);
-    const minutes = Math.floor(diff / (1000 * 60));
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    if (secondes > 1 && secondes < 60) {
-      return {
-        times: "il y a quelques secondes",
-      };
-    } else if (minutes > 1 && minutes < 60) {
-      return {
-        times: "il y a " + minutes + " minutes",
-      };
-    } else if (hours > 1 && hours < 24) {
-      return {
-        times: "il y a " + hours + " heures",
-      };
-    } else if (days > 1 && days < 7) {
-      return {
-        times: "il y a " + days + " jours",
-      };
-    } else {
-      return {
-        times: realDate,
-      };
-    }
-  }
-
   return (
     <>
       {!FAKETOKEN ? (
         <></>
       ) : (
         <>
-          <p className="message red" style={{ marginBottom: 50, textAlign:"center" }}>
+          <p
+            className="message red"
+            style={{ marginBottom: 50, textAlign: "center" }}
+          >
             Application non connecté à une base de données : ceci est une démo
             des fonctions lorsqu'une connection est active
           </p>
@@ -180,13 +151,9 @@ function GaleryVideos() {
                     />
                   </video>
                   <figcaption>
-                    {/* {msg && <p className="msg red">{msg}</p>} */}{" "}
-                    {/* ligne démo // pour version API --------- */}
-                    {/* <button onClick={() => addReaction(video.reaction_total, video.video_id)}> */}{" "}
-                    {/* ligne démo // pour version API --------- */}
-                    <button onClick={() => addReaction(video.video_id)}>
-                      {" "}
-                      {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
+                    {msg && <p className="msg red">{msg}</p>}
+                    {/* <button onClick={() => addReaction(video.reaction_total, video.video_id)}> */} {/* ligne démo // pour version API --------- */}
+                    <button onClick={() => addReaction(video.video_id)}> {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
                       <FontAwesomeIcon icon={faFire} size="lg" />{" "}
                       {video.reaction_total}
                     </button>
@@ -208,11 +175,7 @@ function GaleryVideos() {
                         </p>
                       </>
                     )}
-                    <AddComment
-                      key={video.video_id}
-                      videoId={video.video_id}
-                      timeElapsed={timeElapsed}
-                    />
+                    <AddComment key={video.video_id} videoId={video.video_id} />
                   </figcaption>
                 </figure>
               </div>

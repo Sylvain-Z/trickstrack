@@ -45,8 +45,6 @@ function AddComment({ videoId, timeElapsed }) {
       const filteredComments = comments.filter(
         (comment) => comment.video_id == videoId
       );
-
-      console.log("filteredComments", filteredComments);
       if (filteredComments.length > 0) {
         const recentComment = filteredComments.reduce((latest, current) => {
           return latest.id > current.id ? latest : current;
@@ -146,7 +144,7 @@ function AddComment({ videoId, timeElapsed }) {
         </div>
 
         {/* POPUP */}
-        <ReadAllComments isOpen={modalIsOpen} onRequestClose={closeModal} videoId={videoId} timeElapsed={timeElapsed} />  
+        <ReadAllComments isOpen={modalIsOpen} onRequestClose={closeModal} videoId={videoId}/>  
 
         <div className="input-div">
           <input

@@ -629,7 +629,8 @@ footer {
     }
 
     input,
-    textarea {
+    textarea,
+    select {
       width: 300px;
       background-image: url("../Assets/Images/TextureBeton.jpg");
       background-size: cover;
@@ -642,9 +643,15 @@ footer {
       border: 1px solid $PurpleDarker;
       box-shadow: inset 0px 0px 5px $GreyDarker;
     }
+    select {
+      font-size: 12px;
+      text-align: center;
+      option {
+        font-size: 12px;
+      }
+    }
   }
 }
-
 
 
 .addVideo-form {

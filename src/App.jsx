@@ -6,6 +6,8 @@ import Home from "./Components/Pages/Home/Index";
 import Galery from "./Components/Pages/Galery/Index";
 import Legal from "./Components/Pages/Others/Legal";
 
+import Categories from "./Components/Pages/Galery/Categrories/Index";
+
 import TricksList from "./Components/Pages/TricksList/Index";
 import Flat from "./Components/Pages/TricksList/Flat";
 import Gap from "./Components/Pages/TricksList/Gaps";
@@ -34,6 +36,7 @@ function App() {
         <Route path="/galerie" element={<HOC child={Galery} />} />
         <Route path="/mentions-legales" element={<HOC child={Legal} />} />
         <Route path="/skate-dice" element={<HOC child={SkateDice} />} />
+        <Route path="/categories" element={<HOC child={Categories} />}/>
 
         <Route path="/tricks-list" element={<HOC child={TricksList} />}>
           <Route path="gap" element={<HOC child={Gap} />} />
@@ -41,7 +44,7 @@ function App() {
           <Route path="flat" element={<HOC child={Flat} />} />
           <Route path="ramps" element={<HOC child={Ramps} />} />
         </Route>
-
+        
         <Route path="utilisateurs" >
           <Route path="creer-un-compte" element={<HOC child={Signup} />} />
           <Route path="connexion" element={<HOC child={Signin} />} />

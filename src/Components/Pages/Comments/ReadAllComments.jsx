@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { useEffect, useState } from "react";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
+import { timeElapsed } from "../../../Assets/Variables/functions";
 
 import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
@@ -35,7 +36,7 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-function ReadAllComments({ isOpen, onRequestClose, videoId, timeElapsed }) {
+function ReadAllComments({ isOpen, onRequestClose, videoId }) {
 
   const [allComments, setAllComments] = useState("");
 

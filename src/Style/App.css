@@ -785,14 +785,19 @@ footer a {
 }
 .galery-ctn form input,
 .galery-ctn form textarea,
+.galery-ctn form select,
 .trickslist-ctn form input,
 .trickslist-ctn form textarea,
+.trickslist-ctn form select,
 .form-ctn form input,
 .form-ctn form textarea,
+.form-ctn form select,
 .mytracker-ctn form input,
 .mytracker-ctn form textarea,
+.mytracker-ctn form select,
 .legal-ctn form input,
-.legal-ctn form textarea {
+.legal-ctn form textarea,
+.legal-ctn form select {
   width: 300px;
   background-image: url("../Assets/Images/TextureBeton.jpg");
   background-size: cover;
@@ -804,6 +809,21 @@ footer a {
   border-radius: 30px;
   border: 1px solid rgb(43, 11, 50);
   box-shadow: inset 0px 0px 5px rgb(135, 145, 141);
+}
+.galery-ctn form select,
+.trickslist-ctn form select,
+.form-ctn form select,
+.mytracker-ctn form select,
+.legal-ctn form select {
+  font-size: 12px;
+  text-align: center;
+}
+.galery-ctn form select option,
+.trickslist-ctn form select option,
+.form-ctn form select option,
+.mytracker-ctn form select option,
+.legal-ctn form select option {
+  font-size: 12px;
 }
 
 .addVideo-form {
@@ -818,7 +838,7 @@ footer a {
   margin: 10px 0 40px 0 !important;
 }
 .addVideo-form input {
-  width: 90%;
+  width: 90% !important;
 }
 .addVideo-form button {
   background: radial-gradient(circle, rgb(245, 205, 115), rgb(168, 115, 0));
