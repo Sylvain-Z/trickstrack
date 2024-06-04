@@ -2,7 +2,9 @@ import React from "react";
 import Modal from "react-modal";
 import { useEffect, useState } from "react";
 
-import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
+// import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
+
+import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -35,31 +37,44 @@ Modal.setAppElement("#root");
 
 function ReadAllComments({ isOpen, onRequestClose, videoId, timeElapsed }) {
 
-  
   const [allComments, setAllComments] = useState("");
 
+  // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   useEffect(() => {
-    async function getAllComments() {
-      try {
-        const comments = await fetch(
-          FETCH_URL + "/comments/all-comments/" + videoId,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (comments.status === 200) {
-          const json = await comments.json();
-          setAllComments(json);
-        }
-      } catch (error) {
-        throw Error(error);
-      }
+
+    if (videoId !== undefined && videoId !== null) {
+      const filteredComments = comments.filter(
+        (comment) => comment.video_id == videoId
+      );
+      
+      setAllComments(filteredComments);
+      
     }
-    getAllComments();
-  }, [allComments]);
+  }, [videoId]);
+
+  // Code fetch API Node JS ------------------------------------------
+  // useEffect(() => {
+  //   async function getAllComments() {
+  //     try {
+  //       const comments = await fetch(
+  //         FETCH_URL + "/comments/all-comments/" + videoId,
+  //         {
+  //           method: "GET",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       );
+  //       if (comments.status === 200) {
+  //         const json = await comments.json();
+  //         setAllComments(json);
+  //       }
+  //     } catch (error) {
+  //       throw Error(error);
+  //     }
+  //   }
+  //   getAllComments();
+  // }, [allComments]);
 
   useEffect(() => {
     if (isOpen) {
@@ -101,7 +116,9 @@ function ReadAllComments({ isOpen, onRequestClose, videoId, timeElapsed }) {
                     <strong>{allComments.pseudo}</strong>{" "}
                     {!elapsed ? <></> : <>{elapsed.times}</>}
                   </p>
-                  <p className="comment"><TruncatedText text={allComments.comment} maxLength={50} /></p>
+                  <p className="comment">
+                    <TruncatedText text={allComments.comment} maxLength={50} />
+                  </p>
                 </>
               );
             })
