@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-
-import { getItemWithExpiration } from "../../../../Assets/Variables/functions";
+import { useSelector } from "react-redux";
 
 function UploadSucceded() {
 
-  const myuserid = getItemWithExpiration("myuserid");
+
+  const { info } = useSelector((state) => state.user);
 
   return (
     <>
       <section className="uploadsucceded">
         <h2 className="uploadsucceded-title">Téléchargement Réussi !</h2>
 
-        {!myuserid ? (
+        {info.id === "Invite" ? (
           <><p className="button_ctn logs-profil">
           <Link to={`/galerie`}>
             Mon tracker
@@ -20,7 +20,7 @@ function UploadSucceded() {
         ) : (
           <>
             <p className="button_ctn logs-profil">
-              <Link to={`/utilisateurs/mon-tracker/${myuserid}`}>
+              <Link to={`/utilisateurs/mon-tracker/${info.id}`}>
                 Mon tracker
               </Link>
             </p>

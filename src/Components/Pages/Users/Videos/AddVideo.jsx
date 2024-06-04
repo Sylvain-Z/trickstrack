@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { FETCH_URL } from "../../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../../Assets/Variables/functions"; // pour version API
@@ -10,7 +11,7 @@ import { faCircleCheck, faFilm } from "@fortawesome/free-solid-svg-icons";
 function AddVideo() {
   const navigate = useNavigate();
 
-  const myuserid = getItemWithExpiration("myuserid");
+  const { info } = useSelector((state) => state.user);
   const TOKEN = getItemWithExpiration("auth");
 
   const [video, setVideo] = useState(null); // gère le formulaires
@@ -23,7 +24,7 @@ function AddVideo() {
 
     const formData = new FormData();
     formData.append("video", video);
-    const userId = myuserid;
+    const userId = info.id;
     formData.append("user_Id", userId);
     const trickname = trick_name;
     formData.append("trick_name", trickname);
@@ -32,7 +33,7 @@ function AddVideo() {
       setMsg("Ajoute un fichier");
     } else {
       try {
-        const res = await fetch(FETCH_URL + "videos/add-video/" + myuserid, {
+        const res = await fetch(FETCH_URL + "videos/add-video/" + info.id, {
           headers: {
             enctype: "multipart/form-data",
             Authentication: `Bearer ${TOKEN}`,
@@ -78,14 +79,6 @@ function AddVideo() {
           name="trick_name"
           value={trick_name}
           onChange={(e) => setTrick_Name(e.target.value)}
-        />
-
-        <input
-          disabled
-          placeholder="ID de l'utilisateur"
-          type="hidden"
-          name="myuserid"
-          value={myuserid}
         />
 
         {msg && <p className="green">{msg}</p>}

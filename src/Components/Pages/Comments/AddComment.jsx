@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
 
 import ReadAllComments from "./ReadAllComments";
 
-// import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
-// import { getItemWithExpiration } from "../../../Assets/Variables/functions"; // pour version API
+// import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API  ---------------------
+import { getItemWithExpiration } from "../../../Assets/Variables/functions";
 
 import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
@@ -13,10 +14,10 @@ import { faComment } from "@fortawesome/free-regular-svg-icons";
 
 function AddComment({ videoId, timeElapsed }) {
 
+
   const [lastComment, setLastComment] = useState([]);
   const [comment, setComment] = useState("");
   const [msg, setMsg] = useState("");
-
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -36,7 +37,6 @@ function AddComment({ videoId, timeElapsed }) {
   };
 
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
-  const myuserid = localStorage.getItem("myuserid");
 
   useEffect(() => {
     console.log("videoId", videoId);
@@ -60,10 +60,13 @@ function AddComment({ videoId, timeElapsed }) {
     }
   }, [videoId]);
 
+  
+  const FAKETOKEN = getItemWithExpiration("fakeauth");
+
   async function addComment(e) {
     e.preventDefault();
 
-    if (!myuserid) {
+    if (!FAKETOKEN) {
       setMsg("Vous devez être connecté pour laisser un commentaire");
     } else {
       setLastComment([{
@@ -102,8 +105,8 @@ function AddComment({ videoId, timeElapsed }) {
   // }, [lastComment]);
 
   
-  // const TOKEN = getItemWithExpiration("auth");
-  // const myuserid = getItemWithExpiration("myuserid");
+  // const { info } = useSelector((state) => state.user);
+  // const TOKEN = getItemWithExpiration('auth');
 
   // async function addComment(e) {
   //   e.preventDefault();
@@ -113,7 +116,7 @@ function AddComment({ videoId, timeElapsed }) {
   //       setMsg("");
   //     }, 5000);
   //   } else {
-  //     if (!myuserid) {
+  //     if (!TOKEN) {
   //       setMsg("Vous devez être connecté pour laisser un commentaire");
   //     } else {
   //       await fetch(FETCH_URL + "comments/add-comment", {
@@ -122,7 +125,7 @@ function AddComment({ videoId, timeElapsed }) {
   //           "Content-Type": "application/json",
   //           Authentication: `Bearer ${TOKEN}`,
   //         },
-  //         body: JSON.stringify({ comment, userId: myuserid, videoId }),
+  //         body: JSON.stringify({ comment, userId: info.id , videoId }),
   //       });
   //       setComment("");
   //     }

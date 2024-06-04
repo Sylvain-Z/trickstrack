@@ -1,14 +1,18 @@
 
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react'
-
-import { getItemWithExpiration } from '../../Assets/Variables/functions';
+import { useSelector } from "react-redux";
 
 import Board from '../../Assets/Images/HeaderSkate.png';
 import Open from '../../Assets/Images/MenuOuvert.png';
 import Closed from '../../Assets/Images/MenuFerme.png';
 
+
+import { getItemWithExpiration } from "../../Assets/Variables/functions"; // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
+
 function Header() {
+
+    const { info } = useSelector((state) => state.user);
 
     const { pathname } = useLocation();
 
@@ -30,9 +34,9 @@ function Header() {
         toggleMenu();
     };
 
-    /* Gère l'état des boutons de connexion et déconnexion et la récupération des données du user */
+    
+    const FAKETOKEN = getItemWithExpiration("fakeauth");
 
-    const myuserid = getItemWithExpiration("myuserid"); // récupère l'id de l'usager stocké lors du signin
 
     return (
         <>
@@ -65,13 +69,27 @@ function Header() {
                             </div>
 
                             <div className={!menuHidden ? "logs" : "burger_hidden"}>
-                                {!myuserid ? (
+
+                                {!FAKETOKEN ? ( // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
                                     <>
-                                        <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion" onClick={toggleMenu}>Se connecter</NavLink></p>
+                                    
+                                    
+                                        {info.id === "Invite" ? ( // pour version API -------------------------------------------------------------
+                                            <>
+                                                <p className="button_ctn logs-login"><NavLink to="/utilisateurs/connexion" onClick={toggleMenu}>Se connecter</NavLink></p>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${info.id}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
+                                                <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion" onClick={toggleMenu}>Se déconnecter</NavLink></p>
+                                            </>
+                                        )} {/* // pour version API ------------------------------------------------------------- */}
+                                    
+                                    
                                     </>
-                                ) : (
+                                ) : ( // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
                                     <>
-                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${myuserid}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
+                                        <p className="button_ctn logs-profil"><NavLink to={`/utilisateurs/mon-tracker/${info.id}`} onClick={toggleMenu}>Mon tracker</NavLink></p>
                                         <p className="button_ctn logs-logout"><NavLink to="/utilisateurs/deconnexion" onClick={toggleMenu}>Se déconnecter</NavLink></p>
                                     </>
                                 )}

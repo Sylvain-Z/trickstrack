@@ -6,13 +6,15 @@ import './Style/App-laptop.scss';
 import './Style/App-desktop.scss';
 import App from './App';
 import { Provider } from "react-redux";
-import { store } from "./store";
-
+import { store, persistor } from "./store";
+import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>
 );
 

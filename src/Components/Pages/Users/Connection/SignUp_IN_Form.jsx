@@ -1,19 +1,20 @@
 import { useState } from "react";
-import { /* useNavigate, */ Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-// import { FETCH_URL } from "../../../../Assets/Variables/const";  // pour version API ------------
-// import { setItemWithExpiration } from "../../../../Assets/Variables/functions";  // pour version API ------
+// import { FETCH_URL } from "../../../../Assets/Variables/const"; // pour version API ------------
+import { setItemWithExpiration } from "../../../../Assets/Variables/functions"; // pour version API ------
 
 // import { signin } from "../../../../store/slices/user";
 
 function Form({ type }) {
+
   // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [newUserId, setnewUserId] = useState(uuidv4().slice(0, 16)); // à chaque chargement du composant une chaine de 16 caractères aléatoire sera stocké // SIGNUP
-  // const [id, setId] = useState(""); // SIGNIN
+
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,43 +23,47 @@ function Form({ type }) {
   const [msg2, setMsg2] = useState("");
   const [msg3, setMsg3] = useState("");
 
-  // Fonction de connection lorsque l'Application est reliée à une Base de données --------
-  // --------------------------------------------------------------------------------------
-  // async function handleSubmit(e) {
-  //     e.preventDefault();
-  //     const res = await fetch(FETCH_URL + "users/sign" + type, {
-  //         method: "post",
-  //         headers: { "Content-Type": "application/json" },
-  //         body: JSON.stringify({ newUserId, pseudo, email, password }),
-  //     });
-  //     const json = await res.json();
-  //     setMsg(json.msg);
-  //     setMsg2(json.msg2);
-  //     setMsg3(json.msg3);
-  //     setId(json.userId);
-
-  //     if (type === "in" && res.status === 200) {
-  //         setItemWithExpiration("auth", json.TOKEN, 10080);
-  //         setItemWithExpiration("myuserid", json.userId, 10080);
-  //         dispatch(signin({ id }));
-  //         navigate("/");
-  //     }
-  //     if (type === "up" && res.status === 201) {
-  //         navigate("/utilisateurs/connexion");
-  //     }
-  // }
-
+  
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (type === "in") {
       setMsg("Application non connecté à une base de données");
+      setItemWithExpiration('fakeauth', "juste pour la démo", 10080);
+      navigate("/galerie");
     }
     if (type === "up") {
       setMsg("Application non connecté à une base de données");
     }
-  }
+  };
+
+  // Fonction de connection lorsque l'Application est reliée à une Base de données --------
+  // --------------------------------------------------------------------------------------
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   const res = await fetch(FETCH_URL + "users/sign" + type, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ newUserId, pseudo, email, password }),
+  //   });
+  //   const json = await res.json();
+  //   setMsg(json.msg);
+  //   setMsg2(json.msg2);
+  //   setMsg3(json.msg3);
+
+  //   if (type === "in" && res.status === 200) {
+      
+  //       setItemWithExpiration("auth", json.TOKEN, 10080);
+  //       dispatch(signin({ id : json.userId }));
+  //       navigate("/utilisateurs/mon-tracker/" + json.userId);
+      
+  //   }
+  //   if (type === "up" && res.status === 201) {
+  //     navigate("/utilisateurs/connexion");
+  //   }
+  // };
+
 
   return (
     <>
@@ -76,13 +81,7 @@ function Form({ type }) {
 
             {msg && <p className="msg red">{msg}</p>}
             {msg2 && <p className="msg green">{msg2}</p>}
-            {msg3 && (
-              <p className="msg yellow">
-                <Link to="/utilisateurs/connexion" className="msg_yellow">
-                  {msg3}
-                </Link>
-              </p>
-            )}
+            {msg3 && (<p className="msg yellow"><Link to="/utilisateurs/connexion" className="msg_yellow">{msg3}</Link></p>)}
           </>
         )}
 

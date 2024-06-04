@@ -31,7 +31,6 @@ function HOC({ child, auth  }) {
                     });
                     if (res.status === 401) {
                         localStorage.removeItem("auth")
-                        localStorage.removeItem("myuserid")
                         dispatch(signout());
                         navigate("/galerie");
                     }

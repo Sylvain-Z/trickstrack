@@ -8,13 +8,13 @@ function SignOut() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [pseudo, setPseudo] = useState("");
+  const [id, setId] = useState("");
 
-  dispatch(signout(pseudo))
+  dispatch(signout(id))
 
   function navigateToHome() {
     localStorage.removeItem("auth");
-    localStorage.removeItem("myuserid");
+    localStorage.removeItem("fakeauth"); // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
     setTimeout(()=>
     {navigate("/")}
     , 500);

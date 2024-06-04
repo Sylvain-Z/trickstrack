@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { format } from "date-fns-tz";
+// import { useSelector } from "react-redux";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
-// import { getItemWithExpiration } from "../../../Assets/Variables/functions"; // pour version API
+import { getItemWithExpiration } from "../../../Assets/Variables/functions";
 
 import { galery } from "./Galery"; // variables js pour démo version statique (hébergement sans BDD)
 
@@ -23,11 +24,31 @@ function GaleryVideos() {
     window.scrollTo(0, 0);
   }, [params]);
 
+  // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
+  // Simule l'ajout et le retrait d'une réaction
+  const [videos, setVideos] = useState(galery.map((item) => ({ ...item })));
+
+  const FAKETOKEN = getItemWithExpiration("fakeauth");
+
+  function addReaction(id) {
+    setVideos((prevVideos) =>
+      prevVideos.map((video) =>
+        video.video_id === id
+          ? {
+              ...video,
+              reaction_total: video.reaction_total + (video.clicked ? -1 : 1),
+              clicked: !video.clicked,
+            }
+          : video
+      )
+    );
+  }
+
   // Code fetch API Node JS ------------------------------------------
   // const [videos, setVideos] = useState(null);
 
   // const [msg, setMsg] = useState("");
-  // const myuserid = getItemWithExpiration("myuserid");
+  // const { info } = useSelector((state) => state.user);
   // const TOKEN = getItemWithExpiration("auth");
 
   // useEffect(() => {
@@ -57,7 +78,7 @@ function GaleryVideos() {
   //     const reaction_totalIncr = parseInt(reactionTotal) + 1;
   //     const reaction_totalDecr = parseInt(reactionTotal) - 1;
 
-  //     if (!myuserid) {
+  //     if (!TOKEN) {
   //       // si l'utilisateur n'est pas connecté à un compte il ne peut pas ajouter de réaction
 
   //       setMsg("Compte utilisateur requis");
@@ -68,7 +89,7 @@ function GaleryVideos() {
   //     } else {
   //       // si l'utilisateur est connecté à un compte peut ajouter ou retirer une réaction
   //       const res = await fetch(
-  //         FETCH_URL + "videos/react/" + myuserid + "/" + videoId,
+  //         FETCH_URL + "videos/react/" + info.id  + "/" + videoId,
   //         {
   //           method: "POST",
   //           headers: {
@@ -78,7 +99,7 @@ function GaleryVideos() {
   //           body: JSON.stringify({
   //             reaction_totalIncr,
   //             reaction_totalDecr,
-  //             myuserid,
+  //             userId : info.id,
   //             videoId,
   //           }),
   //         }
@@ -88,24 +109,6 @@ function GaleryVideos() {
   //     throw Error(error);
   //   }
   // };
-
-  // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
-  // Simule l'ajout et le retrait d'une réaction
-  const [videos, setVideos] = useState(galery.map((item) => ({ ...item })));
-
-  function addReaction(id) {
-    setVideos((prevVideos) =>
-      prevVideos.map((video) =>
-        video.video_id === id
-          ? {
-              ...video,
-              reaction_total: video.reaction_total + (video.clicked ? -1 : 1),
-              clicked: !video.clicked,
-            }
-          : video
-      )
-    );
-  }
 
   function timeElapsed(publicationDate) {
     const now = Date.now();
@@ -146,7 +149,17 @@ function GaleryVideos() {
 
   return (
     <>
-      {/* code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++ */}
+      {!FAKETOKEN ? (
+        <></>
+      ) : (
+        <>
+          <p className="message red" style={{ marginBottom: 50, textAlign:"center" }}>
+            Application non connecté à une base de données : ceci est une démo
+            des fonctions lorsqu'une connection est active
+          </p>
+        </>
+      )}
+
       <div className="galery">
         {!videos ? (
           <>
@@ -167,8 +180,13 @@ function GaleryVideos() {
                     />
                   </video>
                   <figcaption>
-                    {/* <button onClick={() => addReaction(video.reaction_total, video.video_id)}> */} {/* ligne démo // pour version API --------- */}
-                    <button onClick={() => addReaction(video.video_id)}>  {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
+                    {/* {msg && <p className="msg red">{msg}</p>} */}{" "}
+                    {/* ligne démo // pour version API --------- */}
+                    {/* <button onClick={() => addReaction(video.reaction_total, video.video_id)}> */}{" "}
+                    {/* ligne démo // pour version API --------- */}
+                    <button onClick={() => addReaction(video.video_id)}>
+                      {" "}
+                      {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
                       <FontAwesomeIcon icon={faFire} size="lg" />{" "}
                       {video.reaction_total}
                     </button>
@@ -190,7 +208,6 @@ function GaleryVideos() {
                         </p>
                       </>
                     )}
-
                     <AddComment
                       key={video.video_id}
                       videoId={video.video_id}

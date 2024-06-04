@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { FETCH_URL } from "../../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../../Assets/Variables/functions"; // pour version API
@@ -9,27 +10,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 function MyInfos() {
+
+
   const [user, setUser] = useState(null);
-  const myuserid = getItemWithExpiration("myuserid");
   const TOKEN = getItemWithExpiration("auth");
+  const { info } = useSelector((state) => state.user);
 
   const [editIsActiv, setEditIsActiv] = useState(false);
   const toggleEditIsActiv = () => {
     setEditIsActiv(preveditIsActiv => !preveditIsActiv);
   };
 
-  // Récupère l'id du user connecté pour l'envoyer dans la mise à jour d'un nombre de réaction
   useEffect(() => {
     async function getUserInfos() {
       try {
-        let id = "";
-        if (!myuserid) {
-          return;
-        } else {
-          id = myuserid;
-        }
-
-        const user = await fetch(FETCH_URL + "users/" + id, {
+        const user = await fetch(FETCH_URL + "users/" + info.id, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
