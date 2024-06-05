@@ -164,12 +164,10 @@ function CategoriesVideos({ trick_name }) {
                             {video.reaction_total}
                         </button>
                         <p>
-                            <FontAwesomeIcon icon={faFaceSmile} size="xs" />{" "}
-                            {video.pseudo}
-                        </p>
-                        <p>
-                            <FontAwesomeIcon icon={faRecordVinyl} size="xs" />{" "}
-                            {video.trick_name}{" "}
+                          <FontAwesomeIcon icon={faFaceSmile} size="xs" />{" "}
+                          <strong>{video.pseudo}</strong>{" "}
+                          <FontAwesomeIcon icon={faRecordVinyl} size="xs" />{" "}
+                          {video.trick_name}
                         </p>
                         {!elapsed ? (
                             <></>

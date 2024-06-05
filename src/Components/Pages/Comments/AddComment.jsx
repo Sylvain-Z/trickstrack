@@ -9,12 +9,14 @@ import { getItemWithExpiration } from "../../../Assets/Variables/functions";
 import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowUp, faCircleUser, } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleArrowUp,
+  faCircleUser,
+  faLink,
+} from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 
-function AddComment({ videoId, timeElapsed }) {
-
-
+function AddComment({ videoId }) {
   const [lastComment, setLastComment] = useState([]);
   const [comment, setComment] = useState("");
   const [msg, setMsg] = useState("");
@@ -58,7 +60,6 @@ function AddComment({ videoId, timeElapsed }) {
     }
   }, [videoId]);
 
-  
   const FAKETOKEN = getItemWithExpiration("fakeauth");
 
   async function addComment(e) {
@@ -67,14 +68,16 @@ function AddComment({ videoId, timeElapsed }) {
     if (!FAKETOKEN) {
       setMsg("Vous devez être connecté pour laisser un commentaire");
     } else {
-      setLastComment([{
-        id: 2,
-        comment: comment,
-        publication_date: "2024-06-02T20:53:44.000Z",
-        user_id: "9d2f000e-52ce-41",
-        video_id: 2,
-        pseudo: "testeur-demo",
-      }]);
+      setLastComment([
+        {
+          id: 2,
+          comment: comment,
+          publication_date: "2024-06-02T20:53:44.000Z",
+          user_id: "9d2f000e-52ce-41",
+          video_id: 2,
+          pseudo: "testeur-demo",
+        },
+      ]);
     }
   }
 
@@ -102,7 +105,6 @@ function AddComment({ videoId, timeElapsed }) {
   //   getLastComment();
   // }, [lastComment]);
 
-  
   // const { info } = useSelector((state) => state.user);
   // const TOKEN = getItemWithExpiration('auth');
 
@@ -128,23 +130,32 @@ function AddComment({ videoId, timeElapsed }) {
   //       setComment("");
   //     }
   //   }
-  // }
-
+  // };
 
   return (
     <>
-    
-      <p className="focus"><span>Nouveauté</span></p>
-
       <form className="video-comment" onSubmit={addComment}>
-        {msg && <p>{msg}</p>}
-
         <div className="comment-btn-div static">
-          <button type="button" onClick={openModal} className="gold static"><FontAwesomeIcon icon={faComment} size="xl" /></button>
+          <button
+            type="button"
+            onClick={openModal}
+            className="commentpicto gold static"
+          >
+            <FontAwesomeIcon icon={faComment} size="lg" />
+          </button>
+          <button type="button" className="commentpicto gold static">
+            <FontAwesomeIcon icon={faLink} size="lg " />
+          </button>
         </div>
 
         {/* POPUP */}
-        <ReadAllComments isOpen={modalIsOpen} onRequestClose={closeModal} videoId={videoId}/>  
+        <ReadAllComments
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          videoId={videoId}
+        />
+
+        {msg && <p>{msg}</p>}
 
         <div className="input-div">
           <input
@@ -164,9 +175,9 @@ function AddComment({ videoId, timeElapsed }) {
           </>
         ) : (
           <>
-            <p className="last-comment"  onClick={openModal} >
-              <strong>{lastComment[0].pseudo}</strong>{" "}
+            <p className="last-comment" onClick={openModal}>
               <FontAwesomeIcon icon={faCircleUser} size="xs" />{" "}
+              <strong>{lastComment[0].pseudo}</strong>{" "}
               {truncateText(lastComment[0].comment, 75)}
             </p>
           </>

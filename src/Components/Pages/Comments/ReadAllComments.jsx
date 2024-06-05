@@ -77,16 +77,16 @@ function ReadAllComments({ isOpen, onRequestClose, videoId }) {
   //   getAllComments();
   // }, [allComments]);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.body.classList.add("no-scroll");
+  //   } else {
+  //     document.body.classList.remove("no-scroll");
+  //   }
+  //   return () => {
+  //     document.body.classList.remove("no-scroll");
+  //   };
+  // }, [isOpen]);
 
   return (
     <Modal

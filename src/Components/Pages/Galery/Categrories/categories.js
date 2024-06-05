@@ -2,19 +2,19 @@ export const categories = [
 
     {
           "id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 3,
-          "label": "grabs"
+          "label": "Grabs"
     },
     {
           "id": 4,
-          "label": "ramps"
+          "label": "Ramps"
     }
 
 ]

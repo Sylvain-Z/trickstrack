@@ -108,9 +108,7 @@ function MyVideos() {
                     </button>
                     <p>
                       <FontAwesomeIcon icon={faFaceSmile} size="xs" />{" "}
-                      {video.pseudo}
-                    </p>
-                    <p>
+                      <strong>{video.pseudo}</strong>{" "}
                       <FontAwesomeIcon icon={faRecordVinyl} size="xs" />{" "}
                       {video.trick_name}
                     </p>

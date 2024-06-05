@@ -13,6 +13,7 @@ function UpdateInfos({ user }) {
   const [bio, setBio] = useState(user.bio);
   const [email, setEmail] = useState(user.email);
   const [msg, setMsg] = useState("");
+  const [msg2, setMsg2] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +30,15 @@ function UpdateInfos({ user }) {
     });
     const json = await res.json();
     setMsg(json.msg);
-  }
+    setMsg2(json.msg2);
+  };
+
+  const handleChange = (e) => {
+    const input = e.target.value;
+    if (input.length <= 200) {
+      setBio(input);
+    }
+  };
 
   return (
     <>
@@ -41,6 +50,7 @@ function UpdateInfos({ user }) {
           <input
             type="text"
             name="pseudo"
+            placeholder="pseudo"
             value={pseudo}
             onChange={(e) => {
               setPseudo(e.target.value);
@@ -50,30 +60,34 @@ function UpdateInfos({ user }) {
           <input
             type="text"
             name="firstname"
+            placeholder="firstname"
             value={firstname}
             onChange={(e) => {
               setFirstname(e.target.value);
             }}
           />
-          <label htmlFor="bio">Bio (200 caractères max)</label>
+          <label htmlFor="bio">Bio ({200 - bio.length} caractères)</label>
           <textarea
             type="text"
             name="bio"
+            placeholder="bio"
             value={bio}
-            onChange={(e) => {
-              setBio(e.target.value);
-            }}
+            onChange={handleChange}
+            maxLength="200" 
           />
+
           <label htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
+            placeholder="email"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
           />
           {msg && <p className="green non-absolute">{msg}</p>}
+          {msg2 && <p className="red non-absolute">{msg2}</p>}
 
           <button className="myinformations-btn non-absolute" type="submit">
             <FontAwesomeIcon icon={faCheckSquare} size="xl" className="icon" />

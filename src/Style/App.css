@@ -181,11 +181,6 @@ button {
   border: 1px solid rgb(43, 11, 50);
 }
 
-.update {
-  width: 150px;
-  margin: 0 auto !important;
-}
-
 .logs-profil {
   background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   margin-bottom: 25px;
@@ -535,6 +530,19 @@ footer a {
   transform: translate(0, -50%);
   color: rgb(43, 11, 50);
 }
+.galery-ctn .video-comment .input-div .commentpicto,
+.galery-ctn .video-comment .comment-btn-div .commentpicto,
+.trickslist-ctn .video-comment .input-div .commentpicto,
+.trickslist-ctn .video-comment .comment-btn-div .commentpicto,
+.form-ctn .video-comment .input-div .commentpicto,
+.form-ctn .video-comment .comment-btn-div .commentpicto,
+.mytracker-ctn .video-comment .input-div .commentpicto,
+.mytracker-ctn .video-comment .comment-btn-div .commentpicto,
+.legal-ctn .video-comment .input-div .commentpicto,
+.legal-ctn .video-comment .comment-btn-div .commentpicto {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
 .galery-ctn .video-comment .comment-btn-div button,
 .trickslist-ctn .video-comment .comment-btn-div button,
 .form-ctn .video-comment .comment-btn-div button,
@@ -712,11 +720,15 @@ footer a {
   width: 300px;
   margin-bottom: 25px;
 }
-.galery-ctn .myinformations-pseudo,
+.galery-ctn .myinformations-pseudo, .galery-ctn .myinformations-motDePasse,
 .trickslist-ctn .myinformations-pseudo,
+.trickslist-ctn .myinformations-motDePasse,
 .form-ctn .myinformations-pseudo,
+.form-ctn .myinformations-motDePasse,
 .mytracker-ctn .myinformations-pseudo,
-.legal-ctn .myinformations-pseudo {
+.mytracker-ctn .myinformations-motDePasse,
+.legal-ctn .myinformations-pseudo,
+.legal-ctn .myinformations-motDePasse {
   left: 25px;
   bottom: 50px;
 }
@@ -742,9 +754,9 @@ footer a {
 .form-ctn .myinformations-btn,
 .mytracker-ctn .myinformations-btn,
 .legal-ctn .myinformations-btn {
-  background: radial-gradient(circle, rgb(245, 205, 115), rgb(168, 115, 0));
   right: 30px;
   top: 30px;
+  background: radial-gradient(circle, rgb(245, 205, 115), rgb(168, 115, 0));
   padding: 0;
   width: 35px;
   height: 35px;
@@ -759,6 +771,19 @@ footer a {
 .mytracker-ctn .myinformations-btn .icon,
 .legal-ctn .myinformations-btn .icon {
   color: rgb(43, 11, 50);
+}
+.galery-ctn .dangerZone,
+.trickslist-ctn .dangerZone,
+.form-ctn .dangerZone,
+.mytracker-ctn .dangerZone,
+.legal-ctn .dangerZone {
+  right: auto;
+  top: auto;
+  left: 30px;
+  bottom: 30px;
+  background: radial-gradient(circle, rgb(255, 129, 129), rgb(199, 18, 18));
+  box-shadow: 0px 0px 3px rgb(255, 129, 129);
+  border: none;
 }
 .galery-ctn .trickslist-list,
 .galery-ctn .mytrickslist-ctn,
@@ -809,6 +834,13 @@ footer a {
   border-radius: 30px;
   border: 1px solid rgb(43, 11, 50);
   box-shadow: inset 0px 0px 5px rgb(135, 145, 141);
+}
+.galery-ctn form textarea,
+.trickslist-ctn form textarea,
+.form-ctn form textarea,
+.mytracker-ctn form textarea,
+.legal-ctn form textarea {
+  height: 90px;
 }
 .galery-ctn form select,
 .trickslist-ctn form select,

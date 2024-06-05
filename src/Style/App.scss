@@ -212,12 +212,6 @@ button {
   border: 1px solid $PurpleDarker;
 }
 
-.update {
-  //boutton myinformations
-  width: 150px;
-  margin: 0 auto !important;
-}
-
 .logs-profil {
   background: $PurpleGradientBkg;
   margin-bottom: 25px;
@@ -476,6 +470,10 @@ footer {
         transform: translate(0, -50%);
         color: $PurpleDarker;
       }
+      .commentpicto{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+      }
     }
 
     .comment-btn-div button {
@@ -580,7 +578,7 @@ footer {
     margin-bottom: 25px;
   }
 
-  .myinformations-pseudo {
+  .myinformations-pseudo, .myinformations-motDePasse {
     left: 25px;
     bottom: 50px;
   }
@@ -597,9 +595,9 @@ footer {
   }
 
   .myinformations-btn {
-    background: radial-gradient(circle, $Gold, rgb(168, 115, 0));
     right: 30px;
     top: 30px;
+    background: radial-gradient(circle, $Gold, rgb(168, 115, 0));
     padding: 0;
     width: 35px;
     height: 35px;
@@ -611,6 +609,15 @@ footer {
     .icon {
       color: $PurpleDarker;
     }
+  }
+  .dangerZone {
+    right: auto;
+    top: auto;
+    left: 30px;
+    bottom: 30px;
+    background: radial-gradient(circle, rgb(255, 129, 129), $Red);
+    box-shadow: 0px 0px 3px rgb(255, 129, 129);
+    border: none;
   }
 
   .trickslist-list,
@@ -642,6 +649,9 @@ footer {
       border-radius: 30px;
       border: 1px solid $PurpleDarker;
       box-shadow: inset 0px 0px 5px $GreyDarker;
+    }
+    textarea {
+      height: 90px;
     }
     select {
       font-size: 12px;

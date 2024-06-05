@@ -5,6 +5,7 @@ import AddVideo from "./Videos/AddVideo";
 import MyVideos from "./Videos/Index";
 import MyTricksList from "./MyTricksList/Index";
 import MyInfos from "./MyInfos/Index";
+import AccountSecurity from "./Security/Index";
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +14,7 @@ import {
   faFilm,
   faReceipt,
   faInfo,
+  faShield,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Tracker() {
@@ -28,6 +30,8 @@ function Tracker() {
         return <MyTricksList />;
       case "MyInfos":
         return <MyInfos />;
+      case "AccountSecurity":
+        return <AccountSecurity />;
       default:
         return <h3>Sélectionne une section</h3>;
     }
@@ -47,6 +51,9 @@ function Tracker() {
           </button>
           <button onClick={() => setSelectedTab("MyInfos")}>
           <FontAwesomeIcon icon={faInfo}  size="xl" />
+          </button>
+          <button onClick={() => setSelectedTab("AccountSecurity")}>
+          <FontAwesomeIcon icon={faShield}  size="xl" />
           </button>
         </div>
         <article className="mytracker">{renderComponent()}</article>

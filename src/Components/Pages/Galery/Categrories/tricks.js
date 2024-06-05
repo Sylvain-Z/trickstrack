@@ -6,7 +6,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -14,7 +14,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -22,7 +22,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -30,7 +30,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -38,7 +38,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -46,7 +46,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -54,7 +54,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -62,7 +62,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -70,7 +70,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -78,7 +78,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -86,7 +86,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -94,7 +94,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -102,7 +102,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -110,7 +110,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -118,7 +118,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -126,7 +126,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -134,7 +134,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -142,7 +142,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -150,7 +150,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -158,7 +158,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -166,7 +166,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -174,7 +174,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 1,
@@ -182,7 +182,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 1,
-          "label": "flat"
+          "label": "Flat"
     },
     {
           "id": 2,
@@ -190,7 +190,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -198,7 +198,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -206,7 +206,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -214,7 +214,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -222,7 +222,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -230,7 +230,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -238,7 +238,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -246,7 +246,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -254,7 +254,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -262,7 +262,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -270,7 +270,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -278,7 +278,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -286,7 +286,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -294,7 +294,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -302,7 +302,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -310,7 +310,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -318,7 +318,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -326,7 +326,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     },
     {
           "id": 2,
@@ -334,7 +334,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "grind_slides"
+          "label": "Grinds & Slides"
     }
 
 ]

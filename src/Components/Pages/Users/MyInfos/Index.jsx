@@ -62,7 +62,7 @@ function MyInfos() {
 
 
             <button
-                className="button_ctn update myinformations-btn"
+                className="myinformations-btn"
                 type="button"
                 onClick={toggleEditIsActiv}
               >

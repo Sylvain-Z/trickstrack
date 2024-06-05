@@ -34,58 +34,58 @@ function Categories() {
 
   // Code fetch API Node JS ------------------------------------------
 
-  //   const [categories, setCategories] = useState([]);
-  //   const [categorieSelected, setCategorieSelected] = useState("");
-  //   const [tricks, setTricks] = useState([]);
-  //   const [tricks_selected, setTricks_selected] = useState("");
-  //   useEffect(() => {
-  //     async function getCategories() {
-  //       try {
-  //         const categories = await fetch(FETCH_URL + "tricks/categories", {
-  //           method: "GET",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //         });
-  //         if (categories.status === 200) {
-  //           const json = await categories.json();
-  //           setCategories(json);
-  //         }
-  //       } catch (error) {
-  //         throw Error(error);
+  // const [categories, setCategories] = useState([]);
+  // const [categorieSelected, setCategorieSelected] = useState("");
+  // const [tricks, setTricks] = useState([]);
+  // const [tricks_selected, setTricks_selected] = useState("");
+  // useEffect(() => {
+  //   async function getCategories() {
+  //     try {
+  //       const categories = await fetch(FETCH_URL + "tricks/categories", {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       });
+  //       if (categories.status === 200) {
+  //         const json = await categories.json();
+  //         setCategories(json);
   //       }
+  //     } catch (error) {
+  //       throw Error(error);
   //     }
-  //     getCategories();
-  //   }, []);
+  //   }
+  //   getCategories();
+  // }, []);
 
-  //   useEffect(() => {
-  //     async function getTricksByCategorie() {
-  //       try {
+  // useEffect(() => {
+  //   async function getTricksByCategorie() {
+  //     try {
 
-  //         if (categorieSelected === "") {
-  //           setTricks([]);
-  //         } else {
-  //           const tricks = await fetch(
-  //             FETCH_URL + "tricks/tricksByCategories/" + categorieSelected,
-  //             {
-  //               method: "GET",
-  //               headers: {
-  //                 "Content-Type": "application/json",
-  //               },
-  //             }
-  //           );
-  //           if (tricks.status === 200) {
-  //             const json = await tricks.json();
-  //             setTricks(json);
+  //       if (categorieSelected === "") {
+  //         setTricks([]);
+  //       } else {
+  //         const tricks = await fetch(
+  //           FETCH_URL + "tricks/tricksByCategories/" + categorieSelected,
+  //           {
+  //             method: "GET",
+  //             headers: {
+  //               "Content-Type": "application/json",
+  //             },
   //           }
+  //         );
+  //         if (tricks.status === 200) {
+  //           const json = await tricks.json();
+  //           setTricks(json);
   //         }
-
-  //       } catch (error) {
-  //         throw Error(error);
   //       }
+
+  //     } catch (error) {
+  //       throw Error(error);
   //     }
-  //     getTricksByCategorie();
-  //   }, [categorieSelected]);
+  //   }
+  //   getTricksByCategorie();
+  // }, [categorieSelected]);
 
   return (
     <>

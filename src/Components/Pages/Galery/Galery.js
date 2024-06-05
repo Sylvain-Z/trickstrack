@@ -4,7 +4,7 @@ export const galery = [
 
     {
         "video_id" : "1",
-        "pseudo": "user_pseudo-1",
+        "pseudo": "NinaGlide",
         "title": "User1V1.mp4",
         "trick_name" : "Hardflip",
         "publication_date" : "2024-05-31 12:55:54",
@@ -12,7 +12,7 @@ export const galery = [
     },
     {
         "video_id" : "2",
-        "pseudo": "user_pseudo-1",
+        "pseudo": "NinaGlide",
         "title": "User1V2.mp4",
         "trick_name" : "Tailslide",
         "publication_date" : "2024-05-25 00:06:46",
@@ -20,7 +20,7 @@ export const galery = [
     },
     {
         "video_id" : "3",
-        "pseudo": "user_pseudo-2",
+        "pseudo": "LéoSpeedster",
         "title": "User2V1.mp4",
         "trick_name" : "Nosegrind",
         "publication_date" : "2024-05-23 06:53:09",
@@ -28,7 +28,7 @@ export const galery = [
     },
     {
         "video_id" : "4",
-        "pseudo": "user_pseudo-2",
+        "pseudo": "LéoSpeedster",
         "title": "User2V2.mp4",
         "trick_name" : "Nosegrind",
         "publication_date" : "2024-05-12 07:04:04",
@@ -36,7 +36,7 @@ export const galery = [
     },
     {
         "video_id" : "5",
-        "pseudo": "user_pseudo-2",
+        "pseudo": "LéoSpeedster",
         "title": "User2V3.mp4",
         "trick_name" : "Kickflip",
         "publication_date" : "2024-05-09 16:06:27",
@@ -44,7 +44,7 @@ export const galery = [
     },
     {
         "video_id" : "6",
-        "pseudo": "user_pseudo-3",
+        "pseudo": "TomRoll",
         "title": "User3V1.mp4",
         "trick_name" : "Kickflip",
         "publication_date" : "2024-05-05 15:11:09",
@@ -52,7 +52,7 @@ export const galery = [
     },
     {
         "video_id" : "7",
-        "pseudo": "user_pseudo-3",
+        "pseudo": "TomRoll",
         "title": "User3V2.mp4",
         "trick_name" : "Kickflip",
         "publication_date" : "2024-05-04 22:50:29",
@@ -60,7 +60,7 @@ export const galery = [
     },
     {
         "video_id" : "8",
-        "pseudo": "user_pseudo-3",
+        "pseudo": "TomRoll",
         "title": "User3V3.mp4",
         "trick_name" : "Smith",
         "publication_date" : "2024-04-29 13:34:44",
@@ -68,7 +68,7 @@ export const galery = [
     },
     {
         "video_id" : "9",
-        "pseudo": "user_pseudo-3",
+        "pseudo": "TomRoll",
         "title": "User3V4.mp4",
         "trick_name" : "Smith",
         "publication_date" : "2024-04-23 06:21:40",
@@ -76,7 +76,7 @@ export const galery = [
     },
     {
         "video_id" : "10",
-        "pseudo": "user_pseudo-3",
+        "pseudo": "TomRoll",
         "title": "User3V5.mp4",
         "trick_name" : "Crooked",
         "publication_date" : "2024-04-06 02:30:54",
@@ -84,7 +84,7 @@ export const galery = [
     },
     {
         "video_id" : "11",
-        "pseudo": "user_pseudo-4",
+        "pseudo": "TomRoll",
         "title": "User4V1.mp4",
         "trick_name" : "50-50",
         "publication_date" : "2024-04-02 22:47:18",
