@@ -79,6 +79,10 @@ h6 {
   color: rgb(245, 205, 115) !important;
 }
 
+.orange {
+  color: rgb(255, 94, 0) !important;
+}
+
 .static {
   position: static !important;
   transform: translate(0) !important;
@@ -368,19 +372,14 @@ footer a {
   margin: 25px 0 15px 0;
 }
 .galery-ctn .galery,
-.galery-ctn .mytracker-galery,
 .galery-ctn form,
 .trickslist-ctn .galery,
-.trickslist-ctn .mytracker-galery,
 .trickslist-ctn form,
 .form-ctn .galery,
-.form-ctn .mytracker-galery,
 .form-ctn form,
 .mytracker-ctn .galery,
-.mytracker-ctn .mytracker-galery,
 .mytracker-ctn form,
 .legal-ctn .galery,
-.legal-ctn .mytracker-galery,
 .legal-ctn form {
   position: relative;
   display: flex;
@@ -389,77 +388,48 @@ footer a {
   justify-content: center;
 }
 .galery-ctn .galery div,
-.galery-ctn .mytracker-galery div,
 .trickslist-ctn .galery div,
-.trickslist-ctn .mytracker-galery div,
 .form-ctn .galery div,
-.form-ctn .mytracker-galery div,
 .mytracker-ctn .galery div,
-.mytracker-ctn .mytracker-galery div,
-.legal-ctn .galery div,
-.legal-ctn .mytracker-galery div {
+.legal-ctn .galery div {
   width: 100%;
   margin-bottom: 25px;
-  box-shadow: 0px 0px 5px rgb(135, 145, 141);
 }
 .galery-ctn .galery figure,
-.galery-ctn .mytracker figure,
 .trickslist-ctn .galery figure,
-.trickslist-ctn .mytracker figure,
 .form-ctn .galery figure,
-.form-ctn .mytracker figure,
 .mytracker-ctn .galery figure,
-.mytracker-ctn .mytracker figure,
-.legal-ctn .galery figure,
-.legal-ctn .mytracker figure {
+.legal-ctn .galery figure {
   background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%);
   background-size: cover;
 }
 .galery-ctn .galery figure figcaption,
-.galery-ctn .mytracker figure figcaption,
 .trickslist-ctn .galery figure figcaption,
-.trickslist-ctn .mytracker figure figcaption,
 .form-ctn .galery figure figcaption,
-.form-ctn .mytracker figure figcaption,
 .mytracker-ctn .galery figure figcaption,
-.mytracker-ctn .mytracker figure figcaption,
-.legal-ctn .galery figure figcaption,
-.legal-ctn .mytracker figure figcaption {
+.legal-ctn .galery figure figcaption {
   padding: 15px;
 }
 .galery-ctn .galery figure figcaption p,
-.galery-ctn .mytracker figure figcaption p,
 .trickslist-ctn .galery figure figcaption p,
-.trickslist-ctn .mytracker figure figcaption p,
 .form-ctn .galery figure figcaption p,
-.form-ctn .mytracker figure figcaption p,
 .mytracker-ctn .galery figure figcaption p,
-.mytracker-ctn .mytracker figure figcaption p,
-.legal-ctn .galery figure figcaption p,
-.legal-ctn .mytracker figure figcaption p {
+.legal-ctn .galery figure figcaption p {
   text-align: center;
   margin: 10px auto;
   color: rgb(245, 205, 115);
 }
 .galery-ctn .galery figure figcaption button,
-.galery-ctn .mytracker figure figcaption button,
 .trickslist-ctn .galery figure figcaption button,
-.trickslist-ctn .mytracker figure figcaption button,
 .form-ctn .galery figure figcaption button,
-.form-ctn .mytracker figure figcaption button,
 .mytracker-ctn .galery figure figcaption button,
-.mytracker-ctn .mytracker figure figcaption button,
-.legal-ctn .galery figure figcaption button,
-.legal-ctn .mytracker figure figcaption button {
-  width: 100px;
+.legal-ctn .galery figure figcaption button {
+  width: auto;
   padding: 0;
   font-size: 16px;
-  display: block;
-  color: rgb(255, 94, 0);
   background: none;
   border: none;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 .galery-ctn .galery_end,
 .trickslist-ctn .galery_end,
@@ -485,64 +455,63 @@ footer a {
   max-height: 550px;
   background-color: rgb(5, 5, 5);
 }
-.galery-ctn .video-comment,
-.trickslist-ctn .video-comment,
-.form-ctn .video-comment,
-.mytracker-ctn .video-comment,
-.legal-ctn .video-comment {
+.galery-ctn .video-display,
+.trickslist-ctn .video-display,
+.form-ctn .video-display,
+.mytracker-ctn .video-display,
+.legal-ctn .video-display {
   width: 100%;
 }
-.galery-ctn .video-comment .last-comment,
-.trickslist-ctn .video-comment .last-comment,
-.form-ctn .video-comment .last-comment,
-.mytracker-ctn .video-comment .last-comment,
-.legal-ctn .video-comment .last-comment {
+.galery-ctn .video-display .last-comment,
+.trickslist-ctn .video-display .last-comment,
+.form-ctn .video-display .last-comment,
+.mytracker-ctn .video-display .last-comment,
+.legal-ctn .video-display .last-comment {
   width: 85%;
   padding: 5px;
   color: rgb(240, 240, 240);
   cursor: pointer;
 }
-.galery-ctn .video-comment .input-div,
-.galery-ctn .video-comment .comment-btn-div,
-.trickslist-ctn .video-comment .input-div,
-.trickslist-ctn .video-comment .comment-btn-div,
-.form-ctn .video-comment .input-div,
-.form-ctn .video-comment .comment-btn-div,
-.mytracker-ctn .video-comment .input-div,
-.mytracker-ctn .video-comment .comment-btn-div,
-.legal-ctn .video-comment .input-div,
-.legal-ctn .video-comment .comment-btn-div {
+.galery-ctn .video-display .input-div,
+.galery-ctn .video-display .comment-btn-div,
+.trickslist-ctn .video-display .input-div,
+.trickslist-ctn .video-display .comment-btn-div,
+.form-ctn .video-display .input-div,
+.form-ctn .video-display .comment-btn-div,
+.mytracker-ctn .video-display .input-div,
+.mytracker-ctn .video-display .comment-btn-div,
+.legal-ctn .video-display .input-div,
+.legal-ctn .video-display .comment-btn-div {
   width: 85%;
   position: relative;
   display: flex;
   justify-content: center;
-  box-shadow: none;
 }
-.galery-ctn .video-comment .input-div textarea,
-.galery-ctn .video-comment .comment-btn-div textarea,
-.trickslist-ctn .video-comment .input-div textarea,
-.trickslist-ctn .video-comment .comment-btn-div textarea,
-.form-ctn .video-comment .input-div textarea,
-.form-ctn .video-comment .comment-btn-div textarea,
-.mytracker-ctn .video-comment .input-div textarea,
-.mytracker-ctn .video-comment .comment-btn-div textarea,
-.legal-ctn .video-comment .input-div textarea,
-.legal-ctn .video-comment .comment-btn-div textarea {
+.galery-ctn .video-display .input-div textarea,
+.galery-ctn .video-display .comment-btn-div textarea,
+.trickslist-ctn .video-display .input-div textarea,
+.trickslist-ctn .video-display .comment-btn-div textarea,
+.form-ctn .video-display .input-div textarea,
+.form-ctn .video-display .comment-btn-div textarea,
+.mytracker-ctn .video-display .input-div textarea,
+.mytracker-ctn .video-display .comment-btn-div textarea,
+.legal-ctn .video-display .input-div textarea,
+.legal-ctn .video-display .comment-btn-div textarea {
   width: 100%;
   height: 45px;
   margin: 0;
   padding-right: 40px;
 }
-.galery-ctn .video-comment .input-div button,
-.galery-ctn .video-comment .comment-btn-div button,
-.trickslist-ctn .video-comment .input-div button,
-.trickslist-ctn .video-comment .comment-btn-div button,
-.form-ctn .video-comment .input-div button,
-.form-ctn .video-comment .comment-btn-div button,
-.mytracker-ctn .video-comment .input-div button,
-.mytracker-ctn .video-comment .comment-btn-div button,
-.legal-ctn .video-comment .input-div button,
-.legal-ctn .video-comment .comment-btn-div button {
+.galery-ctn .video-display .input-div .send-comment-btn,
+.galery-ctn .video-display .comment-btn-div .send-comment-btn,
+.trickslist-ctn .video-display .input-div .send-comment-btn,
+.trickslist-ctn .video-display .comment-btn-div .send-comment-btn,
+.form-ctn .video-display .input-div .send-comment-btn,
+.form-ctn .video-display .comment-btn-div .send-comment-btn,
+.mytracker-ctn .video-display .input-div .send-comment-btn,
+.mytracker-ctn .video-display .comment-btn-div .send-comment-btn,
+.legal-ctn .video-display .input-div .send-comment-btn,
+.legal-ctn .video-display .comment-btn-div .send-comment-btn {
   width: auto;
   position: absolute;
   top: 50%;
@@ -550,25 +519,13 @@ footer a {
   transform: translate(0, -50%);
   color: rgb(43, 11, 50);
 }
-.galery-ctn .video-comment .input-div .commentpicto,
-.galery-ctn .video-comment .comment-btn-div .commentpicto,
-.trickslist-ctn .video-comment .input-div .commentpicto,
-.trickslist-ctn .video-comment .comment-btn-div .commentpicto,
-.form-ctn .video-comment .input-div .commentpicto,
-.form-ctn .video-comment .comment-btn-div .commentpicto,
-.mytracker-ctn .video-comment .input-div .commentpicto,
-.mytracker-ctn .video-comment .comment-btn-div .commentpicto,
-.legal-ctn .video-comment .input-div .commentpicto,
-.legal-ctn .video-comment .comment-btn-div .commentpicto {
-  margin-left: 10px !important;
-  margin-right: 10px !important;
-}
-.galery-ctn .video-comment .comment-btn-div button,
-.trickslist-ctn .video-comment .comment-btn-div button,
-.form-ctn .video-comment .comment-btn-div button,
-.mytracker-ctn .video-comment .comment-btn-div button,
-.legal-ctn .video-comment .comment-btn-div button {
-  margin-bottom: 15px !important;
+.galery-ctn .video-display .comment-btn-div,
+.trickslist-ctn .video-display .comment-btn-div,
+.form-ctn .video-display .comment-btn-div,
+.mytracker-ctn .video-display .comment-btn-div,
+.legal-ctn .video-display .comment-btn-div {
+  width: 50%;
+  margin: 25px auto;
 }
 .galery-ctn .trickslist-nav,
 .galery-ctn .mytracker-nav,

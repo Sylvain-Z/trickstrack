@@ -2,10 +2,10 @@ import React from "react";
 import Modal from "react-modal";
 import { useEffect, useState } from "react";
 
-import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
+// import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 import { timeElapsed } from "../../../Assets/Variables/functions";
 
-// import { comments } from "../../../Assets/Variables/comments"; // code démo version statique (hébergement sans BDD) ++++++++++
+import { comments } from "../../../Assets/Variables/comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -52,41 +52,41 @@ function ReadAllComments({ isOpen, onRequestClose, videoId }) {
   }, [isOpen]);
 
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   if (videoId !== undefined && videoId !== null) {
-  //     const filteredComments = comments.filter(
-  //       (comment) => comment.video_id == videoId
-  //     );
+    if (videoId !== undefined && videoId !== null) {
+      const filteredComments = comments.filter(
+        (comment) => comment.video_id == videoId
+      );
+    
+      setAllComments(filteredComments);
       
-  //     setAllComments(filteredComments);
-      
-  //   }
-  // }, [videoId]);
+    }
+  }, [allComments, videoId]);
 
   // Code fetch API Node JS ------------------------------------------
-  useEffect(() => {
-    async function getAllComments() {
-      try {
-        const comments = await fetch(
-          FETCH_URL + "/comments/all-comments/" + videoId,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (comments.status === 200) {
-          const json = await comments.json();
-          setAllComments(json);
-        }
-      } catch (error) {
-        throw Error(error);
-      }
-    }
-    getAllComments();
-  }, [allComments]);
+  // useEffect(() => {
+  //   async function getAllComments() {
+  //     try {
+  //       const comments = await fetch(
+  //         FETCH_URL + "comments/all-comments/" + videoId,
+  //         {
+  //           method: "GET",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       );
+  //       if (comments.status === 200) {
+  //         const json = await comments.json();
+  //         setAllComments(json);
+  //       }
+  //     } catch (error) {
+  //       throw Error(error);
+  //     }
+  //   }
+  //   getAllComments();
+  // }, [allComments]);
 
 
   return (
@@ -112,7 +112,7 @@ function ReadAllComments({ isOpen, onRequestClose, videoId }) {
               const elapsed = timeElapsed(allComments.publication_date);
 
               return (
-                <>
+                <React.Fragment key={allComments.id}>
                   <p className="comment-user">
                     <FontAwesomeIcon icon={faCircleUser} size="xs" />{" "}
                     <strong>{allComments.pseudo}</strong>{" "}
@@ -121,7 +121,7 @@ function ReadAllComments({ isOpen, onRequestClose, videoId }) {
                   <p className="comment">
                     <TruncatedText text={allComments.comment} maxLength={50} />
                   </p>
-                </>
+                </React.Fragment>
               );
             })
           )}

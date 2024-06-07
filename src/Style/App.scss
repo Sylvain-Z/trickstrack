@@ -100,6 +100,9 @@ h6 {
 .gold {
   color: $Gold !important;
 }
+.orange {
+  color: $Fire !important;
+}
 
 .static {
   position: static !important;
@@ -116,7 +119,8 @@ h6 {
   width: 190px;
   background: $PurpleGradientBkg !important;
   color: $White !important;
-  .my-toast-body{
+
+  .my-toast-body {
     padding: 0 25px;
   }
 
@@ -401,7 +405,6 @@ footer {
   }
 
   .galery,
-  .mytracker-galery,
   form {
     position: relative;
     display: flex;
@@ -410,15 +413,12 @@ footer {
     justify-content: center;
   }
 
-  .galery div,
-  .mytracker-galery div {
+  .galery div {
     width: 100%;
     margin-bottom: 25px;
-    box-shadow: 0px 0px 5px $GreyDarker;
   }
 
-  .galery figure,
-  .mytracker figure {
+  .galery figure {
     background: $PurpleGradientBkg;
     background-size: cover;
 
@@ -433,15 +433,14 @@ footer {
       }
 
       button {
-        width: 100px; // contre la width du button général
+        width: auto; // contre la width du button général
         padding: 0;
         font-size: 16px;
-        display: block;
-        color: $Fire;
+        // display: block;
         background: none;
         border: none;
         cursor: pointer;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
       }
     }
   }
@@ -460,7 +459,8 @@ footer {
     background-color: $Black;
   }
 
-  .video-comment {
+
+  .video-display {
     width: 100%;
 
     .last-comment {
@@ -476,7 +476,6 @@ footer {
       position: relative;
       display: flex;
       justify-content: center;
-      box-shadow: none;
 
       textarea {
         width: 100%;
@@ -485,7 +484,8 @@ footer {
         padding-right: 40px; // pour que le texte de l'input ne passe pas derrière le button
       }
 
-      button {
+      .send-comment-btn {
+        //arrowup
         width: auto;
         position: absolute;
         top: 50%;
@@ -493,17 +493,11 @@ footer {
         transform: translate(0, -50%);
         color: $PurpleDarker;
       }
-
-      .commentpicto {
-        margin-left: 10px !important;
-        margin-right: 10px !important;
-      }
     }
-
-    .comment-btn-div button {
-      margin-bottom: 15px !important;
+    .comment-btn-div {
+      width: 50%;
+      margin: 25px auto;
     }
-
   }
 
   .trickslist-nav,

@@ -86,7 +86,7 @@ export const comments = [
             "id": 11,
             "comment": "Bravo pour cette session incroyable ! Chaque trick est exécuté à la perfection. Continue comme ça !",
             "user_id": "d0449e12-a00c-4e",
-            "video_id": 12,
+            "video_id": 7,
             "publication_date": "2024-05-31T15:51:05.000Z",
             "pseudo": "zojidai static"
       },

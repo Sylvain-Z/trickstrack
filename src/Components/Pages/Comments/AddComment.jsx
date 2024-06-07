@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 
-import ReadAllComments from "./ReadAllComments";
-import CopyToClipboardButton from '../../Containers/CopyToClipboardButton/CopyToClipboardButton';
-
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API  ---------------------
 import { getItemWithExpiration } from "../../../Assets/Variables/functions";
+
+import ReadAllComments from "./ReadAllComments";
+import CopyToClipboardButton from '../../Containers/CopyToClipboardButton/CopyToClipboardButton';
 
 import { comments } from "../../../Assets/Variables/comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
@@ -13,14 +13,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowUp,
   faCircleUser,
+  faFire,
 } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 
-function AddComment({ videoId }) {
+function AddComment({ video, addReaction }) {
+  
+  // const [userReaction, setUserReaction] = useState("");
   const [lastComment, setLastComment] = useState([]);
   const [comment, setComment] = useState("");
   const [msg, setMsg] = useState("");
-
+  
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -30,6 +33,7 @@ function AddComment({ videoId }) {
   const closeModal = () => {
     setModalIsOpen(false);
   };
+
 
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
@@ -42,22 +46,21 @@ function AddComment({ videoId }) {
 
   useEffect(() => {
 
-    if (videoId !== undefined && videoId !== null) {
+    if (video.video_id !== undefined && video.video_id !== null) {
       const filteredComments = comments.filter(
-        (comment) => comment.video_id == videoId
+        (comment) => comment.video_id == video.video_id
       );
       if (filteredComments.length > 0) {
         const recentComment = filteredComments.reduce((latest, current) => {
           return latest.id > current.id ? latest : current;
         }, filteredComments[0]);
-
-        console.log("recentComment", recentComment);
+        
         setLastComment([recentComment]);
       } else {
         setLastComment([]);
       }
     }
-  }, [videoId]);
+  }, [video]);
 
   const FAKETOKEN = getItemWithExpiration("fakeauth");
 
@@ -77,6 +80,7 @@ function AddComment({ videoId }) {
           pseudo: "testeur-demo",
         },
       ]);
+      setComment("");
     }
   };
 
@@ -85,7 +89,7 @@ function AddComment({ videoId }) {
   //   async function getLastComment() {
   //     try {
   //       const comment = await fetch(
-  //         FETCH_URL + "/comments/last-comment/" + videoId,
+  //         FETCH_URL + "comments/last-comment/" + video.video_id,
   //         {
   //           method: "GET",
   //           headers: {
@@ -103,6 +107,28 @@ function AddComment({ videoId }) {
   //   }
   //   getLastComment();
   // }, [lastComment]);
+
+  // useEffect(() => {
+  //   async function getUserReaction() {
+  //     try {
+  //       const reaction = await fetch(FETCH_URL + "videos/reaction/" + info.id + "/" + video.video_id,
+  //         {
+  //           method: "GET",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       );
+  //       if (reaction.status === 200) {
+  //         const json = await reaction.json();
+  //         setUserReaction(json);
+  //       }
+  //     } catch (error) {
+  //       throw Error(error);
+  //     }
+  //   }
+  //   getUserReaction();
+  // }, [userReaction, addReaction]);
 
   // const { info } = useSelector((state) => state.user);
   // const TOKEN = getItemWithExpiration("auth");
@@ -124,7 +150,7 @@ function AddComment({ videoId }) {
   //           "Content-Type": "application/json",
   //           Authentication: `Bearer ${TOKEN}`,
   //         },
-  //         body: JSON.stringify({ comment, userId: info.id, videoId }),
+  //         body: JSON.stringify({ comment, userId: info.id, videoId : video.video_id }),
   //       });
   //       setComment("");
   //     }
@@ -134,25 +160,38 @@ function AddComment({ videoId }) {
   return (
     <>
       <form className="video-comment" onSubmit={addComment}>
-        <div className="comment-btn-div static">
+
+        <div className="comment-btn-div">
+
+          {/*<button
+            type="button"
+            onClick={() => addReaction(video.reaction_total, video.video_id)}
+            className={!userReaction ? "gold" : "orange"}>*/}  {/* ligne démo // pour version API --------- */}
+          <button 
+            type="button"
+            onClick={() => addReaction(video.video_id)}
+            className={video.clicked ? "orange" : "gold"}> {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
+              <FontAwesomeIcon icon={faFire} size="lg" />{" "}
+              {video.reaction_total}
+          </button>
+
           <button
             type="button"
             onClick={openModal}
-            className="commentpicto gold static"
+            className="gold"
           >
             <FontAwesomeIcon icon={faComment} size="lg" />
-          </button>
-          <CopyToClipboardButton videoId={videoId} />
-        </div>
-
-        {/* POPUP */}
-        <ReadAllComments
+          </button >
+          <CopyToClipboardButton videoId={video.video_id} />
+          {/* POPUP */}
+          <ReadAllComments
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          videoId={videoId}
-        />
+          videoId={video.video_id} 
+          />
+        </div>
 
-        {msg && <p>{msg}</p>}
+        {msg && <p className="msg red">{msg}</p>}
 
         <div className="input-div">
           <textarea
@@ -162,7 +201,7 @@ function AddComment({ videoId }) {
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button type="submit">
+          <button type="submit" className="send-comment-btn">
             <FontAwesomeIcon icon={faCircleArrowUp} size="xl" />
           </button>
         </div>
