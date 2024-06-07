@@ -1,22 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../Assets/Variables/functions";
-import { timeElapsed } from "../../../Assets/Variables/functions";
 
-import { galery } from "./Galery"; // variables js pour démo version statique (hébergement sans BDD)
+import VideosDisplay from "../../Containers/VideosDisplay/VideosDisplay";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faRecordVinyl,
-  faFire,
-  faFaceSmile,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
-
-import AddComment from "../Comments/AddComment";
+import { galery } from "../../../Assets/Variables/galery"; // variables js pour démo version statique (hébergement sans BDD)
 
 function GaleryVideos() {
   const params = useParams();
@@ -47,7 +38,7 @@ function GaleryVideos() {
         )
       );
     }
-  }
+  };
 
   // Code fetch API Node JS ------------------------------------------
   // const [videos, setVideos] = useState(null);
@@ -93,22 +84,19 @@ function GaleryVideos() {
   //       }, 3000);
   //     } else {
   //       // si l'utilisateur est connecté à un compte peut ajouter ou retirer une réaction
-  //       const res = await fetch(
-  //         FETCH_URL + "videos/react/" + info.id  + "/" + videoId,
-  //         {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Authentication: `Bearer ${TOKEN}`,
-  //           },
-  //           body: JSON.stringify({
-  //             reaction_totalIncr,
-  //             reaction_totalDecr,
-  //             userId : info.id,
-  //             videoId,
-  //           }),
-  //         }
-  //       );
+  //       await fetch(FETCH_URL + "videos/react/" + info.id + "/" + videoId, {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authentication: `Bearer ${TOKEN}`,
+  //         },
+  //         body: JSON.stringify({
+  //           reaction_totalIncr,
+  //           reaction_totalDecr,
+  //           userId: info.id,
+  //           videoId,
+  //         }),
+  //       });
   //     }
   //   } catch (error) {
   //     throw Error(error);
@@ -131,61 +119,7 @@ function GaleryVideos() {
         </>
       )}
 
-      <div className="galery">
-        {!videos ? (
-          <>
-            <p>Contenu en chargement, patientez</p>
-          </>
-        ) : (
-          videos.map((video) => {
-            const elapsed = timeElapsed(video.publication_date);
-
-            return (
-              <div key={video.video_id}>
-                <figure>
-                  <video className="galery-video" controls>
-                    <source
-                      src={"/Videos/" + video.title}
-                      controls
-                      type="video/mp4"
-                    />
-                  </video>
-                  <figcaption>
-                    {msg && <p className="msg red">{msg}</p>}
-                    {/* <button onClick={() => addReaction(video.reaction_total, video.video_id)}> */} {/* ligne démo // pour version API --------- */}
-                    <button onClick={() => addReaction(video.video_id)}> {/* ligne démo version statique (hébergement sans BDD) ++++++++++++++++++ */}
-                      <FontAwesomeIcon icon={faFire} size="lg" />{" "}
-                      {video.reaction_total}
-                    </button>
-                    <p>
-                      <FontAwesomeIcon icon={faFaceSmile} size="xs" />{" "}
-                      <strong>{video.pseudo}</strong>{" "}
-                      <FontAwesomeIcon icon={faRecordVinyl} size="xs" />{" "}
-                      {video.trick_name}
-                    </p>
-                    {!elapsed ? (
-                      <></>
-                    ) : (
-                      <>
-                        <p>
-                          <FontAwesomeIcon icon={faCheck} size="xs" />{" "}
-                          {elapsed.times}
-                        </p>
-                      </>
-                    )}
-                    <AddComment key={video.video_id} videoId={video.video_id} />
-                  </figcaption>
-                </figure>
-              </div>
-            );
-          })
-        )}
-
-        <p className="galery_end">Fin de la liste</p>
-        <p className="galery_end">
-          Continue à progresser et montre nous tes tricks en video !
-        </p>
-      </div>
+      <VideosDisplay videos={videos} addReaction={addReaction} msg={msg} />
     </>
   );
 }

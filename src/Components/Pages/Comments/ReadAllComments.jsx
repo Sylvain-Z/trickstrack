@@ -2,10 +2,10 @@ import React from "react";
 import Modal from "react-modal";
 import { useEffect, useState } from "react";
 
-// import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
+import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 import { timeElapsed } from "../../../Assets/Variables/functions";
 
-import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
+// import { comments } from "../../../Assets/Variables/comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCircleUser } from "@fortawesome/free-solid-svg-icons";
@@ -39,54 +39,55 @@ Modal.setAppElement("#root");
 function ReadAllComments({ isOpen, onRequestClose, videoId }) {
 
   const [allComments, setAllComments] = useState("");
+  
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
 
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
-  useEffect(() => {
+  // useEffect(() => {
 
-    if (videoId !== undefined && videoId !== null) {
-      const filteredComments = comments.filter(
-        (comment) => comment.video_id == videoId
-      );
+  //   if (videoId !== undefined && videoId !== null) {
+  //     const filteredComments = comments.filter(
+  //       (comment) => comment.video_id == videoId
+  //     );
       
-      setAllComments(filteredComments);
+  //     setAllComments(filteredComments);
       
-    }
-  }, [videoId]);
+  //   }
+  // }, [videoId]);
 
   // Code fetch API Node JS ------------------------------------------
-  // useEffect(() => {
-  //   async function getAllComments() {
-  //     try {
-  //       const comments = await fetch(
-  //         FETCH_URL + "/comments/all-comments/" + videoId,
-  //         {
-  //           method: "GET",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //         }
-  //       );
-  //       if (comments.status === 200) {
-  //         const json = await comments.json();
-  //         setAllComments(json);
-  //       }
-  //     } catch (error) {
-  //       throw Error(error);
-  //     }
-  //   }
-  //   getAllComments();
-  // }, [allComments]);
+  useEffect(() => {
+    async function getAllComments() {
+      try {
+        const comments = await fetch(
+          FETCH_URL + "/comments/all-comments/" + videoId,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (comments.status === 200) {
+          const json = await comments.json();
+          setAllComments(json);
+        }
+      } catch (error) {
+        throw Error(error);
+      }
+    }
+    getAllComments();
+  }, [allComments]);
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.classList.add("no-scroll");
-  //   } else {
-  //     document.body.classList.remove("no-scroll");
-  //   }
-  //   return () => {
-  //     document.body.classList.remove("no-scroll");
-  //   };
-  // }, [isOpen]);
 
   return (
     <Modal

@@ -112,6 +112,28 @@ h6 {
   padding: 0 5px;
 }
 
+.toast-message {
+  width: 190px;
+  background: $PurpleGradientBkg !important;
+  color: $White !important;
+  .my-toast-body{
+    padding: 0 25px;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    color: $White;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .my-toast-progress-bar {
+    background-color: transparent !important;
+  }
+}
+
+
 .hidden {
   display: none;
 }
@@ -456,8 +478,9 @@ footer {
       justify-content: center;
       box-shadow: none;
 
-      input {
+      textarea {
         width: 100%;
+        height: 45px;
         margin: 0;
         padding-right: 40px; // pour que le texte de l'input ne passe pas derrière le button
       }
@@ -470,7 +493,8 @@ footer {
         transform: translate(0, -50%);
         color: $PurpleDarker;
       }
-      .commentpicto{
+
+      .commentpicto {
         margin-left: 10px !important;
         margin-right: 10px !important;
       }
@@ -578,7 +602,8 @@ footer {
     margin-bottom: 25px;
   }
 
-  .myinformations-pseudo, .myinformations-motDePasse {
+  .myinformations-pseudo,
+  .myinformations-motDePasse {
     left: 25px;
     bottom: 50px;
   }
@@ -610,6 +635,7 @@ footer {
       color: $PurpleDarker;
     }
   }
+
   .dangerZone {
     right: auto;
     top: auto;
@@ -650,12 +676,15 @@ footer {
       border: 1px solid $PurpleDarker;
       box-shadow: inset 0px 0px 5px $GreyDarker;
     }
+
     textarea {
       height: 90px;
     }
+
     select {
       font-size: 12px;
       text-align: center;
+
       option {
         font-size: 12px;
       }

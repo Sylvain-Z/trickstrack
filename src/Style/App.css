@@ -90,6 +90,25 @@ h6 {
   padding: 0 5px;
 }
 
+.toast-message {
+  width: 190px;
+  background: linear-gradient(50deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 90.71%), linear-gradient(200deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 30.71%), linear-gradient(127deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 70.71%), linear-gradient(336deg, rgb(43, 11, 50), rgba(255, 255, 255, 0) 95.71%) !important;
+  color: rgb(240, 240, 240) !important;
+}
+.toast-message .my-toast-body {
+  padding: 0 25px;
+}
+.toast-message button {
+  width: 30px;
+  height: 30px;
+  color: rgb(240, 240, 240);
+  background: transparent !important;
+  border: none !important;
+}
+.toast-message .my-toast-progress-bar {
+  background-color: transparent !important;
+}
+
 .hidden {
   display: none;
 }
@@ -499,17 +518,18 @@ footer a {
   justify-content: center;
   box-shadow: none;
 }
-.galery-ctn .video-comment .input-div input,
-.galery-ctn .video-comment .comment-btn-div input,
-.trickslist-ctn .video-comment .input-div input,
-.trickslist-ctn .video-comment .comment-btn-div input,
-.form-ctn .video-comment .input-div input,
-.form-ctn .video-comment .comment-btn-div input,
-.mytracker-ctn .video-comment .input-div input,
-.mytracker-ctn .video-comment .comment-btn-div input,
-.legal-ctn .video-comment .input-div input,
-.legal-ctn .video-comment .comment-btn-div input {
+.galery-ctn .video-comment .input-div textarea,
+.galery-ctn .video-comment .comment-btn-div textarea,
+.trickslist-ctn .video-comment .input-div textarea,
+.trickslist-ctn .video-comment .comment-btn-div textarea,
+.form-ctn .video-comment .input-div textarea,
+.form-ctn .video-comment .comment-btn-div textarea,
+.mytracker-ctn .video-comment .input-div textarea,
+.mytracker-ctn .video-comment .comment-btn-div textarea,
+.legal-ctn .video-comment .input-div textarea,
+.legal-ctn .video-comment .comment-btn-div textarea {
   width: 100%;
+  height: 45px;
   margin: 0;
   padding-right: 40px;
 }
@@ -720,7 +740,8 @@ footer a {
   width: 300px;
   margin-bottom: 25px;
 }
-.galery-ctn .myinformations-pseudo, .galery-ctn .myinformations-motDePasse,
+.galery-ctn .myinformations-pseudo,
+.galery-ctn .myinformations-motDePasse,
 .trickslist-ctn .myinformations-pseudo,
 .trickslist-ctn .myinformations-motDePasse,
 .form-ctn .myinformations-pseudo,

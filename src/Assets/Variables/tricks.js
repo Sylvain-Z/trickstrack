@@ -190,7 +190,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -198,7 +198,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -206,7 +206,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -214,7 +214,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -222,7 +222,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -230,7 +230,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -238,7 +238,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -246,7 +246,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -254,7 +254,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -262,7 +262,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -270,7 +270,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -278,7 +278,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -286,7 +286,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -294,7 +294,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -302,7 +302,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -310,7 +310,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -318,7 +318,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -326,7 +326,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 2,
@@ -334,7 +334,7 @@ export const tricksList = [
           "switch": 0,
           "completed": 0,
           "categorie_id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     }
 
 ]

@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 
 import ReadAllComments from "./ReadAllComments";
+import CopyToClipboardButton from '../../Containers/CopyToClipboardButton/CopyToClipboardButton';
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API  ---------------------
 import { getItemWithExpiration } from "../../../Assets/Variables/functions";
 
-import { comments } from "./Comments"; // code démo version statique (hébergement sans BDD) ++++++++++
+import { comments } from "../../../Assets/Variables/comments"; // code démo version statique (hébergement sans BDD) ++++++++++
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowUp,
   faCircleUser,
-  faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 
@@ -41,7 +41,6 @@ function AddComment({ videoId }) {
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
 
   useEffect(() => {
-    console.log("videoId", videoId);
 
     if (videoId !== undefined && videoId !== null) {
       const filteredComments = comments.filter(
@@ -79,7 +78,7 @@ function AddComment({ videoId }) {
         },
       ]);
     }
-  }
+  };
 
   // Code fetch API Node JS ------------------------------------------
   // useEffect(() => {
@@ -106,7 +105,7 @@ function AddComment({ videoId }) {
   // }, [lastComment]);
 
   // const { info } = useSelector((state) => state.user);
-  // const TOKEN = getItemWithExpiration('auth');
+  // const TOKEN = getItemWithExpiration("auth");
 
   // async function addComment(e) {
   //   e.preventDefault();
@@ -125,7 +124,7 @@ function AddComment({ videoId }) {
   //           "Content-Type": "application/json",
   //           Authentication: `Bearer ${TOKEN}`,
   //         },
-  //         body: JSON.stringify({ comment, userId: info.id , videoId }),
+  //         body: JSON.stringify({ comment, userId: info.id, videoId }),
   //       });
   //       setComment("");
   //     }
@@ -143,9 +142,7 @@ function AddComment({ videoId }) {
           >
             <FontAwesomeIcon icon={faComment} size="lg" />
           </button>
-          <button type="button" className="commentpicto gold static">
-            <FontAwesomeIcon icon={faLink} size="lg " />
-          </button>
+          <CopyToClipboardButton videoId={videoId} />
         </div>
 
         {/* POPUP */}
@@ -158,7 +155,7 @@ function AddComment({ videoId }) {
         {msg && <p>{msg}</p>}
 
         <div className="input-div">
-          <input
+          <textarea
             placeholder="Ajoute un commentaire"
             type="text"
             name="comment"

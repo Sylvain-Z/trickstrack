@@ -6,7 +6,7 @@ export const categories = [
     },
     {
           "id": 2,
-          "label": "Grinds & Slides"
+          "label": "Grinds et Slides"
     },
     {
           "id": 3,

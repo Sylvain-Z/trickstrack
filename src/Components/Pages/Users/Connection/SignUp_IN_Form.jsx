@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 // import { FETCH_URL } from "../../../../Assets/Variables/const"; // pour version API ------------
-import { setItemWithExpiration } from "../../../../Assets/Variables/functions"; // pour version API ------
+import { getItemWithExpiration } from "../../../../Assets/Variables/functions";
+import { setItemWithExpiration } from "../../../../Assets/Variables/functions";
 
 // import { signin } from "../../../../store/slices/user";
 
 function Form({ type }) {
-
   // const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,23 +23,42 @@ function Form({ type }) {
   const [msg2, setMsg2] = useState("");
   const [msg3, setMsg3] = useState("");
 
-  
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
+
+  const FAKETOKEN = getItemWithExpiration("fakeauth");
+  useEffect(() => {
+    if (!FAKETOKEN) {
+      return;
+    } else {
+      navigate("/galerie");
+    }
+  }, []);
+
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (type === "in") {
       setMsg("Application non connecté à une base de données");
-      setItemWithExpiration('fakeauth', "juste pour la démo", 10080);
+      setItemWithExpiration("fakeauth", "juste pour la démo", 10080);
       navigate("/galerie");
     }
     if (type === "up") {
       setMsg("Application non connecté à une base de données");
     }
-  };
+  }
 
   // Fonction de connection lorsque l'Application est reliée à une Base de données --------
   // --------------------------------------------------------------------------------------
+
+  // const TOKEN = getItemWithExpiration("auth");
+  // useEffect(() => {
+  //   if (!TOKEN) {
+  //     return;
+  //   } else {
+  //     navigate("/galerie");
+  //   }
+  // }, []);
+  
   // async function handleSubmit(e) {
   //   e.preventDefault();
   //   const res = await fetch(FETCH_URL + "users/sign" + type, {
@@ -53,17 +72,16 @@ function Form({ type }) {
   //   setMsg3(json.msg3);
 
   //   if (type === "in" && res.status === 200) {
-      
+
   //       setItemWithExpiration("auth", json.TOKEN, 10080);
   //       dispatch(signin({ id : json.userId }));
   //       navigate("/utilisateurs/mon-tracker/" + json.userId);
-      
+
   //   }
   //   if (type === "up" && res.status === 201) {
   //     navigate("/utilisateurs/connexion");
   //   }
   // };
-
 
   return (
     <>
@@ -81,7 +99,13 @@ function Form({ type }) {
 
             {msg && <p className="msg red">{msg}</p>}
             {msg2 && <p className="msg green">{msg2}</p>}
-            {msg3 && (<p className="msg yellow"><Link to="/utilisateurs/connexion" className="msg_yellow">{msg3}</Link></p>)}
+            {msg3 && (
+              <p className="msg yellow">
+                <Link to="/utilisateurs/connexion" className="msg_yellow">
+                  {msg3}
+                </Link>
+              </p>
+            )}
           </>
         )}
 
