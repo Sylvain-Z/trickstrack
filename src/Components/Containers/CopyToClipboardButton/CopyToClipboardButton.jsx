@@ -8,7 +8,7 @@ const CopyToClipboardButton = ({ videoId }) => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(
-        "http://localhost:3000/video/" + videoId
+        "https://trickstrack.vercel.app/video/" + videoId
       );
       toast.success("URL copiée !", {
         className: "toast-message",

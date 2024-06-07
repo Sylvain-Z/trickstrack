@@ -10,6 +10,7 @@ import VideosDisplay from "../../Containers/VideosDisplay/VideosDisplay";
 import { galery } from "../../../Assets/Variables/galery"; // variables js pour démo version statique (hébergement sans BDD)
 
 function GaleryVideos() {
+  
   const params = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,10 +18,26 @@ function GaleryVideos() {
 
   // code démo version statique (hébergement sans BDD) ++++++++++++++++++++++++++
   // Simule l'ajout et le retrait d'une réaction
-  const [videos, setVideos] = useState(galery.map((item) => ({ ...item })));
+  const [videos, setVideos] = useState([]);
   const [msg, setMsg] = useState("");
 
   const FAKETOKEN = getItemWithExpiration("fakeauth");
+
+  useEffect(() => {
+    async function getTricksByCategorie() {
+      try {
+ 
+            const filteredVideos = galery.filter(
+              (video) => video.video_id == params.video_id
+            );
+            setVideos(filteredVideos);
+          
+      } catch (error) {
+        throw Error(error);
+      }
+    }
+    getTricksByCategorie();
+  }, [videos]);
 
   function addReaction(id) {
     if (!FAKETOKEN) {
