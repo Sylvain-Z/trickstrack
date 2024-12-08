@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 // import { FETCH_URL } from "../../../Assets/Variables/const"; // pour version API
 import { getItemWithExpiration } from "../../../Assets/Variables/functions";
@@ -105,20 +105,6 @@ function GaleryVideos() {
 
   return (
     <>
-      {!FAKETOKEN ? (
-        <></>
-      ) : (
-        <>
-          <p
-            className="message red"
-            style={{ marginBottom: 50, textAlign: "center" }}
-          >
-            Application non connecté à une base de données : ceci est une démo
-            des fonctions lorsqu'une connection est active
-          </p>
-        </>
-      )}
-
       <VideosDisplay videos={videos} addReaction={addReaction} msg={msg} />
     </>
   );

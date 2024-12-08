@@ -86,6 +86,19 @@ function Form({ type }) {
   return (
     <>
       <section className="form-ctn">
+        {FAKETOKEN === undefined ? (
+          <></>
+        ) : (
+          <>
+            <p
+              className="message red"
+              style={{ marginBottom: 50, textAlign: "center" }}
+            >
+              Application non connecté à une base de données : ceci est une démo
+              des fonctions lorsqu'une connection est active
+            </p>
+          </>
+        )}
         {type === "in" ? (
           <>
             <h2 className="form-title">Connectez vous</h2>
