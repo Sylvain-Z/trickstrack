@@ -7,8 +7,6 @@ function Galery() {
         <>
             <section className='galery-ctn'>
 
-                <h2 className='galery-title'>Les progrès de la communauté</h2>
-
                 <GaleryVideos/>
 
             </section>

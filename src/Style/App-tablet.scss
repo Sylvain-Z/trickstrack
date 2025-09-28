@@ -98,12 +98,23 @@ $text-font: "Rounded_Elegance";
       }
     }
 
-
-    .galery-video,
-    .slider-video,
+    .video-controls,
     .myvideo {
-      width: 50%;
+      width: 50% !important;
       height: auto;
+      max-height: 450px;
+    }
+
+    .video-controls {
+      // pour les vidéos horizontales
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: $Black;
+    }
+
+    .galery-video {
       max-height: 450px;
     }
   }

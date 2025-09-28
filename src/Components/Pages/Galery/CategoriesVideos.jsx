@@ -30,7 +30,7 @@ function Categories() {
           setTricks_selected("");
         } else {
           const filteredTricks = tricksList.filter(
-            (trick) => trick.label == categorieSelected
+            (trick) => trick.label === categorieSelected
           );
           setTricks(filteredTricks);
 
@@ -38,7 +38,7 @@ function Categories() {
             setVideos([]);
           } else {
             const filteredVideos = galery.filter(
-              (video) => video.trick_name == tricks_selected
+              (video) => video.trick_name === tricks_selected
             );
             setVideos(filteredVideos);
           }

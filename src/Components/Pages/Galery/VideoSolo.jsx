@@ -28,7 +28,7 @@ function GaleryVideos() {
       try {
  
             const filteredVideos = galery.filter(
-              (video) => video.video_id == params.video_id
+              (video) => video.video_id === parseInt(params.video_id)
             );
             setVideos(filteredVideos);
           
@@ -37,7 +37,7 @@ function GaleryVideos() {
       }
     }
     getTricksByCategorie();
-  }, [videos]);
+  }, [videos, params.video_id]);
 
   function addReaction(id) {
     if (!FAKETOKEN) {

@@ -100,6 +100,7 @@ h6 {
 .gold {
   color: $Gold !important;
 }
+
 .orange {
   color: $Fire !important;
 }
@@ -304,7 +305,7 @@ header {
       position: fixed;
       display: flex;
       flex-direction: column;
-      z-index: 20;
+      z-index: 10000;
 
       .menu-ctn-closed,
       .menu-ctn-open {
@@ -413,7 +414,7 @@ footer {
     justify-content: center;
   }
 
-  .galery div {
+  .galery>div {
     width: 100%;
     margin-bottom: 25px;
   }
@@ -456,12 +457,96 @@ footer {
     width: 100%;
     height: auto;
     max-height: 550px;
-    background-color: $Black;
   }
-
 
   .video-display {
     width: 100%;
+
+    .video-controls {
+      width: 100%;
+      position: relative;
+
+      .play-pause-btn {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35px;
+        z-index: 10;
+        background: none;
+        border: none;
+        color: $White;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+        z-index: 10;
+
+        &.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        &.visible {
+          opacity: 1;
+        }
+      }
+
+      .progress-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+      }
+
+      .fullscreen-btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        border-radius: 0;
+        color: white;
+        padding: 0;
+        cursor: pointer;
+        z-index: 20;
+      }
+
+      .progress-bar {
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        width: 100%;
+        height: 30px;
+        cursor: pointer;
+        z-index: 25;
+      }
+
+      .tooltip {
+        position: absolute;
+        bottom: 35px;
+        /* au-dessus de la barre */
+        transform: translateX(-50%);
+        color: white;
+        padding: 4px;
+        font-size: 12px;
+        border-radius: 4px;
+        pointer-events: none;
+        white-space: nowrap;
+        // empêcher le tooltip de sortir de l’écran
+        max-width: 60px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 25;
+
+        &.visible {
+          opacity: 1;
+        }
+      }
+    }
 
     .last-comment {
       width: 85%;
@@ -494,6 +579,7 @@ footer {
         color: $PurpleDarker;
       }
     }
+
     .comment-btn-div {
       width: 50%;
       margin: 25px auto;

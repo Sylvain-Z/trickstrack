@@ -105,18 +105,10 @@ $text-font: "Rounded_Elegance";
             }
         }
 
-        .galery div,
-        .mytracker-galery div {
+        .galery > div,
+        .mytracker-galery > div {
             max-width: 850px;
         }
-
-        .galery-video,
-        .slider-video,
-        .myvideo {
-            height: auto;
-            max-height: 450px;
-        }
-
     }
 
     .addVideo-form {
